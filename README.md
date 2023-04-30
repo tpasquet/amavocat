@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Home
+About Us
+    Attorney Profiles
+    Firm History
+    Mission Statement
+Practice Areas
+    Employment Discrimination
+    Sexual Harassment
+    Workplace Retaliation
+    Wage and Hour Violations
+    Whistleblower Claims
+    Family and Medical Leave Act (FMLA)
+    Disability Discrimination
+    Workers' Compensation
+Client Resources
+    FAQ
+    Glossary
+    Helpful Links
+Testimonials
+Blog
+Contact Us
+    Location and Directions
+    Contact Form
+    Phone and Email
