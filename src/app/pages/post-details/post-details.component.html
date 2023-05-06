@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>{{(post$ | async)?.title}}</h1>
+            <h2>{{(post$ | async)?.subtitle}}</h2>
+            <p>{{(post$ | async)?.authorFirstName}} {{(post$ | async)?.authorLastName}}</p>
+            <p>{{(post$ | async)?.createdAt}}</p>
+            <p>{{(post$ | async)?.modifiedAt}}</p>
+            <img [src]="(post$ | async)?.featuredImage" [alt]="(post$ | async)?.featuredImageAlt" class="img-fluid">
+            <p>{{(post$ | async)?.description}}</p>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    Tags
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li *ngFor="let tag of (post$ | async)?.tags">{{tag}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

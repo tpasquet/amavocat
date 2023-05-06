@@ -1,0 +1,57 @@
+.home-page-container {
+    height: 100%;
+    width: 100vw;
+    padding: 0 20px;
+    z-index: 0;
+}
+
+.big-title-section {
+    margin-bottom: 40px;
+}
+
+.firstname,.lastname {
+    font-family: 'Open sans', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.profession {
+    font-family: 'Open sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.profession-summary {
+    font-family: 'Open sans', sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.bloc {
+    // height: 100vh;
+    width: 100%;
+    z-index: 0;
+
+    &-title {
+        position: relative;
+        margin-bottom: 20px;
+        z-index: 1;
+        width: fit-content;
+    }
+
+    &-title::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 4px;
+        width: 100%;
+        height: 12px;
+        background-color: #fafafa;
+        z-index: -1;
+    }
+}
+
+.bloc:not(:last-child) {
+    margin-bottom: 30px;
+}

@@ -6,14 +6,10 @@ import { LanguageGuard } from '../guards/language.guard';
 import { SelectLanguageGuard } from '../guards/select-language.guard';
 import { ContactComponent } from '../pages/contact/contact.component';
 import { HomeComponent } from '../pages/home/home.component';
+import { PostDetailsComponent } from '../pages/post-details/post-details.component';
+import { PostsComponent } from '../pages/posts/posts.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    canActivate: [SelectLanguageGuard],
-    component: HomeComponent,
-  },
   {
     path: ':lang', // Language-specific route
     canActivate: [LanguageGuard],
@@ -25,8 +21,24 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
-      }
+      },
+      {
+        path: 'posts',
+        component: PostsComponent,
+        children: [
+          {
+            path: 'posts/:id',
+            component: PostDetailsComponent
+          },
+        ]
+      },
     ]
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    canActivate: [SelectLanguageGuard],
+    component: HomeComponent,
   },
   {
     path: '**',
