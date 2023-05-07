@@ -16,8 +16,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { PostDetailsComponent } from './pages/post-details/post-details.component';
 import { RoutingModule } from './routing/routing.module';
-import { RouterModule } from '@angular/router';
-import {  } from './components/burger-menu/burger-menu.component';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,28 @@ import {  } from './components/burger-menu/burger-menu.component';
     LayoutModule,
     RouterModule,
     RoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    { provide: 'googleTagManagerId', useValue: environment.gtmId }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private router: Router, private gtmService: GoogleTagManagerService) {
+    this.router.events.forEach(item => {
+      if (item instanceof NavigationEnd) {
+        const gtmTag = {
+          event: 'page',
+          pageName: item.url
+        };
+
+        this.gtmService.pushTag(gtmTag);
+      }
+    });
+  }
+}

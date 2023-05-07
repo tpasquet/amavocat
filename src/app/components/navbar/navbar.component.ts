@@ -20,7 +20,6 @@ export class NavbarComponent {
     this.language = this.languageService.getCurrentLang();
 
     this.responsive.observe([
-      Breakpoints.Medium,
       Breakpoints.Small,
       Breakpoints.XSmall,
     ])

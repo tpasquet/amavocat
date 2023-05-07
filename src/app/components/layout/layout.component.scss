@@ -1,4 +1,30 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
 .layout-content {
+    min-height: calc(100vh - 160px);
+    flex-grow: 1;
+    margin: 0 150px 80px 150px;
     margin-top: 80px;
-    background-color: #bdd5ea;
+
+    @include media-breakpoint-up(xs) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
 }

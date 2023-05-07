@@ -1,4 +1,7 @@
-@import "reset";
-@import "variables";
-@import "fonts";
-@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "./reset";
+@import "./variables";
+@import "./fonts";
+@import './functions';
+@import './variables';
+@import './mixins';
+@import './vendors';

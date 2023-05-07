@@ -1,0 +1,18 @@
+@import "bootstrap/scss/mixins";
+
+@mixin custom-underline {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 4px;
+        width: 100%;
+        height: 12px;
+        background-color: #fafafa;
+        z-index: -1;
+    }
+}

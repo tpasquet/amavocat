@@ -1,19 +1,24 @@
-<form class="w-100">
-    <div class="form-group pb-4">
-        <label class="mb-2" for="inputName">Nom*</label>
-        <input type="text" class="form-control" id="inputName" aria-describedby="inputName" placeholder="Saisissez votre nom et prénom">
+<form class="message-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2 class="">Contacter Maitre Manier</h2>
+    <div class="form-group w-100 mb-2">
+        <label class="mb-2" for="firstName">Prénom*</label>
+        <input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Saisissez votre prénom">
     </div>
-    <div class="form-group pb-4">
-        <label class="mb-2" for="inputPhone">Téléphone*</label>
-        <input type="tel" class="form-control" id="inputPhone" aria-describedby="inputPhone" placeholder="Saisissez votre numéro de téléphone">
+    <div class="form-group w-100 mb-2">
+        <label class="mb-2" for="lastName">Nom*</label>
+        <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="Saisissez votre nom">
     </div>
-    <div class="form-group pb-4">
-        <label class="mb-2" for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail" placeholder="Saisissez votre adresse email">
+    <div class="form-group w-100 mb-2">
+        <label class="mb-2" for="phoneNumber">Téléphone*</label>
+        <input class="form-control" type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="Saisissez votre numéro de téléphone">
     </div>
-    <div class="form-group pb-4">
+    <div class="form-group w-100 mb-2">
+        <label class="mb-2" for="email">Email</label>
+        <input class="form-control" type="email" id="email" formControlName="email" placeholder="Saisissez votre adresse email">
+    </div>
+    <div class="form-group w-100 mb-2">
         <label class="mb-2" for="inputMessage">Message*</label>
-        <textarea class="form-control" id="inputMessage" rows="3" placeholder="Saissez la raison de votre prise de contact"></textarea>
+        <textarea class="form-control" id="inputMessage" placeholder="Saissez la raison de votre prise de contact"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary d-flex align-items-end">Envoyer</button>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>

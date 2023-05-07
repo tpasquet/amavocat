@@ -22,6 +22,7 @@
     "@angular/router": "^15.2.0",
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@popperjs/core": "^2.11.6",
+    "angular-google-tag-manager": "^1.7.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "react-responsive": "^9.0.2",

@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'amavocat-b23f5.firebaseapp.com',
     messagingSenderId: '115175686052',
     measurementId: 'G-77BMYFW8S8',
-  }
+  },
+  gtmId: 'GTM-N6J7ZJG',
 };

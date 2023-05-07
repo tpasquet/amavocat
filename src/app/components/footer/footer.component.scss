@@ -1,0 +1,36 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+.footer-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    height: auto;
+    min-height: 300px;
+    width: 100vw;
+
+    .footer-content {
+        @include media-breakpoint-up(sm) {
+            max-width: 500px;
+        }
+        @include media-breakpoint-up(md) {
+            max-width: 600px;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 850px;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 1000px;
+        }
+        @include media-breakpoint-up(xxl) {
+            max-width: 1200px;
+        }
+    }
+}

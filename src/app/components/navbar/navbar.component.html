@@ -1,21 +1,20 @@
 <div class="navbar-container">
-    <div class="navbar-link-container" *ngIf="showNavbarLinks">
+    <div class="navbar-link-container" *ngIf="!showBurgerMenu">
         <div class="navbar-item">
-            <a class="navbar-link" [routerLink]="'/accueil'">Accueil</a>
+            <a class="navbar-link" (click)="redirectTo('home')">Accueil</a>
         </div>
         <div class="navbar-item">
-            <a class="navbar-link" href="#">Domaines</a>
+            <a class="navbar-link" (click)="redirectTo('domains')">Domaines</a>
         </div>
         <div class="navbar-item">
-            <a class="navbar-link" href="#">Articles</a>
+            <a class="navbar-link" (click)="redirectTo('posts')">Articles</a>
         </div>
         <div class="navbar-item">
-            <a class="navbar-link" [routerLink]="'/contact'">Contact</a>
+            <a class="navbar-link" (click)="redirectTo('contact')">Contact</a>
         </div>
     </div>
-    <div class=""></div>
 </div>
-<div class="navbar-mobile-container">
+<div class="navbar-mobile-container" *ngIf="showBurgerMenu">
     <!-- <app-iconologo *ngIf="showMobileNavbar"></app-iconologo> -->
     <div class="logo">
         <!-- <div class="">Aurélie Manier</div>
