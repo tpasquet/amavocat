@@ -39,8 +39,8 @@ export class NavbarComponent {
 
   
   redirectTo(path: string) {
-    this.router.navigate(['/' + this.language + '/' + path]);
     this.menuOpened = false;
+    this.router.navigate(['/' + this.language + '/' + path]);
   }
 
   @HostListener('document:scroll', ['$event'])

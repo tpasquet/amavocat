@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { Constants } from 'src/app/global/constant';
 import { PageMetaTranslations } from 'src/app/global/types';
@@ -27,11 +28,28 @@ const HomeMetaTranslations: PageMetaTranslations = {
 })
 export class ContactComponent {
 
-  constructor(private languageService: LanguageService, private metaService: MetaService) { }
+  xSmall = false;
+  small = false;
+  
+  constructor(private languageService: LanguageService, private metaService: MetaService, private responsive: BreakpointObserver) {
+    this.responsive.observe([
+      Breakpoints.Small,
+      Breakpoints.XSmall,
+    ])
+      .subscribe(result => {
+        if (result.matches) {
+          this.xSmall = true;
+          this.small = true;
+        } else {
+          this.xSmall = true;
+          this.small = true;
+        }
+      });
+  }
 
   ngOnInit() {
     const lang = this.languageService.getCurrentLang();
     this.metaService.setPageMeta(HomeMetaTranslations[lang]);
-    
+
   }
 }
