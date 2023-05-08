@@ -6,7 +6,7 @@
     min-height: calc(100vh - 160px);
     flex-grow: 1;
     margin: 0 150px 80px 150px;
-    margin-top: 80px;
+    margin-top: 160px;
 
     @include media-breakpoint-up(xs) {
         margin-left: 0;

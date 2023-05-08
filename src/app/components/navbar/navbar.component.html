@@ -1,25 +1,22 @@
-<div class="navbar-container">
-    <div class="navbar-link-container" *ngIf="!showBurgerMenu">
-        <div class="navbar-item">
-            <a class="navbar-link" (click)="redirectTo('home')">Accueil</a>
+<div class="position-fixed top-0 start-0 d-flex justify-content-center align-items-center align-self-center w-100 bg-secondary"
+    style="height: 140px; z-index: 10" *ngIf="!showBurgerMenu">
+    <div class="d-flex flex-column w-100 justify-content-center align-items-center h-100 py-2">
+        <div class="d-flex flex-row justify-content-center align-items-center h-100">
+            <div class="d-flex flex-column align-items-center">
+                <div class="h3 m-0 text-white">Aurélie Manier</div>
+                <hr class="text-white w-100 m-0" />
+                <div class="h4 m-0 text-white">Avocat au barreau de Lyon</div>
+            </div>
         </div>
-        <div class="navbar-item">
-            <a class="navbar-link" (click)="redirectTo('domains')">Domaines</a>
-        </div>
-        <div class="navbar-item">
-            <a class="navbar-link" (click)="redirectTo('posts')">Articles</a>
-        </div>
-        <div class="navbar-item">
-            <a class="navbar-link" (click)="redirectTo('contact')">Contact</a>
+        <div class="d-flex flex-row justify-content-center align-items-center h-100 w-100" style="margin-right: 28px;">
+            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('home')">Accueil</div>
+            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('domains')">Domaines</div>
+            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('posts')">Articles</div>
+            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('contact')">Contact</div>
         </div>
     </div>
 </div>
 <div class="navbar-mobile-container" *ngIf="showBurgerMenu">
-    <!-- <app-iconologo *ngIf="showMobileNavbar"></app-iconologo> -->
-    <div class="logo">
-        <!-- <div class="">Aurélie Manier</div>
-        <div class="">Avocat Droit</div> -->
-    </div>
     <div class="burger-menu-container" *ngIf="showBurgerMenu" [ngClass]="{'opened': menuOpened}">
         <app-burger-menu (click)="onMenuClick()"></app-burger-menu>
     </div>

@@ -19,6 +19,7 @@ import { RoutingModule } from './routing/routing.module';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuLanguageComponent } from './components/menu-language/menu-language.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PostsComponent,
     PostCardComponent,
     PostDetailsComponent,
+    MenuLanguageComponent,
   ],
   imports: [
     BrowserModule,
