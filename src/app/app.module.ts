@@ -20,6 +20,7 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuLanguageComponent } from './components/menu-language/menu-language.component';
+import { DomainsComponent } from './pages/domains/domains.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MenuLanguageComponent } from './components/menu-language/menu-language.
     PostCardComponent,
     PostDetailsComponent,
     MenuLanguageComponent,
+    DomainsComponent,
   ],
   imports: [
     BrowserModule,

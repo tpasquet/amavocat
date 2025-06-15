@@ -1,18 +1,18 @@
 <div class="position-fixed top-0 start-0 d-flex justify-content-center align-items-center align-self-center w-100 bg-secondary"
-    style="height: 140px; z-index: 10" *ngIf="!showBurgerMenu">
+    style="height: 85px; z-index: 10" *ngIf="!showBurgerMenu">
     <div class="d-flex flex-column w-100 justify-content-center align-items-center h-100 py-2">
-        <div class="d-flex flex-row justify-content-center align-items-center h-100">
+        <!-- <div class="d-flex flex-row justify-content-center align-items-center h-100">
             <div class="d-flex flex-column align-items-center">
                 <div class="h3 m-0 text-white">Aurélie Manier</div>
                 <hr class="text-white w-100 m-0" />
                 <div class="h4 m-0 text-white">Avocat au barreau de Lyon</div>
             </div>
-        </div>
+        </div> -->
         <div class="d-flex flex-row justify-content-center align-items-center h-100 w-100" style="margin-right: 28px;">
-            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('home')">Accueil</div>
-            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('domains')">Domaines</div>
-            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('posts')">Articles</div>
-            <div class="custom-link h4 ms-4 text-white" (click)="redirectTo('contact')">Contact</div>
+            <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('home')">Accueil</div>
+            <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('domains')">Domaines</div>
+            <!-- <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('posts')">Articles</div> -->
+            <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('contact')">Contact</div>
         </div>
     </div>
 </div>
@@ -29,9 +29,9 @@
             <li>
                 <a class="navbar-link" (click)="redirectTo('domains')">Domaines</a>
             </li>
-            <li>
-                <a class="navbar-link" (click)="redirectTo('posts')">Articles</a>
-            </li>
+            <!-- <li>
+                <a class="navbar-link" (click)="redirectTo('posts')">Articles</a> -->
+            <!-- </li> -->
             <li>
                 <a class="navbar-link" (click)="redirectTo('contact')">Contact</a>
             </li>

@@ -1,26 +1,7 @@
-@import "../../../styles/mixins";
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
+@import "./../../../styles/fonts";
 
-.contact-container {
-    height: 100%;
-    
-}
-
-.contact-summary-container {
-    height: 100%;
-    min-width: 400px;
-    max-width: 550px;
-}
-
-.contact-message-container {
-    min-width: 400px;
-    max-width: 550px;
-}
-
-.title {
-    margin-bottom: 20px;
-
-    @include custom-underline;
+.profile-picture {
+    margin-top: 40px;
+    border-radius: 12px;
+    max-height: 500px;
 }

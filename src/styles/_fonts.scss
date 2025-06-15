@@ -2,6 +2,10 @@ body {
     font-family: "Open sans", sans-serif;
 }
 
+strong {
+    font-weight: 600;
+}
+
 h1,
 h2,
 h3,
@@ -9,19 +13,59 @@ h5,
 h6,
 span,
 p {
-    font-family: "Open sans", sans-serif;
     line-height: 18px;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     color: #274c77;
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 35px;
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+ul {
+    font-size: 22px;
+    list-style-type: square;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin-left: 2.5rem;
+    }
+}
+
+.big-underline {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 10px;
+        left: 6px;
+        background-color: #b7d0ec;
+        z-index: -1;
+    }
 }

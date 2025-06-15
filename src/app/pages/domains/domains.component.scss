@@ -1,0 +1,41 @@
+@import "./../../../styles/mixins";
+@import "./../../../styles/fonts";
+
+.photo-wrapper {
+    flex: 0 0 300px;
+    margin-left: 2rem;
+
+    @media (max-width: 767px) {
+        flex: 0 0 auto;
+        margin: 0 auto;
+        max-width: 70%;
+    }
+}
+
+.page-container {
+    height: 100%;
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.photo-wrapper {
+    flex-shrink: 0;
+    max-width: 300px;
+    margin-left: 2rem;
+
+    @media (max-width: 767px) {
+        margin-left: 0;
+        align-self: center;
+    }
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+    max-width: 400px;
+}

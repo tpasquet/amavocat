@@ -5,13 +5,14 @@ import { Constants } from '../global/constant';
 import { LanguageGuard } from '../guards/language.guard';
 import { SelectLanguageGuard } from '../guards/select-language.guard';
 import { ContactComponent } from '../pages/contact/contact.component';
+import { DomainsComponent } from '../pages/domains/domains.component';
 import { HomeComponent } from '../pages/home/home.component';
-import { PostDetailsComponent } from '../pages/post-details/post-details.component';
-import { PostsComponent } from '../pages/posts/posts.component';
+// import { PostDetailsComponent } from '../pages/post-details/post-details.component';
+// import { PostsComponent } from '../pages/posts/posts.component';
 
 const routes: Routes = [
   {
-    path: ':lang', // Language-specific route
+    path: ':lang',
     canActivate: [LanguageGuard],
     children: [
       {
@@ -19,19 +20,23 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
+        path: 'domains',
+        component: DomainsComponent,
+      },
+      {
         path: 'contact',
         component: ContactComponent
       },
-      {
-        path: 'posts',
-        component: PostsComponent,
-        children: [
-          {
-            path: 'posts/:id',
-            component: PostDetailsComponent
-          },
-        ]
-      },
+      // {
+      //   path: 'posts',
+      //   component: PostsComponent,
+      //   children: [
+      //     {
+      //       path: 'posts/:id',
+      //       component: PostDetailsComponent
+      //     },
+      //   ]
+      // },
     ]
   },
   {
