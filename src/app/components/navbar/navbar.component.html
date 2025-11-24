@@ -1,40 +1,51 @@
-<div class="position-fixed top-0 start-0 d-flex justify-content-center align-items-center align-self-center w-100 bg-secondary"
-    style="height: 85px; z-index: 10" *ngIf="!showBurgerMenu">
-    <div class="d-flex flex-column w-100 justify-content-center align-items-center h-100 py-2">
-        <!-- <div class="d-flex flex-row justify-content-center align-items-center h-100">
-            <div class="d-flex flex-column align-items-center">
-                <div class="h3 m-0 text-white">Aurélie Manier</div>
-                <hr class="text-white w-100 m-0" />
-                <div class="h4 m-0 text-white">Avocat au barreau de Lyon</div>
-            </div>
-        </div> -->
-        <div class="d-flex flex-row justify-content-center align-items-center h-100 w-100" style="margin-right: 28px;">
-            <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('home')">Accueil</div>
-            <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('domains')">Domaines</div>
-            <!-- <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('posts')">Articles</div> -->
-            <div class="custom-link h4 ms-4 text-primary" (click)="redirectTo('contact')">Contact</div>
+<nav class="navbar-desktop" *ngIf="!showBurgerMenu" aria-label="Navigation principale">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div class="navbar-content">
+        <div class="navbar-title">
+            <div class="navbar-name">{{ 'navbar.title' | translate }}</div>
+            <div class="navbar-subtitle">{{ 'navbar.subtitle' | translate }}</div>
         </div>
+        <ul class="navbar-links" role="menubar">
+            <li role="none"><a class="custom-link" [routerLink]="['/', language, 'home']" role="menuitem">{{ 'navbar.home' | translate }}</a></li>
+            <li role="none"><a class="custom-link" [routerLink]="['/', language, 'domains']" role="menuitem">{{ 'navbar.domains' | translate }}</a></li>
+            <li role="none"><a class="custom-link" [routerLink]="['/', language, 'contact']" role="menuitem">{{ 'navbar.contact' | translate }}</a></li>
+        </ul>
+        <app-language-selector></app-language-selector>
     </div>
-</div>
-<div class="navbar-mobile-container" *ngIf="showBurgerMenu">
-    <div class="burger-menu-container" *ngIf="showBurgerMenu" [ngClass]="{'opened': menuOpened}">
-        <app-burger-menu (click)="onMenuClick()"></app-burger-menu>
+</nav>
+<nav class="navbar-mobile-container" *ngIf="showBurgerMenu" aria-label="Navigation principale mobile">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div class="navbar-mobile-title">
+        <div class="navbar-mobile-name">{{ 'navbar.title' | translate }}</div>
+        <div class="navbar-mobile-subtitle">{{ 'navbar.subtitle' | translate }}</div>
     </div>
+    <button class="burger-menu-container"
+            *ngIf="showBurgerMenu"
+            [ngClass]="{'opened': menuOpened}"
+            (click)="onMenuClick()"
+            [attr.aria-expanded]="menuOpened"
+            aria-label="Menu de navigation"
+            aria-controls="mobile-menu">
+        <app-burger-menu [class.active]="menuOpened"></app-burger-menu>
+    </button>
     <div class="menu-mobile-background" *ngIf="isMobile" [ngClass]="{'opened': menuOpened}"></div>
-    <div class="menu-mobile" [ngClass]="{'opened': menuOpened}">
+    <div class="menu-mobile" [ngClass]="{'opened': menuOpened}" id="mobile-menu" role="menu">
         <ul>
-            <li>
-                <a class="navbar-link" (click)="redirectTo('home')">Accueil</a>
+            <li role="none">
+                <a class="navbar-link" [routerLink]="['/', language, 'home']" (click)="closeMenu()" role="menuitem">{{ 'navbar.home' | translate }}</a>
             </li>
-            <li>
-                <a class="navbar-link" (click)="redirectTo('domains')">Domaines</a>
+            <li role="none">
+                <a class="navbar-link" [routerLink]="['/', language, 'domains']" (click)="closeMenu()" role="menuitem">{{ 'navbar.domains' | translate }}</a>
             </li>
-            <!-- <li>
-                <a class="navbar-link" (click)="redirectTo('posts')">Articles</a> -->
+            <!-- <li role="none">
+                <a class="navbar-link" [routerLink]="['/', language, 'posts']" (click)="closeMenu()" role="menuitem">Articles</a> -->
             <!-- </li> -->
-            <li>
-                <a class="navbar-link" (click)="redirectTo('contact')">Contact</a>
+            <li role="none">
+                <a class="navbar-link" [routerLink]="['/', language, 'contact']" (click)="closeMenu()" role="menuitem">{{ 'navbar.contact' | translate }}</a>
+            </li>
+            <li role="none" class="language-mobile-item">
+                <app-language-selector (languageChanged)="onLanguageChanged($event)"></app-language-selector>
             </li>
         </ul>
     </div>
-</div>
+</nav>

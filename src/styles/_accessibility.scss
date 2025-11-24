@@ -1,0 +1,123 @@
+@import './variables';
+
+// Skip navigation link for keyboard users
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: $primary;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+
+  &:focus {
+    top: 10px;
+    left: 10px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Focus indicators for all interactive elements
+*:focus {
+  outline: 3px solid $primary;
+  outline-offset: 2px;
+}
+
+// Better focus for buttons
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid $primary;
+  outline-offset: 2px;
+}
+
+// Remove default focus for mouse users but keep for keyboard
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid $primary;
+  outline-offset: 2px;
+}
+
+// Ensure sufficient contrast for text
+body {
+  color: #212529; // WCAG AA compliant on white background
+}
+
+// Link contrast
+a {
+  color: $primary; // Ensure this has sufficient contrast
+
+  &:hover,
+  &:focus {
+    color: darken($primary, 15%);
+    text-decoration: underline;
+  }
+}
+
+// Screen reader only content
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Skip to main content visible on focus
+.skip-link:focus {
+  clip: auto;
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+// Improve touch targets for mobile (min 44x44px)
+@media (max-width: 768px) {
+  button,
+  a,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  * {
+    border-color: currentColor !important;
+  }
+
+  button,
+  a {
+    text-decoration: underline;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,47 @@
+<div class="legal-page container-fluid">
+    <main class="legal-main" id="main-content">
+        <div class="legal-content">
+            <section class="bloc">
+                <h1>{{ 'legal.title' | translate }}</h1>
+                
+                <h2>{{ 'legal.editor.title' | translate }}</h2>
+                <p>
+                    <strong>{{ 'legal.editor.name' | translate }}</strong><br>
+                    {{ 'legal.editor.profession' | translate }}<br>
+                    {{ 'legal.editor.orderNumber' | translate }} : 3525<br>
+                    {{ 'legal.editor.address' | translate }} : 90, rue Servient<br>
+                    69003 Lyon<br>
+                    {{ 'legal.editor.phone' | translate }} : 07 69 99 75 60<br>
+                    {{ 'legal.editor.email' | translate }} : contact&#64;aureliemanier-avocat.fr<br>
+                    {{ 'legal.editor.professionalRules' | translate }} : <a href="https://www.cnb.avocat.fr" target="_blank" rel="noopener noreferrer">{{ 'legal.editor.rulesLink' | translate }}</a>
+                </p>
+
+                <h2>{{ 'legal.host.title' | translate }}</h2>
+                <p>
+                    <strong>{{ 'legal.host.name' | translate }}</strong><br>
+                    <span [innerHTML]="'legal.host.address' | translate"></span><br>
+                    {{ 'legal.host.website' | translate }} : <a href="https://www.alwaysdata.com" target="_blank" rel="noopener noreferrer">www.alwaysdata.com</a>
+                </p>
+
+                <h2>{{ 'legal.director.title' | translate }}</h2>
+                <p>{{ 'legal.director.name' | translate }}</p>
+
+                <h2>{{ 'legal.ip.title' | translate }}</h2>
+                <p [innerHTML]="'legal.ip.content' | translate"></p>
+
+                <h2>{{ 'legal.analytics.title' | translate }}</h2>
+                <p [innerHTML]="'legal.analytics.content' | translate"></p>
+
+                <h2>{{ 'legal.liability.title' | translate }}</h2>
+                <p [innerHTML]="'legal.liability.content' | translate"></p>
+
+                <h2>{{ 'legal.links.title' | translate }}</h2>
+                <p [innerHTML]="'legal.links.content' | translate"></p>
+
+                <p>
+                    <strong>{{ 'legal.lastUpdate' | translate }} :</strong> Janvier 2025
+                </p>
+            </section>
+        </div>
+    </main>
+</div>

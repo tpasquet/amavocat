@@ -5,9 +5,10 @@ import { Post } from 'src/app/global/interfaces';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss']
+    selector: 'app-posts',
+    templateUrl: './posts.component.html',
+    styleUrls: ['./posts.component.scss'],
+    standalone: false
 })
 export class PostsComponent {
   posts$: Observable<Post[]>

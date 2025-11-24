@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .balance { fill: #C5A572; }
+      .base { fill: #8B7355; }
+    </style>
+  </defs>
+  <!-- Base -->
+  <rect class="base" x="26" y="54" width="12" height="4" rx="1"/>
+  <rect class="base" x="18" y="58" width="28" height="4" rx="2"/>
+  
+  <!-- Pilier central -->
+  <rect class="balance" x="30" y="16" width="4" height="38"/>
+  
+  <!-- Barre horizontale -->
+  <rect class="balance" x="12" y="14" width="40" height="3" rx="1.5"/>
+  
+  <!-- Plateau gauche -->
+  <path class="balance" d="M 14 17 L 10 24 L 18 24 Z"/>
+  <ellipse class="balance" cx="14" cy="24" rx="8" ry="2"/>
+  <line x1="14" y1="14" x2="14" y2="17" stroke="#C5A572" stroke-width="1.5"/>
+  
+  <!-- Plateau droit -->
+  <path class="balance" d="M 50 17 L 46 24 L 54 24 Z"/>
+  <ellipse class="balance" cx="50" cy="24" rx="8" ry="2"/>
+  <line x1="50" y1="14" x2="50" y2="17" stroke="#C5A572" stroke-width="1.5"/>
+  
+  <!-- Point central -->
+  <circle class="balance" cx="32" cy="15.5" r="2.5"/>
+</svg>

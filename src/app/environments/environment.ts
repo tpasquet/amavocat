@@ -1,13 +1,11 @@
 export const environment = {
   production: false,
-  firebase: {
-    projectId: 'amavocat-b23f5',
-    appId: '1:115175686052:web:1a0bb2b5e2107285ffcb31',
-    storageBucket: 'amavocat-b23f5.appspot.com',
-    apiKey: 'AIzaSyDkJc6aZCjzOWxPkTW6NxoJ4mgwOVvLv8M',
-    authDomain: 'amavocat-b23f5.firebaseapp.com',
-    messagingSenderId: '115175686052',
-    measurementId: 'G-77BMYFW8S8',
-  },
-  gtmId: 'GTM-N6J7ZJG',
+  dev: false,
+  hostname: 'http://localhost:4200',
+  apiUrl: 'http://localhost:3000/api',
+  umami: {
+    enabled: true, // Activé pour tester en local
+    websiteId: 'fc57237c-ebb4-49f2-bf2b-0da03e57e157',
+    src: 'https://cloud.umami.is/script.js'
+  }
 };

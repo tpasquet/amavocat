@@ -1,12 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { BurgerMenuComponent } from '../components/burger-menu/burger-menu.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { RoutingModule } from '../routing/routing.module';
 import { IconologoComponent } from '../components/iconologo/iconologo.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
+import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
+import { CookieBannerComponent } from '../components/cookie-banner/cookie-banner.component';
+import { CookieButtonComponent } from '../components/cookie-button/cookie-button.component';
 
 
 
@@ -16,15 +21,23 @@ import { FooterComponent } from '../components/footer/footer.component';
     LayoutComponent,
     BurgerMenuComponent,
     IconologoComponent,
-    FooterComponent
+    FooterComponent,
+    BreadcrumbComponent,
+    LanguageSelectorComponent,
+    CookieBannerComponent,
+    CookieButtonComponent
   ],
   imports: [
     CommonModule,
-    NgbCollapseModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule,
+    TranslateModule
   ],
   exports: [
-    LayoutComponent
+    LayoutComponent,
+    LanguageSelectorComponent,
+    CookieBannerComponent,
+    CookieButtonComponent
   ]
 })
 export class LayoutModule { }

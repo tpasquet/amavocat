@@ -5,9 +5,10 @@ import { Post } from 'src/app/global/interfaces';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
-  selector: 'app-post-details',
-  templateUrl: './post-details.component.html',
-  styleUrls: ['./post-details.component.scss']
+    selector: 'app-post-details',
+    templateUrl: './post-details.component.html',
+    styleUrls: ['./post-details.component.scss'],
+    standalone: false
 })
 export class PostDetailsComponent {
   post$?: Observable<Post>;

@@ -1,7 +1,91 @@
-@import "./../../../styles/fonts";
+@import "./../../../styles/variables";
 
-.profile-picture {
-    margin-top: 40px;
+.contact-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .contact-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 1rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+
+    @media (min-width: 992px) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+.contact-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-card {
+    background: white;
     border-radius: 12px;
-    max-height: 500px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $primary;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $primary;
+        margin-bottom: 1rem;
+    }
+}
+
+
+.contact-form-section {
+    .contact-card {
+        height: fit-content;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .contact-header {
+        .contact-title {
+            font-size: 2rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
 }

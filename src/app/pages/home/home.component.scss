@@ -16,16 +16,46 @@
 .page-container {
     height: 100%;
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     box-sizing: border-box;
     z-index: 0;
+}
+
+.intro-text {
+    font-size: 18px;
+    line-height: 1.6;
+
+    @media (min-width: 768px) {
+        font-size: 22px;
+        line-height: 1.8;
+    }
 }
 
 .profile-image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    aspect-ratio: 2 / 3;
+    border-radius: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    min-width: 250px;
-    max-width: 400px;
+    max-width: 250px;
+    display: block;
+    margin: 1rem auto 0 auto;
+
+    &.desktop-only {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        &.mobile-only {
+            display: none;
+        }
+
+        &.desktop-only {
+            display: block;
+            max-width: 350px;
+            min-width: 300px;
+            float: right;
+            margin: 0 0 1rem 2rem;
+        }
+    }
 }

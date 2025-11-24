@@ -1,0 +1,79 @@
+<div class="privacy-page">
+    <main class="privacy-main" id="main-content">
+        <div class="privacy-content">
+            <section class="bloc">
+                <h1>{{ 'privacy.title' | translate }}</h1>
+                
+                <h2>{{ 'privacy.intro.content' | translate }}</h2>
+                <p [innerHTML]="'privacy.intro.content' | translate"></p>
+
+                <h2>{{ 'privacy.controller.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.controller.content' | translate"></p>
+                <p>
+                    Email : contact&#64;aureliemanier-avocat.fr<br>
+                    {{ 'legal.editor.phone' | translate }} : 07 69 99 75 60
+                </p>
+
+                <h2>{{ 'privacy.collection.title' | translate }}</h2>
+                <p>{{ 'privacy.collection.intro' | translate }}</p>
+                <ul>
+                    <li [innerHTML]="'privacy.collection.items.identity' | translate"></li>
+                    <li [innerHTML]="'privacy.collection.items.contact' | translate"></li>
+                    <li [innerHTML]="'privacy.collection.items.message' | translate"></li>
+                </ul>
+
+                <h2>{{ 'privacy.purpose.title' | translate }}</h2>
+                <p>{{ 'privacy.purpose.intro' | translate }}</p>
+                <ul>
+                    <li>{{ 'privacy.purpose.items.contact' | translate }}</li>
+                    <li>{{ 'privacy.purpose.items.info' | translate }}</li>
+                    <li>{{ 'privacy.purpose.items.legal' | translate }}</li>
+                </ul>
+
+                <h2>{{ 'privacy.legal.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.legal.content' | translate"></p>
+
+                <h2>{{ 'privacy.recipients.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.recipients.content' | translate"></p>
+
+                <h2>{{ 'privacy.retention.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.retention.content' | translate"></p>
+
+                <h2>{{ 'privacy.rights.title' | translate }}</h2>
+                <p>{{ 'privacy.rights.intro' | translate }}</p>
+                <ul>
+                    <li [innerHTML]="'privacy.rights.items.access' | translate"></li>
+                    <li [innerHTML]="'privacy.rights.items.rectification' | translate"></li>
+                    <li [innerHTML]="'privacy.rights.items.deletion' | translate"></li>
+                    <li [innerHTML]="'privacy.rights.items.opposition' | translate"></li>
+                    <li [innerHTML]="'privacy.rights.items.portability' | translate"></li>
+                    <li [innerHTML]="'privacy.rights.items.complaint' | translate"></li>
+                </ul>
+                <p [innerHTML]="'privacy.rights.exercise' | translate"></p>
+
+                <h2>{{ 'privacy.security.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.security.content' | translate"></p>
+
+                <h2>{{ 'privacy.cookies.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.cookies.content' | translate"></p>
+
+                <h2>{{ 'privacy.analytics.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.analytics.content' | translate"></p>
+
+                <h2>{{ 'privacy.modifications.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.modifications.content' | translate"></p>
+
+                <h2>{{ 'privacy.contact.title' | translate }}</h2>
+                <p [innerHTML]="'privacy.contact.content' | translate"></p>
+                <p>
+                    Email : <a href="mailto:contact@aureliemanier-avocat.fr">contact&#64;aureliemanier-avocat.fr</a><br>
+                    {{ 'legal.editor.phone' | translate }} : 07 69 99 75 60
+                </p>
+
+                <p>
+                    <strong>{{ 'privacy.lastUpdate' | translate }} :</strong> Janvier 2025
+                </p>
+            </section>
+        </div>
+    </main>
+</div>

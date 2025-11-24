@@ -3,6 +3,7 @@ export interface PageMeta {
     description: string;
     ogTitle: string;
     ogDescription: string;
+    ogImage?: string;
     canonical: string;
 }
 

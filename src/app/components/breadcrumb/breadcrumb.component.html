@@ -1,0 +1,11 @@
+<nav aria-label="Fil d'Ariane" class="breadcrumb-container" *ngIf="breadcrumbs.length > 1">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let crumb of breadcrumbs; let last = last" [class.active]="last">
+      <a *ngIf="!last" [routerLink]="crumb.url">{{ crumb.label }}</a>
+      <span *ngIf="last">{{ crumb.label }}</span>
+    </li>
+  </ol>
+
+  <!-- Schema.org structured data for breadcrumbs -->
+  <script type="application/ld+json" [innerHTML]="structuredData"></script>
+</nav>

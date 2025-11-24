@@ -7,6 +7,8 @@ import { SelectLanguageGuard } from '../guards/select-language.guard';
 import { ContactComponent } from '../pages/contact/contact.component';
 import { DomainsComponent } from '../pages/domains/domains.component';
 import { HomeComponent } from '../pages/home/home.component';
+import { LegalComponent } from '../pages/legal/legal.component';
+import { PrivacyComponent } from '../pages/privacy/privacy.component';
 // import { PostDetailsComponent } from '../pages/post-details/post-details.component';
 // import { PostsComponent } from '../pages/posts/posts.component';
 
@@ -26,6 +28,14 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'mentions-legales',
+        component: LegalComponent
+      },
+      {
+        path: 'politique-confidentialite',
+        component: PrivacyComponent
       },
       // {
       //   path: 'posts',

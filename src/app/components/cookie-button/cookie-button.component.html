@@ -1,0 +1,10 @@
+<!-- Cookie button component - visible après consentement -->
+<button 
+  *ngIf="isVisible" 
+  class="cookie-button" 
+  (click)="openSettings()"
+  type="button"
+  aria-label="Gérer le consentement des cookies">
+  <span class="cookie-icon">🍪</span>
+  <span class="cookie-text">Gérer les cookies</span>
+</button>

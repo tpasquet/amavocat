@@ -11,6 +11,7 @@ const HomeMetaTranslations: PageMetaTranslations = {
     description: 'Looking for an employment law attorney in Lyon? Contact Aurélie Manier for a confidential and effective legal consultation. Get help with your employment and employer-employee relationship issues.',
     ogTitle: 'Contact Aurélie Manier, Employment Law Attorney in Lyon',
     ogDescription: 'Looking for an employment law attorney in Lyon? Contact Aurélie Manier for a confidential and effective legal consultation. Get help with your employment and employer-employee relationship issues.',
+    ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/en/contact`
   },
   fr: {
@@ -18,13 +19,15 @@ const HomeMetaTranslations: PageMetaTranslations = {
     description: 'Besoin d\'un avocat en droit du travail à Lyon ? Contactez Aurélie Manier pour une consultation juridique confidentielle et efficace. Obtenez de l\'aide pour vos problèmes de travail et de relations employeur-employé.',
     ogTitle: 'Contactez Aurélie Manier, Avocate en Droit du Travail à Lyon',
     ogDescription: 'Besoin d\'un avocat en droit du travail à Lyon ? Contactez Aurélie Manier pour une consultation juridique confidentielle et efficace. Obtenez de l\'aide pour vos problèmes de travail et de relations employeur-employé.',
+    ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/fr/contact`
   }
 };
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.scss'],
+    standalone: false
 })
 export class ContactComponent {
 

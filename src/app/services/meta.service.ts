@@ -2,19 +2,36 @@ import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { PageMeta } from '../global/interfaces';
+import { environment } from '../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class MetaService {
 
-    constructor(private title: Title, private metaService: Meta, private router: Router) { }
+    constructor(private title: Title, private metaService: Meta, private router: Router) {
+        // Set noindex for dev environment
+        if (environment.dev) {
+            this.metaService.updateTag({ name: 'robots', content: 'noindex, nofollow' });
+        }
+    }
 
     setPageMeta(data: PageMeta): void {
         this.title.setTitle(data.title);
         this.metaService.updateTag({ name: 'description', content: data.description });
-        this.metaService.updateTag({ name: 'og:title', content: data.ogTitle });
-        this.metaService.updateTag({ name: 'og:description', content: data.ogDescription });
+        this.metaService.updateTag({ property: 'og:title', content: data.ogTitle });
+        this.metaService.updateTag({ property: 'og:description', content: data.ogDescription });
+        this.metaService.updateTag({ property: 'og:url', content: data.canonical });
+        this.metaService.updateTag({ name: 'twitter:title', content: data.ogTitle });
+        this.metaService.updateTag({ name: 'twitter:description', content: data.ogDescription });
+        this.metaService.updateTag({ name: 'twitter:url', content: data.canonical });
+        
+        // Update og:image if provided
+        if (data.ogImage) {
+            this.metaService.updateTag({ property: 'og:image', content: data.ogImage });
+            this.metaService.updateTag({ name: 'twitter:image', content: data.ogImage });
+        }
+        
         this.setCanonicalUrl(data.canonical);
 
         // FIXME - Set the language-specific meta tags

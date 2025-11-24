@@ -1,76 +1,65 @@
 <div class="page-container container-fluid">
-    <main class="main-layout">
+    <main class="main-layout" id="main-content">
         <div class="content-wrapper">
-            <section class="bloc d-flex flex-column flex-md-row align-items-start justify-content-between">
-                <div>
-                    <h1>Aurélie Manier</h1>
-                    <h2>Avocat en droit du travail à Lyon</h2>
-                    <p>
-                        Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce son activité dans le domaine du <strong>Droit du
-                            travail</strong> et du <strong>Droit de la Sécurité sociale</strong>.
-                        Elle a prêté serment en <strong>décembre 2021</strong>.
-                    </p>
-                </div>
+            <section class="bloc">
+                <p class="intro-text" [innerHTML]="'home.intro' | translate"></p>
+                <img class="img-fluid profile-image mobile-only" 
+                    src="../../../assets/img/profile-picture-home.jpg"
+                    srcset="../../../assets/img/profile-picture-home-350w.jpg 350w,
+                            ../../../assets/img/profile-picture-home-525w.jpg 525w,
+                            ../../../assets/img/profile-picture-home.jpg 700w"
+                    sizes="(max-width: 768px) 250px, 350px"
+                    alt="Portrait de Maître Aurélie Manier">
             </section>
 
-            <section class="bloc">
-                <h2 class="bloc-title big-underline">Domaines d'expertise</h2>
-                <p><strong>Maître Aurélie MANIER</strong> intervient notamment dans les situations suivantes :</p>
-                <div class="d-flex d-flex-row align-items-start justify-content-between">
-                    <ul>
-                        <li><strong>Litiges</strong> dans le cadre d’une relation de travail ou d’un licenciement</li>
-                        <li><strong>Respect de l’obligation de sécurité</strong> au travail</li>
-                        <li><strong>Situations de harcèlement</strong> au travail</li>
-                        <li><strong>Inaptitudes</strong></li>
-                        <li><strong>Accidents du travail</strong></li>
-                        <li><strong>Maladies professionnelles</strong></li>
-                        <li><strong>Taux d’incapacité permanente partielle</strong></li>
-                        <li>Litiges avec les <strong>organismes sociaux</strong> (Sécurité sociale, Pôle emploi, Caisse de retraite, Maison des
-                            personnes
-                            handicapées, etc.)</li>
-                    </ul>
-                    <figure>
-                        <img class="img-fluid profile-image" src="../../../assets/img/profile-picture-home.jpg"
-                            alt="Portrait de Maître Aurélie Manier">
-                    </figure>
-                </div>
-            </section>
-
-            <section class="bloc">
-                <h2 class="bloc-title big-underline">Accompagnement personnalisé</h2>
-                <p>
-                    L’objectif est de vous accompagner et de vous aider à trouver la <strong>procédure</strong> qui vous correspond le mieux.
-                </p>
-                <p>
-                    Rien n’oblige à saisir le Tribunal, il est toujours intéressant de tenter une <strong>procédure amiable</strong> en amont.
-                </p>
-                <p>
-                    Dans le cadre des <strong>contentieux médicaux</strong> contre certains organismes sociaux ou même dans le cadre d’un
-                    <strong>contentieux employeur-salarié</strong>,
-                    il est possible de solliciter l’avis d’un <strong>médecin consultant</strong>, afin de donner plus de poids à vos demandes et vos
-                    arguments.
-                </p>
-            </section>
-
-            <section class="bloc">
-                <h2 class="bloc-title big-underline">Consultations</h2>
-                <p><strong>Maître MANIER</strong> vous reçoit selon vos convenances personnelles :</p>
+            <section class="bloc bloc-with-image">
+                <img class="img-fluid profile-image desktop-only" 
+                    src="../../../assets/img/profile-picture-home.jpg"
+                    srcset="../../../assets/img/profile-picture-home-350w.jpg 350w,
+                            ../../../assets/img/profile-picture-home-525w.jpg 525w,
+                            ../../../assets/img/profile-picture-home.jpg 700w"
+                    sizes="350px"
+                    alt="Portrait de Maître Aurélie Manier">
+                <h2 class="bloc-title big-underline">{{ 'home.expertise.title' | translate }}</h2>
+                <p [innerHTML]="'home.expertise.description' | translate"></p>
                 <ul>
-                    <li><strong>Au cabinet</strong> situé dans le 3<sup>e</sup> arrondissement de Lyon</li>
-                    <li><strong>En visioconférence</strong></li>
-                    <li><strong>Par téléphone</strong>, selon vos préférences</li>
+                    <li [innerHTML]="'home.expertise.items.litigation' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.safety' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.harassment' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.inaptitude' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.accidents' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.diseases' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.disability' | translate"></li>
+                    <li [innerHTML]="'home.expertise.items.organisms' | translate"></li>
                 </ul>
             </section>
 
             <section class="bloc">
-                <h2 class="bloc-title big-underline">Les valeurs du cabinet</h2>
+                <h2 class="bloc-title big-underline">{{ 'home.support.title' | translate }}</h2>
+                <p [innerHTML]="'home.support.paragraph1' | translate"></p>
+                <p [innerHTML]="'home.support.paragraph2' | translate"></p>
+                <p [innerHTML]="'home.support.paragraph3' | translate"></p>
+            </section>
+
+            <section class="bloc">
+                <h2 class="bloc-title big-underline">{{ 'home.consultations.title' | translate }}</h2>
+                <p [innerHTML]="'home.consultations.description' | translate"></p>
                 <ul>
-                    <li><strong>Réponses simples et claires</strong></li>
-                    <li><strong>Privilégier les recours amiables</strong></li>
-                    <li><strong>Respect du secret professionnel</strong></li>
-                    <li><strong>Instaurer une relation de confiance</strong></li>
-                    <li><strong>Honoraires</strong> discutés en amont et adaptés à la situation financière du client</li>
-                    <li><strong>Toutes les étapes</strong> de la procédure sont vues avec vous pour éviter les mauvaises surprises.</li>
+                    <li [innerHTML]="'home.consultations.items.office' | translate"></li>
+                    <li [innerHTML]="'home.consultations.items.video' | translate"></li>
+                    <li [innerHTML]="'home.consultations.items.phone' | translate"></li>
+                </ul>
+            </section>
+
+            <section class="bloc">
+                <h2 class="bloc-title big-underline">{{ 'home.values.title' | translate }}</h2>
+                <ul>
+                    <li [innerHTML]="'home.values.items.simple' | translate"></li>
+                    <li [innerHTML]="'home.values.items.amicable' | translate"></li>
+                    <li [innerHTML]="'home.values.items.secret' | translate"></li>
+                    <li [innerHTML]="'home.values.items.trust' | translate"></li>
+                    <li [innerHTML]="'home.values.items.fees' | translate"></li>
+                    <li [innerHTML]="'home.values.items.transparent' | translate"></li>
                 </ul>
             </section>
         </div>

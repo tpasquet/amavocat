@@ -1,0 +1,55 @@
+@use 'sass:color';
+@import '../../../styles/variables';
+
+.breadcrumb-container {
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+
+  &:not(:last-child)::after {
+    content: '/';
+    padding: 0 0.5rem;
+    color: #6c757d;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: color.adjust($primary, $lightness: -10%);
+      text-decoration: underline;
+    }
+  }
+
+  &.active {
+    color: #495057;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    padding: 0 0.35rem;
+  }
+}

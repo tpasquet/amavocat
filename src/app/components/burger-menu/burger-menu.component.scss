@@ -1,8 +1,17 @@
-.burger-menu-background {
-    background-color: #b7d0ec;
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
+:host {
+    display: block;
+}
+
+:host.active .ham {
+    transform: rotate(45deg);
+}
+
+:host.active .ham4 .top {
+    stroke-dashoffset: -68px;
+}
+
+:host.active .ham4 .bottom {
+    stroke-dashoffset: -68px;
 }
 
 .ham {
@@ -13,14 +22,6 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-.hamRotate.active {
-    transform: rotate(45deg);
-}
-
-.hamRotate180.active {
-    transform: rotate(180deg);
 }
 
 .line {
@@ -34,12 +35,7 @@
 .ham4 .top {
     stroke-dasharray: 40 121;
 }
+
 .ham4 .bottom {
     stroke-dasharray: 40 121;
-}
-.ham4.active .top {
-    stroke-dashoffset: -68px;
-}
-.ham4.active .bottom {
-    stroke-dashoffset: -68px;
 }

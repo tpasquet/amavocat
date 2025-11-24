@@ -1,33 +1,24 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, CollectionReference, Firestore, doc, getDoc, getDocs, QuerySnapshot } from '@angular/fire/firestore';
-import { updateDoc } from 'firebase/firestore';
-import { from, map, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Post } from '../global/interfaces';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  private postCollection = collection(this.firestore, 'posts') as CollectionReference<Post>;
+  private apiUrl = environment.apiUrl;
 
-  constructor(private readonly firestore: Firestore) { }
+  constructor(private http: HttpClient) { }
 
   // Get all posts
   getAllPosts(): Observable<Post[]> {
-    return from(getDocs(this.postCollection)).pipe(
-      map((docs) => {
-        return docs.docs.map((doc) => ({ ...doc.data(), uid: doc.id }) as Post);
-      })
-    );
+    return this.http.get<Post[]>(`${this.apiUrl}/posts`);
   }
 
   // Get existing post
   getPost(postId: string): Observable<Post> {
-    const docRef = doc(this.firestore, "posts", postId);
-    return from(getDoc(docRef)).pipe(
-      map((doc) => {
-        return { ...doc.data(), uid: doc.id } as Post;
-      })
-    );
+    return this.http.get<Post>(`${this.apiUrl}/posts/${postId}`);
   }
 }

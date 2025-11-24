@@ -1,0 +1,222 @@
+{
+  "navbar": {
+    "home": "Home",
+    "domains": "Areas of Practice",
+    "contact": "Contact",
+    "title": "Aurélie Manier",
+    "subtitle": "Labor Law Attorney in Lyon"
+  },
+  "home": {
+    "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices in the field of <strong>Labor Law</strong> and <strong>Social Security Law</strong>. She was sworn in in <strong>December 2021</strong>.",
+    "expertise": {
+      "title": "Areas of Expertise",
+      "description": "<strong>Maître Aurélie MANIER</strong> specializes in the following situations:",
+      "items": {
+        "litigation": "<strong>Disputes</strong> in the context of an employment relationship or dismissal",
+        "safety": "<strong>Compliance with safety obligations</strong> at work",
+        "harassment": "<strong>Harassment situations</strong> at work",
+        "inaptitude": "<strong>Unfitness for work</strong>",
+        "accidents": "<strong>Work-related accidents</strong>",
+        "diseases": "<strong>Occupational diseases</strong>",
+        "disability": "<strong>Permanent partial disability rate</strong>",
+        "organisms": "Disputes with <strong>social organizations</strong> (Social Security, Pension Fund, Disabled Persons Office)"
+      }
+    },
+    "support": {
+      "title": "Personalized Support",
+      "paragraph1": "The goal is to support you and help you find the <strong>procedure</strong> that best suits you.",
+      "paragraph2": "There is no obligation to go to court; it is always worthwhile to attempt an <strong>amicable procedure</strong> first.",
+      "paragraph3": "In the case of <strong>medical disputes</strong> against certain social organizations or even in the context of an <strong>employer-employee dispute</strong>, it is possible to seek the opinion of a <strong>consulting physician</strong> to give more weight to your requests and arguments."
+    },
+    "consultations": {
+      "title": "Consultations",
+      "description": "<strong>Maître MANIER</strong> receives you according to your personal preferences:",
+      "items": {
+        "office": "<strong>At the office</strong> located in the 3<sup>rd</sup> arrondissement of Lyon",
+        "video": "<strong>By videoconference</strong>",
+        "phone": "<strong>By phone</strong>, according to your preferences"
+      }
+    },
+    "values": {
+      "title": "Office Values",
+      "items": {
+        "simple": "<strong>Simple and clear answers</strong>",
+        "amicable": "<strong>Favor amicable resolutions</strong>",
+        "secret": "<strong>Respect for professional confidentiality</strong>",
+        "trust": "<strong>Establish a relationship of trust</strong>",
+        "fees": "<strong>Fees</strong> discussed in advance and adapted to the client's financial situation",
+        "transparent": "<strong>All steps</strong> of the procedure are reviewed with you to avoid bad surprises."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Contact Maître Aurélie MANIER for any questions or to schedule an appointment",
+    "infoTitle": "Contact Information",
+    "formTitle": "Send us a message",
+    "form": {
+      "title": "Contact Maitre Manier",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "phone": "Phone",
+      "phonePlaceholder": "Enter your phone number",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "message": "Message",
+      "messagePlaceholder": "Enter the reason for contacting us",
+      "required": "required",
+      "submit": "Send",
+      "submitting": "Sending...",
+      "success": "✓ Your message has been sent successfully!"
+    }
+  },
+  "domains": {
+    "title": "Areas of Expertise",
+    "subtitle": "Maître Aurélie MANIER's Specialties",
+    "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices primarily in the field of <strong>Labor Law</strong> and <strong>Social Security Law</strong>. She intervenes in various specific situations detailed below.",
+    "expertiseTitle": "Areas of Expertise",
+    "expertiseItems": {
+      "litigation": "<strong>Disputes</strong> in the context of an employment relationship or dismissal",
+      "safety": "<strong>Compliance with safety obligations</strong> at work",
+      "harassment": "<strong>Harassment situations</strong> at work",
+      "inaptitude": "<strong>Unfitness for work</strong>",
+      "accidents": "<strong>Work-related accidents</strong>",
+      "diseases": "<strong>Occupational diseases</strong>",
+      "disability": "<strong>Permanent partial disability rate</strong>",
+      "organisms": "Disputes with <strong>social organizations</strong> (Social Security, Pension Fund, Disabled Persons Office)"
+    },
+    "supportTitle": "Tailored Support",
+    "supportParagraph1": "The goal is to support you in choosing the procedure that best suits you. An <strong>amicable procedure</strong> is always preferred before any court action.",
+    "supportParagraph2": "In certain <strong>medical disputes</strong> or <strong>employer-employee</strong> conflicts, it is possible to seek the opinion of a <strong>consulting physician</strong> to strengthen your arguments."
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "editor": {
+      "title": "Website Editor",
+      "name": "Aurélie MANIER",
+      "profession": "Attorney at the Lyon Bar",
+      "orderNumber": "Toque number",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "professionalRules": "Applicable professional rules",
+      "rulesLink": "https://www.cnb.avocat.fr"
+    },
+    "host": {
+      "title": "Website Host",
+      "name": "Alwaysdata",
+      "address": "91 rue du Faubourg Saint-Honoré<br>75008 Paris, France",
+      "website": "Website"
+    },
+    "director": {
+      "title": "Publication Director",
+      "name": "Aurélie MANIER"
+    },
+    "ip": {
+      "title": "Intellectual Property",
+      "content": "All content on this site (text, images, graphics, logo, icons, etc.) is the exclusive property of Aurélie MANIER, except for trademarks, logos or content belonging to other partner companies or authors.<br><br>Any reproduction, distribution, modification, adaptation, retransmission or publication of these elements is strictly prohibited without the written consent of Aurélie MANIER."
+    },
+    "analytics": {
+      "title": "Audience Analysis Tool",
+      "content": "This site uses <strong>Umami Analytics</strong>, a privacy-friendly analytics solution that does not collect personally identifiable data and does not require GDPR consent.<br><br>Umami Analytics only collects anonymized data (pages visited, session duration, general geographic origin) to improve user experience. No tracking cookies are used."
+    },
+    "liability": {
+      "title": "Liability",
+      "content": "Aurélie MANIER strives to ensure the accuracy and updating of information published on this site. However, she cannot guarantee the accuracy, precision or completeness of the information made available on this site.<br><br>Consequently, Aurélie MANIER declines all responsibility for any inaccuracy, inexactitude or omission concerning information available on this site."
+    },
+    "links": {
+      "title": "Hyperlinks",
+      "content": "The site may contain links to other sites. Aurélie MANIER cannot be held responsible for the content of these third-party sites."
+    },
+    "lastUpdate": "Last update"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": {
+      "content": "This privacy policy aims to inform you about how we collect, use and protect your personal data in accordance with the General Data Protection Regulation (GDPR)."
+    },
+    "controller": {
+      "title": "Data Controller",
+      "content": "The data controller is <strong>Aurélie MANIER</strong>, Attorney at the Lyon Bar.<br><br>For any questions regarding your personal data, you can contact us:"
+    },
+    "collection": {
+      "title": "Data Collected",
+      "intro": "We only collect data strictly necessary to process your request:",
+      "items": {
+        "identity": "<strong>Identity data</strong>: last name, first name",
+        "contact": "<strong>Contact data</strong>: email address, phone number",
+        "message": "<strong>Data related to your request</strong>: message content via the contact form"
+      }
+    },
+    "purpose": {
+      "title": "Processing Purposes",
+      "intro": "Your personal data is collected for the following purposes:",
+      "items": {
+        "contact": "Respond to your contact requests",
+        "info": "Provide you with information about our services",
+        "legal": "Comply with our legal and regulatory obligations"
+      }
+    },
+    "legal": {
+      "title": "Legal Basis",
+      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: when you fill out the contact form<br><strong>Legitimate interest</strong>: to respond to your requests and ensure the proper functioning of our professional activity"
+    },
+    "recipients": {
+      "title": "Data Recipients",
+      "content": "Your personal data is intended only for <strong>Aurélie MANIER</strong> and is <strong>never sold or shared</strong> with third parties, except for legal obligations."
+    },
+    "retention": {
+      "title": "Retention Period",
+      "content": "Your data is kept for the time necessary to manage your request, then archived in accordance with legal obligations (generally <strong>5 years</strong> for data relating to a professional exchange)."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "intro": "In accordance with GDPR, you have the following rights:",
+      "items": {
+        "access": "<strong>Right of access</strong>: obtain a copy of your personal data",
+        "rectification": "<strong>Right of rectification</strong>: correct your inaccurate or incomplete data",
+        "deletion": "<strong>Right to erasure</strong>: request deletion of your data",
+        "opposition": "<strong>Right to object</strong>: object to the processing of your data",
+        "portability": "<strong>Right to portability</strong>: retrieve your data in a structured format",
+        "complaint": "<strong>Right to lodge a complaint</strong>: file a complaint with the CNIL"
+      },
+      "exercise": "To exercise these rights, contact us at: <a href=\"mailto:contact@aureliemanier-avocat.fr\">contact@aureliemanier-avocat.fr</a>"
+    },
+    "security": {
+      "title": "Data Security",
+      "content": "We implement all appropriate technical and organizational measures to protect your personal data against any loss, misuse, unauthorized access, disclosure, alteration or destruction."
+    },
+    "cookies": {
+      "title": "Cookies and Similar Technologies",
+      "content": "This site uses <strong>Umami Analytics</strong>, a privacy-friendly analytics tool that does not collect personally identifiable data.<br><br>No advertising or profiling tracking cookies are used on this site."
+    },
+    "analytics": {
+      "title": "Umami Analytics",
+      "content": "We use <strong>Umami Analytics</strong> to analyze the use of our site anonymously. This tool:<br><br>Does not collect any personally identifiable data<br>Does not use tracking cookies<br>Fully complies with GDPR and does not require consent<br>Only collects aggregated and anonymized data (pages visited, session duration, general geographic origin)"
+    },
+    "modifications": {
+      "title": "Policy Modifications",
+      "content": "We reserve the right to modify this privacy policy at any time. Any modification will be published on this page with an update date."
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "For any questions regarding this privacy policy or your personal data, contact us:"
+    },
+    "lastUpdate": "Last update"
+  },
+  "footer": {
+    "copyright": "Aurélie Manier - Attorney at the Lyon Bar",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "cookies": "Manage cookies"
+  },
+  "cookieBanner": {
+    "title": "Respect for your privacy",
+    "description": "We use cookies to improve your browsing experience and analyze our site traffic. You can accept or refuse the use of these cookies.",
+    "learnMore": "Learn more",
+    "reject": "Reject",
+    "acceptAll": "Accept all"
+  }
+}

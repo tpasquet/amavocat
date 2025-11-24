@@ -1,22 +1,19 @@
-<div class="bg-dark text-light text-center py-4 footer-container">
-    <div class="container footer-content">
-        <div class="row">
-            <!-- <div class="col-lg-4">
-                <h5 class="footer-title text-light text-decoration-underline text-bold">A propos d'Aurélie Manier</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo sem nec blandit sagittis.</p>
-            </div> -->
-            <div class="col-lg-4">
-                <h5 class="footer-title text-light text-decoration-underline text-bold">Contact</h5>
-                <div>aurelie.manier-avocat@outlook.fr</div>
-                <div>07 69 99 75 60</div>
+<footer class="footer-container" role="contentinfo">
+    <div class="footer-content">
+        <div class="footer-main">
+            <div class="footer-contact">
+                <a href="mailto:contact@aureliemanier-avocat.fr" aria-label="Email : contact@aureliemanier-avocat.fr">contact&#64;aureliemanier-avocat.fr</a>
+                <span class="separator">•</span>
+                <a href="tel:0769997560" aria-label="Téléphone : 07 69 99 75 60">07 69 99 75 60</a>
             </div>
-            <!-- <div class="col-lg-4">
-                <h5 class="footer-title text-light text-decoration-underline text-bold">Réseaux sociaux</h5>
-                <div class="social-icons">
-                    <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
-                </div>
-            </div> -->
+            <p class="footer-copyright">&copy; 2025 {{ 'footer.copyright' | translate }}</p>
+        </div>
+        <div class="footer-links">
+            <a [routerLink]="['/', language, 'mentions-legales']" (click)="navigateToLegalPage(['/', language, 'mentions-legales'])" style="cursor: pointer;">{{ 'footer.legal' | translate }}</a>
+            <span class="separator">|</span>
+            <a [routerLink]="['/', language, 'politique-confidentialite']" (click)="navigateToLegalPage(['/', language, 'politique-confidentialite'])" style="cursor: pointer;">{{ 'footer.privacy' | translate }}</a>
+            <span class="separator">|</span>
+            <a href="javascript:void(0)" (click)="openCookieSettings()" style="cursor: pointer;">{{ 'footer.cookies' | translate }}</a>
         </div>
     </div>
-</div>
+</footer>

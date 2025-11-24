@@ -1,24 +1,63 @@
-<form class="message-form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h2>Contacter Maitre Manier</h2>
+<form class="message-form" [formGroup]="form" (ngSubmit)="onSubmit()" aria-label="Formulaire de contact">
+    <h2>{{ 'contact.form.title' | translate }}</h2>
     <div class="form-group w-100 mb-2">
-        <label class="mb-2" for="firstName">Prénom*</label>
-        <input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Saisissez votre prénom">
+        <label class="mb-2" for="firstName">{{ 'contact.form.firstName' | translate }}<span [attr.aria-label]="'contact.form.required' | translate">*</span></label>
+        <input class="form-control"
+               type="text"
+               id="firstName"
+               formControlName="firstName"
+               [placeholder]="'contact.form.firstNamePlaceholder' | translate"
+               required
+               aria-required="true">
     </div>
     <div class="form-group w-100 mb-2">
-        <label class="mb-2" for="lastName">Nom*</label>
-        <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="Saisissez votre nom">
+        <label class="mb-2" for="lastName">{{ 'contact.form.lastName' | translate }}<span [attr.aria-label]="'contact.form.required' | translate">*</span></label>
+        <input class="form-control"
+               type="text"
+               id="lastName"
+               formControlName="lastName"
+               [placeholder]="'contact.form.lastNamePlaceholder' | translate"
+               required
+               aria-required="true">
     </div>
     <div class="form-group w-100 mb-2">
-        <label class="mb-2" for="phoneNumber">Téléphone*</label>
-        <input class="form-control" type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="Saisissez votre numéro de téléphone">
+        <label class="mb-2" for="phoneNumber">{{ 'contact.form.phone' | translate }}<span [attr.aria-label]="'contact.form.required' | translate">*</span></label>
+        <input class="form-control"
+               type="tel"
+               id="phoneNumber"
+               formControlName="phoneNumber"
+               [placeholder]="'contact.form.phonePlaceholder' | translate"
+               required
+               aria-required="true">
     </div>
     <div class="form-group w-100 mb-2">
-        <label class="mb-2" for="email">Email</label>
-        <input class="form-control" type="email" id="email" formControlName="email" placeholder="Saisissez votre adresse email">
+        <label class="mb-2" for="email">{{ 'contact.form.email' | translate }}</label>
+        <input class="form-control"
+               type="email"
+               id="email"
+               formControlName="email"
+               [placeholder]="'contact.form.emailPlaceholder' | translate">
     </div>
     <div class="form-group w-100 mb-2">
-        <label class="mb-2" for="inputMessage">Message*</label>
-        <textarea class="form-control" id="inputMessage" placeholder="Saissez la raison de votre prise de contact"></textarea>
+        <label class="mb-2" for="inputMessage">{{ 'contact.form.message' | translate }}<span [attr.aria-label]="'contact.form.required' | translate">*</span></label>
+        <textarea class="form-control"
+                  id="inputMessage"
+                  formControlName="message"
+                  [placeholder]="'contact.form.messagePlaceholder' | translate"
+                  required
+                  aria-required="true"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Envoyer</button>
+
+    <div *ngIf="submitSuccess" class="alert alert-success" role="alert">
+        {{ 'contact.form.success' | translate }}
+    </div>
+
+    <div *ngIf="submitError" class="alert alert-error" role="alert">
+        ✗ {{ submitError }}
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+        <span *ngIf="!isSubmitting">{{ 'contact.form.submit' | translate }}</span>
+        <span *ngIf="isSubmitting">{{ 'contact.form.submitting' | translate }}</span>
+    </button>
 </form>

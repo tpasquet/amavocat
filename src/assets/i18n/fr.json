@@ -1,0 +1,222 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "domains": "Domaines",
+    "contact": "Contact",
+    "title": "Aurélie Manier",
+    "subtitle": "Avocat en droit du travail à Lyon"
+  },
+  "home": {
+    "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce son activité dans le domaine du <strong>Droit du travail</strong> et du <strong>Droit de la Sécurité sociale</strong>. Elle a prêté serment en <strong>décembre 2021</strong>.",
+    "expertise": {
+      "title": "Domaines d'expertise",
+      "description": "<strong>Maître Aurélie MANIER</strong> intervient notamment dans les situations suivantes :",
+      "items": {
+        "litigation": "<strong>Litiges</strong> dans le cadre d'une relation de travail ou d'un licenciement",
+        "safety": "<strong>Respect de l'obligation de sécurité</strong> au travail",
+        "harassment": "<strong>Situations de harcèlement</strong> au travail",
+        "inaptitude": "<strong>Inaptitudes</strong>",
+        "accidents": "<strong>Accidents du travail</strong>",
+        "diseases": "<strong>Maladies professionnelles</strong>",
+        "disability": "<strong>Taux d'incapacité permanente partielle</strong>",
+        "organisms": "Litiges avec les <strong>organismes sociaux</strong> (Sécurité sociale, Caisse de retraite, Maison des personnes handicapées)"
+      }
+    },
+    "support": {
+      "title": "Accompagnement personnalisé",
+      "paragraph1": "L'objectif est de vous accompagner et de vous aider à trouver la <strong>procédure</strong> qui vous correspond le mieux.",
+      "paragraph2": "Rien n'oblige à saisir le Tribunal, il est toujours intéressant de tenter une <strong>procédure amiable</strong> en amont.",
+      "paragraph3": "Dans le cadre des <strong>contentieux médicaux</strong> contre certains organismes sociaux ou même dans le cadre d'un <strong>contentieux employeur-salarié</strong>, il est possible de solliciter l'avis d'un <strong>médecin consultant</strong>, afin de donner plus de poids à vos demandes et vos arguments."
+    },
+    "consultations": {
+      "title": "Consultations",
+      "description": "<strong>Maître MANIER</strong> vous reçoit selon vos convenances personnelles :",
+      "items": {
+        "office": "<strong>Au cabinet</strong> situé dans le 3<sup>e</sup> arrondissement de Lyon",
+        "video": "<strong>En visioconférence</strong>",
+        "phone": "<strong>Par téléphone</strong>, selon vos préférences"
+      }
+    },
+    "values": {
+      "title": "Les valeurs du cabinet",
+      "items": {
+        "simple": "<strong>Réponses simples et claires</strong>",
+        "amicable": "<strong>Privilégier les recours amiables</strong>",
+        "secret": "<strong>Respect du secret professionnel</strong>",
+        "trust": "<strong>Instaurer une relation de confiance</strong>",
+        "fees": "<strong>Honoraires</strong> discutés en amont et adaptés à la situation financière du client",
+        "transparent": "<strong>Toutes les étapes</strong> de la procédure sont vues avec vous pour éviter les mauvaises surprises."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Contacter Maître Aurélie MANIER pour toute question ou prise de rendez-vous",
+    "infoTitle": "Informations de contact",
+    "formTitle": "Envoyez-nous un message",
+    "form": {
+      "title": "Contacter Maitre Manier",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Saisissez votre prénom",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Saisissez votre nom",
+      "phone": "Téléphone",
+      "phonePlaceholder": "Saisissez votre numéro de téléphone",
+      "email": "Email",
+      "emailPlaceholder": "Saisissez votre adresse email",
+      "message": "Message",
+      "messagePlaceholder": "Saisissez la raison de votre prise de contact",
+      "required": "requis",
+      "submit": "Envoyer",
+      "submitting": "Envoi en cours...",
+      "success": "✓ Votre message a été envoyé avec succès !"
+    }
+  },
+  "domains": {
+    "title": "Domaines d'expertise",
+    "subtitle": "Les spécialités de Maître Aurélie MANIER",
+    "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce principalement dans le domaine du <strong>Droit du travail</strong> et du <strong>Droit de la Sécurité sociale</strong>. Elle intervient dans diverses situations spécifiques détaillées ci-dessous.",
+    "expertiseTitle": "Domaines d'expertise",
+    "expertiseItems": {
+      "litigation": "<strong>Litiges</strong> dans le cadre d'une relation de travail ou d'un licenciement",
+      "safety": "<strong>Respect de l'obligation de sécurité</strong> au travail",
+      "harassment": "<strong>Situations de harcèlement</strong> au travail",
+      "inaptitude": "<strong>Inaptitudes</strong>",
+      "accidents": "<strong>Accidents du travail</strong>",
+      "diseases": "<strong>Maladies professionnelles</strong>",
+      "disability": "<strong>Taux d'incapacité permanente partielle</strong>",
+      "organisms": "Litiges avec les <strong>organismes sociaux</strong> (Sécurité sociale, Caisse de retraite, Maison des personnes handicapées)"
+    },
+    "supportTitle": "Accompagnement adapté",
+    "supportParagraph1": "L'objectif est de vous accompagner pour choisir la procédure qui vous correspond au mieux. Une <strong>procédure amiable</strong> est toujours privilégiée avant toute saisine du Tribunal.",
+    "supportParagraph2": "Dans certains <strong>contentieux médicaux</strong> ou <strong>employeur-salarié</strong>, il est possible de solliciter l'avis d'un <strong>médecin consultant</strong> pour renforcer vos arguments."
+  },
+  "legal": {
+    "title": "Mentions Légales",
+    "editor": {
+      "title": "Éditeur du site",
+      "name": "Aurélie MANIER",
+      "profession": "Avocate au Barreau de Lyon",
+      "orderNumber": "Numéro de toque",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "professionalRules": "Règles professionnelles applicables",
+      "rulesLink": "https://www.cnb.avocat.fr"
+    },
+    "host": {
+      "title": "Hébergeur du site",
+      "name": "Alwaysdata",
+      "address": "91 rue du Faubourg Saint-Honoré<br>75008 Paris, France",
+      "website": "Site web"
+    },
+    "director": {
+      "title": "Directeur de publication",
+      "name": "Aurélie MANIER"
+    },
+    "ip": {
+      "title": "Propriété intellectuelle",
+      "content": "L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, etc.) est la propriété exclusive d'Aurélie MANIER, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.<br><br>Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces différents éléments est strictement interdite sans l'accord écrit d'Aurélie MANIER."
+    },
+    "analytics": {
+      "title": "Outil d'analyse d'audience",
+      "content": "Ce site utilise <strong>Umami Analytics</strong>, une solution d'analyse respectueuse de la vie privée qui ne collecte pas de données personnelles identifiables et ne nécessite pas de consentement au titre du RGPD.<br><br>Umami Analytics collecte uniquement des données anonymisées (pages visitées, durée des sessions, origine géographique générale) pour améliorer l'expérience utilisateur. Aucun cookie de suivi n'est utilisé."
+    },
+    "liability": {
+      "title": "Responsabilité",
+      "content": "Aurélie MANIER s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, elle ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition sur ce site.<br><br>En conséquence, Aurélie MANIER décline toute responsabilité pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur ce site."
+    },
+    "links": {
+      "title": "Liens hypertextes",
+      "content": "Le site peut contenir des liens vers d'autres sites. Aurélie MANIER ne saurait être tenue responsable du contenu de ces sites tiers."
+    },
+    "lastUpdate": "Dernière mise à jour"
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "intro": {
+      "content": "La présente politique de confidentialité a pour but de vous informer sur la manière dont nous collectons, utilisons et protégeons vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD)."
+    },
+    "controller": {
+      "title": "Responsable du traitement",
+      "content": "Le responsable du traitement des données personnelles est <strong>Aurélie MANIER</strong>, Avocate au Barreau de Lyon.<br><br>Pour toute question relative à vos données personnelles, vous pouvez nous contacter :"
+    },
+    "collection": {
+      "title": "Données collectées",
+      "intro": "Nous collectons uniquement les données strictement nécessaires au traitement de votre demande :",
+      "items": {
+        "identity": "<strong>Données d'identité</strong> : nom, prénom",
+        "contact": "<strong>Données de contact</strong> : adresse email, numéro de téléphone",
+        "message": "<strong>Données relatives à votre demande</strong> : contenu du message via le formulaire de contact"
+      }
+    },
+    "purpose": {
+      "title": "Finalités du traitement",
+      "intro": "Vos données personnelles sont collectées pour les finalités suivantes :",
+      "items": {
+        "contact": "Répondre à vos demandes de contact",
+        "info": "Vous fournir des informations sur nos services",
+        "legal": "Respecter nos obligations légales et réglementaires"
+      }
+    },
+    "legal": {
+      "title": "Base légale",
+      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : lorsque vous remplissez le formulaire de contact<br><strong>L'intérêt légitime</strong> : pour répondre à vos demandes et assurer le bon fonctionnement de notre activité professionnelle"
+    },
+    "recipients": {
+      "title": "Destinataires des données",
+      "content": "Vos données personnelles sont destinées uniquement à <strong>Aurélie MANIER</strong> et ne sont <strong>jamais vendues ni partagées</strong> avec des tiers, sauf obligation légale."
+    },
+    "retention": {
+      "title": "Durée de conservation",
+      "content": "Vos données sont conservées pour la durée nécessaire à la gestion de votre demande, puis archivées conformément aux obligations légales (généralement <strong>5 ans</strong> pour les données relatives à un échange professionnel)."
+    },
+    "rights": {
+      "title": "Vos droits",
+      "intro": "Conformément au RGPD, vous disposez des droits suivants :",
+      "items": {
+        "access": "<strong>Droit d'accès</strong> : obtenir une copie de vos données personnelles",
+        "rectification": "<strong>Droit de rectification</strong> : corriger vos données inexactes ou incomplètes",
+        "deletion": "<strong>Droit à l'effacement</strong> : demander la suppression de vos données",
+        "opposition": "<strong>Droit d'opposition</strong> : vous opposer au traitement de vos données",
+        "portability": "<strong>Droit à la portabilité</strong> : récupérer vos données dans un format structuré",
+        "complaint": "<strong>Droit de réclamation</strong> : introduire une réclamation auprès de la CNIL"
+      },
+      "exercise": "Pour exercer ces droits, contactez-nous à l'adresse : <a href=\"mailto:contact@aureliemanier-avocat.fr\">contact@aureliemanier-avocat.fr</a>"
+    },
+    "security": {
+      "title": "Sécurité des données",
+      "content": "Nous mettons en œuvre toutes les mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre toute perte, utilisation abusive, accès non autorisé, divulgation, altération ou destruction."
+    },
+    "cookies": {
+      "title": "Cookies et technologies similaires",
+      "content": "Ce site utilise <strong>Umami Analytics</strong>, un outil d'analyse respectueux de la vie privée qui ne collecte pas de données personnelles identifiables.<br><br>Aucun cookie de suivi publicitaire ou de profilage n'est utilisé sur ce site."
+    },
+    "analytics": {
+      "title": "Umami Analytics",
+      "content": "Nous utilisons <strong>Umami Analytics</strong> pour analyser l'utilisation de notre site de manière anonyme. Cet outil :<br><br>Ne collecte aucune donnée personnelle identifiable<br>N'utilise pas de cookies de suivi<br>Respecte totalement le RGPD et ne nécessite pas de consentement<br>Collecte uniquement des données agrégées et anonymisées (pages visitées, durée des sessions, origine géographique générale)"
+    },
+    "modifications": {
+      "title": "Modifications de la politique",
+      "content": "Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page avec une date de mise à jour."
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "Pour toute question concernant cette politique de confidentialité ou vos données personnelles, contactez-nous :"
+    },
+    "lastUpdate": "Dernière mise à jour"
+  },
+  "footer": {
+    "copyright": "Aurélie Manier - Avocate au barreau de Lyon",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Gérer les cookies"
+  },
+  "cookieBanner": {
+    "title": "Respect de votre vie privée",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser le trafic de notre site. Vous pouvez accepter ou refuser l'utilisation de ces cookies.",
+    "learnMore": "En savoir plus",
+    "reject": "Refuser",
+    "acceptAll": "Tout accepter"
+  }
+}

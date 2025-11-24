@@ -1,0 +1,64 @@
+@import '../../../styles/variables';
+
+.cookie-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: $primary;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    &:hover {
+        background-color: darken($primary, 8%);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 3px solid $primary;
+        outline-offset: 2px;
+    }
+
+    .cookie-icon {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    .cookie-text {
+        white-space: nowrap;
+    }
+}
+
+// Responsive pour mobile
+@media (max-width: map-get($grid-breakpoints, 'md')) {
+    .cookie-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+
+        .cookie-icon {
+            font-size: 1.1rem;
+        }
+
+        .cookie-text {
+            display: none; // Masquer le texte sur mobile pour économiser l'espace
+        }
+    }
+}
+

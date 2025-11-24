@@ -1,50 +1,36 @@
 <div class="page-container container-fluid">
-    <main class="main-layout">
+    <main class="main-layout" id="main-content">
         <div class="content-wrapper">
             <section class="bloc d-flex flex-column flex-md-row align-items-start justify-content-between">
                 <div>
                     <div>
-                        <h1>Domaines d'expertise</h1>
-                        <h2>Les spécialités de Maître Aurélie MANIER</h2>
+                        <h1>{{ 'domains.title' | translate }}</h1>
+                        <h2>{{ 'domains.subtitle' | translate }}</h2>
                     </div>
                     <div class="d-flex-row">
-                        <p>
-                            Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce principalement dans le domaine du <strong>Droit du
-                                travail</strong> et du <strong>Droit de la Sécurité sociale</strong>.
-                            Elle intervient dans diverses situations spécifiques détaillées ci-dessous.
-                        </p>
+                        <p [innerHTML]="'domains.intro' | translate"></p>
                     </div>
                 </div>
             </section>
 
             <section class="bloc">
-                <h2 class="bloc-title big-underline">Domaines d'expertise</h2>
+                <h2 class="bloc-title big-underline">{{ 'domains.expertiseTitle' | translate }}</h2>
                 <ul>
-                    <li><strong>Litiges</strong> dans le cadre d’une relation de travail ou d’un licenciement</li>
-                    <li><strong>Respect de l’obligation de sécurité</strong> au travail</li>
-                    <li><strong>Situations de harcèlement</strong> au travail</li>
-                    <li><strong>Inaptitudes</strong></li>
-                    <li><strong>Accidents du travail</strong></li>
-                    <li><strong>Maladies professionnelles</strong></li>
-                    <li><strong>Taux d’incapacité permanente partielle</strong></li>
-                    <li>Litiges avec les <strong>organismes sociaux</strong> (Sécurité sociale, Pôle emploi, Caisse de retraite, Maison des
-                        personnes
-                        handicapées, etc.)</li>
+                    <li [innerHTML]="'domains.expertiseItems.litigation' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.safety' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.harassment' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.inaptitude' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.accidents' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.diseases' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.disability' | translate"></li>
+                    <li [innerHTML]="'domains.expertiseItems.organisms' | translate"></li>
                 </ul>
             </section>
 
             <section class="bloc">
-                <h2 class="bloc-title big-underline">Accompagnement adapté</h2>
-                <p>
-                    L’objectif est de vous accompagner pour choisir la procédure qui vous correspond au mieux. Une <strong>procédure amiable</strong>
-                    est toujours
-                    privilégiée avant toute saisine du Tribunal.
-                </p>
-                <p>
-                    Dans certains <strong>contentieux médicaux</strong> ou <strong>employeur-salarié</strong>, il est possible de solliciter l’avis
-                    d’un <strong>médecin consultant</strong> pour
-                    renforcer vos arguments.
-                </p>
+                <h2 class="bloc-title big-underline">{{ 'domains.supportTitle' | translate }}</h2>
+                <p [innerHTML]="'domains.supportParagraph1' | translate"></p>
+                <p [innerHTML]="'domains.supportParagraph2' | translate"></p>
             </section>
         </div>
     </main>
