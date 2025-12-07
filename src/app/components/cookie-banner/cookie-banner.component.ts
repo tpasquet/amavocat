@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CookieConsentService } from '../../services/cookie-consent.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
     selector: 'app-cookie-banner',
@@ -10,9 +11,16 @@ import { CookieConsentService } from '../../services/cookie-consent.service';
 export class CookieBannerComponent {
   isVisible = false;
 
-  constructor(private cookieConsentService: CookieConsentService) {
+  constructor(
+    private cookieConsentService: CookieConsentService,
+    private languageService: LanguageService
+  ) {
     // Afficher la bannière si l'utilisateur n'a pas encore donné son consentement
     this.isVisible = !this.cookieConsentService.hasConsent();
+  }
+
+  get language(): string {
+    return this.languageService.getCurrentLang();
   }
 
   acceptAll(): void {

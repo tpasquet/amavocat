@@ -13,6 +13,7 @@ import { filter } from 'rxjs/operators';
 })
 export class LanguageSelectorComponent implements OnInit, OnDestroy {
   language: string;
+  isOpen: boolean = false;
   private routerSubscription?: Subscription;
   @Output() languageChanged = new EventEmitter<string>();
 
@@ -36,6 +37,22 @@ export class LanguageSelectorComponent implements OnInit, OnDestroy {
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
     }
+  }
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+
+  closeDropdown() {
+    this.isOpen = false;
+  }
+
+  selectLanguage(lang: string) {
+    if (this.language !== lang) {
+      this.language = lang;
+      this.onLanguageChange();
+    }
+    this.closeDropdown();
   }
 
   onLanguageChange() {

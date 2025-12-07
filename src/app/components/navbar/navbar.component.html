@@ -1,10 +1,10 @@
-<nav class="navbar-desktop" *ngIf="!showBurgerMenu" aria-label="Navigation principale">
+<nav class="navbar-desktop" *ngIf="!showBurgerMenu" [class.fixed-top]="isScrollingUp" aria-label="Navigation principale">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <div class="navbar-content">
-        <div class="navbar-title">
+        <a [routerLink]="['/', language, 'home']" class="navbar-title">
             <div class="navbar-name">{{ 'navbar.title' | translate }}</div>
             <div class="navbar-subtitle">{{ 'navbar.subtitle' | translate }}</div>
-        </div>
+        </a>
         <ul class="navbar-links" role="menubar">
             <li role="none"><a class="custom-link" [routerLink]="['/', language, 'home']" role="menuitem">{{ 'navbar.home' | translate }}</a></li>
             <li role="none"><a class="custom-link" [routerLink]="['/', language, 'domains']" role="menuitem">{{ 'navbar.domains' | translate }}</a></li>
@@ -13,12 +13,12 @@
         <app-language-selector></app-language-selector>
     </div>
 </nav>
-<nav class="navbar-mobile-container" *ngIf="showBurgerMenu" aria-label="Navigation principale mobile">
+<nav class="navbar-mobile-container" *ngIf="showBurgerMenu" [class.fixed-top]="isScrollingUp" aria-label="Navigation principale mobile">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-    <div class="navbar-mobile-title">
+    <a [routerLink]="['/', language, 'home']" class="navbar-mobile-title">
         <div class="navbar-mobile-name">{{ 'navbar.title' | translate }}</div>
         <div class="navbar-mobile-subtitle">{{ 'navbar.subtitle' | translate }}</div>
-    </div>
+    </a>
     <button class="burger-menu-container"
             *ngIf="showBurgerMenu"
             [ngClass]="{'opened': menuOpened}"

@@ -1,6 +1,20 @@
-<div class="language-selector">
-    <select class="language-select" [(ngModel)]="language" (change)="onLanguageChange()" aria-label="Changer de langue">
-        <option value="fr">🇫🇷&nbsp;&nbsp;Français</option>
-        <option value="en">🇬🇧&nbsp;&nbsp;English</option>
-    </select>
+<div class="language-selector" (clickOutside)="closeDropdown()">
+    <div class="custom-select" [class.open]="isOpen">
+        <div class="select-trigger" (click)="toggleDropdown()" tabindex="0"
+             (keydown.enter)="toggleDropdown()" (keydown.space)="toggleDropdown()"
+             [attr.aria-label]="'Changer de langue'">
+            <span>{{ language === 'fr' ? 'Français' : 'English' }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="arrow">
+                <path fill="#274c77" d="M1 1l4 4 4-4"/>
+            </svg>
+        </div>
+        <div class="select-options" *ngIf="isOpen">
+            <div class="option" (click)="selectLanguage('fr')" [class.selected]="language === 'fr'">
+                Français
+            </div>
+            <div class="option" (click)="selectLanguage('en')" [class.selected]="language === 'en'">
+                English
+            </div>
+        </div>
+    </div>
 </div>

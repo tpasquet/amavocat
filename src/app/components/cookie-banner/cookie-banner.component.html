@@ -4,7 +4,7 @@
       <h3 class="cookie-banner__title">{{ 'cookieBanner.title' | translate }}</h3>
       <p class="cookie-banner__description">
         {{ 'cookieBanner.description' | translate }}
-        <a routerLink="/privacy" class="cookie-banner__link">{{ 'cookieBanner.learnMore' | translate }}</a>
+        <a [routerLink]="['/', language, 'politique-confidentialite']" class="cookie-banner__link">{{ 'cookieBanner.learnMore' | translate }}</a>
       </p>
     </div>
     <div class="cookie-banner__actions">

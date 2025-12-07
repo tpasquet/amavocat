@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Constants } from 'src/app/global/constant';
 import { PageMetaTranslations } from 'src/app/global/types';
 import { LanguageService } from 'src/app/services/language.service';
@@ -29,35 +29,12 @@ const DomainMetaTranslations: PageMetaTranslations = {
     styleUrls: ['./domains.component.scss'],
     standalone: false
 })
-export class DomainsComponent implements OnInit, AfterViewInit {
-  private observer!: IntersectionObserver;
+export class DomainsComponent implements OnInit {
 
   constructor(private languageService: LanguageService, private metaService: MetaService) { }
 
   ngOnInit() {
     const lang = this.languageService.getCurrentLang();
     this.metaService.setPageMeta(DomainMetaTranslations[lang]);
-  }
-
-  ngAfterViewInit() {
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    const blocs = document.querySelectorAll('.bloc');
-    blocs.forEach(bloc => this.observer.observe(bloc));
-  }
-
-  ngOnDestroy() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
   }
 }

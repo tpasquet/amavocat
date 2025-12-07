@@ -143,25 +143,22 @@
     },
     "collection": {
       "title": "Données collectées",
-      "intro": "Nous collectons uniquement les données strictement nécessaires au traitement de votre demande :",
+      "intro": "Nous utilisons Umami Analytics, une solution d'analyse respectueuse de la vie privée et conforme au RGPD. Les données collectées sont :",
       "items": {
-        "identity": "<strong>Données d'identité</strong> : nom, prénom",
-        "contact": "<strong>Données de contact</strong> : adresse email, numéro de téléphone",
-        "message": "<strong>Données relatives à votre demande</strong> : contenu du message via le formulaire de contact"
+        "analytics": "<strong>Données analytiques anonymisées</strong> : pages visitées, durée de visite, appareil utilisé (sans identification personnelle)"
       }
     },
     "purpose": {
       "title": "Finalités du traitement",
-      "intro": "Vos données personnelles sont collectées pour les finalités suivantes :",
+      "intro": "Les données analytiques sont collectées pour les finalités suivantes :",
       "items": {
-        "contact": "Répondre à vos demandes de contact",
-        "info": "Vous fournir des informations sur nos services",
-        "legal": "Respecter nos obligations légales et réglementaires"
+        "analytics": "Améliorer l'expérience utilisateur du site",
+        "stats": "Analyser le trafic et l'utilisation du site de manière anonyme"
       }
     },
     "legal": {
       "title": "Base légale",
-      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : lorsque vous remplissez le formulaire de contact<br><strong>L'intérêt légitime</strong> : pour répondre à vos demandes et assurer le bon fonctionnement de notre activité professionnelle"
+      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : pour l'utilisation des cookies analytiques<br><strong>L'intérêt légitime</strong> : pour améliorer le site et son contenu"
     },
     "recipients": {
       "title": "Destinataires des données",
@@ -169,7 +166,7 @@
     },
     "retention": {
       "title": "Durée de conservation",
-      "content": "Vos données sont conservées pour la durée nécessaire à la gestion de votre demande, puis archivées conformément aux obligations légales (généralement <strong>5 ans</strong> pour les données relatives à un échange professionnel)."
+      "content": "Les données analytiques anonymisées sont conservées pour une durée maximale de <strong>13 mois</strong> conformément aux recommandations de la CNIL."
     },
     "rights": {
       "title": "Vos droits",

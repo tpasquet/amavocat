@@ -143,25 +143,22 @@
     },
     "collection": {
       "title": "Data Collected",
-      "intro": "We only collect data strictly necessary to process your request:",
+      "intro": "We use Umami Analytics, a privacy-friendly and GDPR-compliant analytics solution. The data collected is:",
       "items": {
-        "identity": "<strong>Identity data</strong>: last name, first name",
-        "contact": "<strong>Contact data</strong>: email address, phone number",
-        "message": "<strong>Data related to your request</strong>: message content via the contact form"
+        "analytics": "<strong>Anonymized analytical data</strong>: pages visited, visit duration, device used (without personal identification)"
       }
     },
     "purpose": {
       "title": "Processing Purposes",
-      "intro": "Your personal data is collected for the following purposes:",
+      "intro": "Analytical data is collected for the following purposes:",
       "items": {
-        "contact": "Respond to your contact requests",
-        "info": "Provide you with information about our services",
-        "legal": "Comply with our legal and regulatory obligations"
+        "analytics": "Improve user experience on the site",
+        "stats": "Analyze traffic and site usage anonymously"
       }
     },
     "legal": {
       "title": "Legal Basis",
-      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: when you fill out the contact form<br><strong>Legitimate interest</strong>: to respond to your requests and ensure the proper functioning of our professional activity"
+      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: for the use of analytical cookies<br><strong>Legitimate interest</strong>: to improve the site and its content"
     },
     "recipients": {
       "title": "Data Recipients",
@@ -169,7 +166,7 @@
     },
     "retention": {
       "title": "Retention Period",
-      "content": "Your data is kept for the time necessary to manage your request, then archived in accordance with legal obligations (generally <strong>5 years</strong> for data relating to a professional exchange)."
+      "content": "Anonymized analytical data is kept for a maximum period of <strong>13 months</strong> in accordance with CNIL recommendations."
     },
     "rights": {
       "title": "Your Rights",

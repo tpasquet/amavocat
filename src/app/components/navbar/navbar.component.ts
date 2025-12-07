@@ -19,6 +19,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   menuOpened = false;
   isMobile = false;
   showMobileNavbar = true;
+  isScrollingUp = false;
+  private lastScrollTop = 0;
   private routerSubscription?: Subscription;
 
   constructor(
@@ -29,17 +31,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ) {
     this.language = this.languageService.getCurrentLang();
 
-    this.responsive.observe([
-      Breakpoints.XSmall,
-      Breakpoints.Small,
-      Breakpoints.Medium,
-      Breakpoints.Large,
-      Breakpoints.XLarge
-    ])
+    this.responsive.observe('(max-width: 700px)')
       .subscribe(result => {
-        const isSmallScreen = this.responsive.isMatched([Breakpoints.XSmall, Breakpoints.Small]);
-
-        if (isSmallScreen) {
+        if (result.matches) {
           this.showBurgerMenu = true;
           this.showNavbarLinks = false;
           this.isMobile = true;
@@ -73,13 +67,22 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   @HostListener('document:scroll', ['$event'])
   public onViewportScroll() {
-    const windowHeight = window.innerHeight;
     const verticalOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (verticalOffset > windowHeight && this.isMobile) {
-      this.showMobileNavbar = false;
-    } else {
-      this.showMobileNavbar = true;
+
+    if (verticalOffset > this.lastScrollTop && verticalOffset > 0) {
+      // Scrolling down
+      this.isScrollingUp = false;
+    } else if (verticalOffset < this.lastScrollTop) {
+      // Scrolling up
+      this.isScrollingUp = true;
     }
+
+    // When at the top, navbar should be relative
+    if (verticalOffset === 0) {
+      this.isScrollingUp = false;
+    }
+
+    this.lastScrollTop = verticalOffset <= 0 ? 0 : verticalOffset;
   }
 
   onMenuClick() {

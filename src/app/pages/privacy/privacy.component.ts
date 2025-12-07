@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { MetaService } from '../../services/meta.service';
@@ -9,13 +9,11 @@ import { MetaService } from '../../services/meta.service';
     styleUrls: ['./privacy.component.scss'],
     standalone: false
 })
-export class PrivacyComponent implements OnInit, AfterViewInit {
-  private observer!: IntersectionObserver;
+export class PrivacyComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
     private metaService: MetaService,
-    private el: ElementRef,
     private viewportScroller: ViewportScroller
   ) {}
 
@@ -31,26 +29,4 @@ export class PrivacyComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    const blocs = this.el.nativeElement.querySelectorAll('.bloc');
-    blocs.forEach((bloc: Element) => {
-      this.observer.observe(bloc);
-    });
-  }
-
-  ngOnDestroy(): void {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
-  }
 }

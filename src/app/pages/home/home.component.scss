@@ -23,11 +23,11 @@
 
 .intro-text {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
 
     @media (min-width: 768px) {
         font-size: 22px;
-        line-height: 1.8;
+        line-height: 1.6;
     }
 }
 
@@ -36,7 +36,6 @@
     height: auto;
     aspect-ratio: 2 / 3;
     border-radius: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 250px;
     display: block;
     margin: 1rem auto 0 auto;

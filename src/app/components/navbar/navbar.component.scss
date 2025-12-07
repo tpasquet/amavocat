@@ -1,15 +1,26 @@
 @import "../../../styles/variables";
 
+.navbar-desktop-wrapper {
+    position: relative;
+}
+
 .navbar-desktop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: auto;
+    position: relative;
+    width: 100%;
     z-index: 999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #b7d0ec;
     padding: 1rem 0;
+    transition: transform 0.3s;
+
+    &.fixed-top {
+        position: fixed;
+        animation: slideDown 0.3s;
+    }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
 
 .navbar-content {
@@ -18,9 +29,7 @@
     align-items: center;
     gap: 2rem;
     max-width: 1400px;
-    width: 100%;
     margin: 0 auto;
-    height: 100%;
     padding: 0 15px;
 
     @media (min-width: 768px) {
@@ -30,6 +39,8 @@
 
 .navbar-title {
     text-align: left;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .navbar-name {
@@ -58,13 +69,10 @@
     margin: 0;
     padding: 0;
 
-    li {
-        margin: 0;
-    }
+    li { margin: 0; }
 }
 
 .custom-link {
-    cursor: pointer;
     position: relative;
     text-decoration: none;
     font-weight: 600;
@@ -78,34 +86,22 @@
         position: absolute;
         width: 100%;
         height: 3px;
-        border-radius: 4px;
-        background-color: $primary;
+        background: $primary;
         bottom: -3px;
         left: 0;
-        transform-origin: right;
         transform: scaleX(0);
-        transition: transform 0.3s ease-in-out;
+        transform-origin: right;
+        transition: transform 0.3s;
     }
 
-    &:hover {
-        color: $primary !important;
-
-        &::before {
-            transform-origin: left;
-            transform: scaleX(1);
-        }
+    &:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
     }
 
-    &:focus {
-        outline: none;
-    }
-
-    &:focus-visible {
-        outline: 3px solid $primary;
-        outline-offset: 4px;
-    }
+    &:focus { outline: none; }
+    &:focus-visible { outline: 3px solid $primary; outline-offset: 4px; }
 }
-
 
 .burger-menu-container {
     position: absolute;
@@ -113,25 +109,18 @@
     transform: translateY(-50%);
     right: 20px;
     z-index: 1003;
-    background-color: transparent;
+    background: transparent;
     border: none;
     padding: 0;
-    cursor: pointer;
-    border-radius: 50%;
     width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
 
-    &:focus {
-        outline: none;
-    }
-
-    &:focus-visible {
-        outline: 3px solid $primary;
-        outline-offset: 2px;
-    }
+    &:focus { outline: none; }
+    &:focus-visible { outline: 3px solid $primary; outline-offset: 2px; }
 }
 
 .menu-mobile-background {
@@ -144,25 +133,26 @@
     transition: height 0.3s ease-out;
     z-index: 1000;
 
-    &.opened {
-        height: 100vh;
-    }
+    &.opened { height: 100vh; }
 }
 
 .navbar-mobile-container {
-    position: fixed;
+    position: relative;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    top: 0;
+    padding: 1.25rem 1rem;
+    background: #b7d0ec;
+    z-index: 999;
+    width: 100%;
     left: 0;
     right: 0;
-    height: auto;
-    padding: 1.25rem 1rem;
-    background-color: #b7d0ec;
-    z-index: 999;
-    max-width: 100%;
+    transition: transform 0.3s;
+
+    &.fixed-top {
+        position: fixed;
+        animation: slideDown 0.3s;
+    }
 }
 
 .navbar-mobile-title {
@@ -170,6 +160,8 @@
     flex: 1;
     padding: 0 60px;
     z-index: 1001;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .navbar-mobile-name {
@@ -191,27 +183,18 @@
 
 .menu-mobile {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 25vh;
-    width: 100%;
-    height: 100%;
+    padding-top: 15vh;
     opacity: 0;
     visibility: hidden;
-    transition:
-        opacity 0.25s,
-        visibility 0.25s;
+    transition: opacity 0.25s, visibility 0.25s;
     z-index: 1001;
     pointer-events: none;
 
-    a {
-        color: $primary !important;
-        position: relative;
-        z-index: 1003;
-    }
+    a { color: $primary !important; position: relative; z-index: 1003; }
 
     &.opened {
         opacity: 1;
@@ -221,22 +204,10 @@
         ul li {
             opacity: 1;
             transform: translateY(0);
-
-            &:nth-child(1) {
-                transition-delay: 0.3s;
-            }
-
-            &:nth-child(2) {
-                transition-delay: 0.35s;
-            }
-
-            &:nth-child(3) {
-                transition-delay: 0.4s;
-            }
-
-            &:nth-child(4) {
-                transition-delay: 0.45s;
-            }
+            &:nth-child(1) { transition-delay: .3s; }
+            &:nth-child(2) { transition-delay: .35s; }
+            &:nth-child(3) { transition-delay: .4s; }
+            &:nth-child(4) { transition-delay: .45s; }
         }
     }
 
@@ -255,45 +226,27 @@
     }
 
     ul li {
-        display: block;
         position: relative;
         opacity: 0;
         transform: translateY(20px);
-        transition:
-            opacity 0.2s ease,
-            transform 0.2s ease;
+        transition: opacity 0.2s, transform 0.2s;
         z-index: 1003;
         margin: 0;
-        list-style: none;
 
         a {
             display: block;
-            position: relative;
             color: $primary;
             text-decoration: none;
-            overflow: hidden;
-            font-family: "Open sans", sans-serif;
-            font-size: 1.8rem;
+            font-family: Nunito, Helvetica, Arial, sans-serif;
+            font-size: 1.3rem;
             font-weight: 600;
-            background: none;
-            border: none;
-            cursor: pointer;
             padding: 12px 24px;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s;
 
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-
-            &:focus {
-                outline: none;
-            }
-
-            &:focus-visible {
-                outline: 3px solid #ffffff;
-                outline-offset: 4px;
-            }
+            &:hover { background: rgba(255,255,255,0.2); }
+            &:focus { outline: none; }
+            &:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
         }
 
         button {
@@ -302,7 +255,7 @@
             color: #fff;
             text-decoration: none;
             overflow: hidden;
-            font-family: "Open sans", sans-serif;
+            font-family: Nunito, Helvetica, Arial, sans-serif;
             font-size: 24px;
             background: none;
             border: none;
@@ -318,7 +271,7 @@
 }
 
 .language-mobile-item {
-    margin-top: 1rem;
+    margin-top: 3rem !important;
 }
 
 .language-mobile-selector {
@@ -350,10 +303,7 @@
         transform: scale(1.1);
     }
 
-    &:focus {
-        outline: none;
-    }
-
+    &:focus { outline: none; }
     &:focus-visible {
         outline: 3px solid $primary;
         outline-offset: 2px;

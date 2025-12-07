@@ -7,8 +7,8 @@
 }
 
 .contact-header {
-    text-align: center;
-    margin-bottom: 3rem;
+    text-align: left;
+    margin-bottom: 2rem;
 
     .contact-title {
         font-size: 2.5rem;
@@ -20,8 +20,7 @@
     .contact-subtitle {
         font-size: 1.125rem;
         color: #666;
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 800px;
     }
 }
 
@@ -29,11 +28,11 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    justify-items: center;
 
-    @media (min-width: 992px) {
-        grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
         gap: 3rem;
+        align-items: start;
     }
 }
 
@@ -42,15 +41,9 @@
     flex-direction: column;
     gap: 2rem;
     width: 100%;
-    max-width: 600px;
 }
 
 .contact-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
     .section-title {
         font-size: 1.5rem;
         font-weight: 600;
@@ -85,7 +78,4 @@
         }
     }
 
-    .contact-card {
-        padding: 1.5rem;
-    }
 }

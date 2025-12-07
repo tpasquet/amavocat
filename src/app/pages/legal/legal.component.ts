@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { LanguageService } from 'src/app/services/language.service';
 import { MetaService } from 'src/app/services/meta.service';
@@ -9,13 +9,11 @@ import { MetaService } from 'src/app/services/meta.service';
     styleUrls: ['./legal.component.scss'],
     standalone: false
 })
-export class LegalComponent implements OnInit, AfterViewInit {
-  private observer!: IntersectionObserver;
+export class LegalComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
     private metaService: MetaService,
-    private el: ElementRef,
     private viewportScroller: ViewportScroller
   ) { }
 
@@ -29,29 +27,6 @@ export class LegalComponent implements OnInit, AfterViewInit {
       ogImage: 'https://www.aurelie-manier.fr/assets/img/profile-picture-home.jpg',
       canonical: 'https://www.aurelie-manier.fr/mentions-legales'
     });
-  }
-
-  ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    const blocs = this.el.nativeElement.querySelectorAll('.bloc');
-    blocs.forEach((bloc: Element) => {
-      this.observer.observe(bloc);
-    });
-  }
-
-  ngOnDestroy(): void {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
   }
 
 }

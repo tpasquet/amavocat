@@ -33,7 +33,7 @@
             width: 100%;
             padding: 0.75rem;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            border-radius: 0;
             font-size: 1rem;
             transition: all 0.3s ease;
             font-family: inherit;
@@ -41,7 +41,6 @@
             &:focus {
                 outline: none;
                 border-color: $primary;
-                box-shadow: 0 0 0 3px rgba(39, 76, 119, 0.1);
             }
 
             &::placeholder {
@@ -83,7 +82,7 @@
     .btn {
         padding: 0.875rem 2rem;
         border: none;
-        border-radius: 8px;
+        border-radius: 0;
         font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
@@ -97,7 +96,6 @@
             &:hover:not(:disabled) {
                 background-color: darken($primary, 10%);
                 transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(39, 76, 119, 0.3);
             }
 
             &:active:not(:disabled) {
