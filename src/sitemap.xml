@@ -24,22 +24,22 @@
 
   <!-- Page domaines FR -->
   <url>
-    <loc>https://aureliemanier-avocat.fr/fr/domains</loc>
+    <loc>https://aureliemanier-avocat.fr/fr/domaines</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/domains"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aureliemanier-avocat.fr/en/domains"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/domaines"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aureliemanier-avocat.fr/en/domaines"/>
   </url>
 
   <!-- Page domaines EN -->
   <url>
-    <loc>https://aureliemanier-avocat.fr/en/domains</loc>
+    <loc>https://aureliemanier-avocat.fr/en/domaines</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/domains"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aureliemanier-avocat.fr/en/domains"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/domaines"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aureliemanier-avocat.fr/en/domaines"/>
   </url>
 
   <!-- Page contact FR -->

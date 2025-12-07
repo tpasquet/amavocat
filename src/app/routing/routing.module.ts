@@ -22,7 +22,11 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'domains',
+        path: 'accueil',
+        component: HomeComponent
+      },
+      {
+        path: 'domaines',
         component: DomainsComponent,
       },
       {

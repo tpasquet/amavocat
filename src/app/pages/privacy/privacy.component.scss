@@ -1,38 +1,16 @@
-:host {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-}
+@import "./../../../styles/mixins";
+@import "./../../../styles/fonts";
 
-.privacy-page {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  padding: 2rem 1rem;
-  position: relative;
-  z-index: 100 !important;
-  background-color: white;
-}
-
-.privacy-main {
-  display: flex !important;
-  visibility: visible !important;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: calc(100vh - 200px);
-  position: relative;
-  z-index: 100 !important;
+.page-container {
+    height: 100%;
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    z-index: 0;
 }
 
 .privacy-content {
-  display: block !important;
-  visibility: visible !important;
   width: 100%;
-  max-width: 800px;
-  padding: 2rem;
-  background-color: white;
-  position: relative;
-  z-index: 100 !important;
   
   h1 {
     margin-bottom: 2rem;

@@ -1,8 +1,9 @@
-<div class="privacy-page">
-    <main class="privacy-main" id="main-content">
-        <div class="privacy-content">
-            <section class="bloc">
-                <h1>{{ 'privacy.title' | translate }}</h1>
+<div class="page-container container-fluid">
+    <main class="main-layout" id="main-content">
+        <div class="content-wrapper">
+            <div class="privacy-content">
+                <section class="bloc">
+                    <h1>{{ 'privacy.title' | translate }}</h1>
                 
                 <h2>{{ 'privacy.intro.content' | translate }}</h2>
                 <p [innerHTML]="'privacy.intro.content' | translate"></p>
@@ -71,6 +72,7 @@
                     <strong>{{ 'privacy.lastUpdate' | translate }} :</strong> Décembre 2025
                 </p>
             </section>
+            </div>
         </div>
     </main>
 </div>

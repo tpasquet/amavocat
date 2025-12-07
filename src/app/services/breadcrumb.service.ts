@@ -46,9 +46,11 @@ export class BreadcrumbService {
 
   private getSegmentLabel(segment: string): string {
     const labels: { [key: string]: string } = {
-      'home': 'Accueil',
-      'domains': 'Domaines d\'expertise',
+      'accueil': 'Accueil',
+      'domaines': 'Domaines d\'expertise',
       'contact': 'Contact',
+      'mentions-legales': 'Mentions légales',
+      'politique-confidentialite': 'Politique de confidentialité',
       'posts': 'Articles',
       'fr': 'Français',
       'en': 'English'
