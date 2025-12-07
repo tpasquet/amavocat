@@ -11,7 +11,7 @@ const HomeMetaTranslations: PageMetaTranslations = {
     ogTitle: 'Labor Law Lawyer in Lyon | Aurélie Manier',
     ogDescription: 'Aurélie Manier is a labor law lawyer in New York with expertise in handling complex employment disputes, including discrimination, harassment, and wage and hour issues. Contact Aurélie Manier today for a consultation.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
-    canonical: `${Constants.HOSTNAME}/en/home`
+    canonical: `${Constants.HOSTNAME}/en`
   },
   fr: {
     title: 'Avocate Droit du Travail à Lyon | Aurélie Manier',
@@ -19,7 +19,7 @@ const HomeMetaTranslations: PageMetaTranslations = {
     ogTitle: 'Avocate Droit du Travail à Lyon | Aurélie Manier',
     ogDescription: 'Aurélie Manier est une avocate en droit du travail à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\hui pour une consultation.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
-    canonical: `${Constants.HOSTNAME}/fr/home`
+    canonical: `${Constants.HOSTNAME}/fr`
   }
 };
 

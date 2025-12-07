@@ -4,5 +4,5 @@ export const Constants = {
     LOCAL_STORAGE: {
         LANG_KEY: 'lang'
     },
-    HOSTNAME: 'https://www.aurelie-manier.fr',
+    HOSTNAME: 'https://aureliemanier-avocat.fr',
 }
