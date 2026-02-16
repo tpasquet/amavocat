@@ -4,10 +4,10 @@
     "domains": "Areas of Practice",
     "contact": "Contact",
     "title": "Aurélie Manier",
-    "subtitle": "Labor Law Attorney in Lyon"
+    "subtitle": "Social Law and Personal Injury Attorney in Lyon"
   },
   "home": {
-    "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices in the field of <strong>Labor Law</strong> and <strong>Social Security Law</strong>. She was sworn in in <strong>December 2021</strong>.",
+    "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices in the field of <strong>Labor Law</strong>, <strong>Social Security Law</strong> and <strong>Personal Injury</strong>. She was sworn in in <strong>December 2021</strong>.",
     "expertise": {
       "title": "Areas of Expertise",
       "description": "<strong>Maître Aurélie MANIER</strong> specializes in the following situations:",
@@ -17,6 +17,7 @@
         "harassment": "<strong>Harassment situations</strong> at work",
         "inaptitude": "<strong>Unfitness for work</strong>",
         "accidents": "<strong>Work-related accidents</strong>",
+        "trafficAccidents": "<strong>Traffic accidents</strong>",
         "diseases": "<strong>Occupational diseases</strong>",
         "disability": "<strong>Permanent partial disability rate</strong>",
         "organisms": "Disputes with <strong>social organizations</strong> (Social Security, Pension Fund, Disabled Persons Office)"
@@ -75,7 +76,7 @@
   "domains": {
     "title": "Areas of Expertise",
     "subtitle": "Maître Aurélie MANIER's Specialties",
-    "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices primarily in the field of <strong>Labor Law</strong> and <strong>Social Security Law</strong>. She intervenes in various specific situations detailed below.",
+    "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices primarily in the field of <strong>Labor Law</strong>, <strong>Social Security Law</strong> and <strong>Personal Injury</strong>. She intervenes in various specific situations detailed below.",
     "expertiseTitle": "Areas of Expertise",
     "expertiseItems": {
       "litigation": "<strong>Disputes</strong> in the context of an employment relationship or dismissal",
@@ -83,6 +84,7 @@
       "harassment": "<strong>Harassment situations</strong> at work",
       "inaptitude": "<strong>Unfitness for work</strong>",
       "accidents": "<strong>Work-related accidents</strong>",
+      "trafficAccidents": "<strong>Traffic accidents</strong>",
       "diseases": "<strong>Occupational diseases</strong>",
       "disability": "<strong>Permanent partial disability rate</strong>",
       "organisms": "Disputes with <strong>social organizations</strong> (Social Security, Pension Fund, Disabled Persons Office)"

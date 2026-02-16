@@ -4,10 +4,10 @@
     "domains": "Domaines",
     "contact": "Contact",
     "title": "Aurélie Manier",
-    "subtitle": "Avocat en droit du travail à Lyon"
+    "subtitle": "Avocate en Droit Social et Dommage corporel à Lyon"
   },
   "home": {
-    "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce son activité dans le domaine du <strong>Droit du travail</strong> et du <strong>Droit de la Sécurité sociale</strong>. Elle a prêté serment en <strong>décembre 2021</strong>.",
+    "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce son activité dans le domaine du <strong>Droit du travail</strong>, du <strong>Droit de la Sécurité sociale</strong> et du <strong>Dommage corporel</strong>. Elle a prêté serment en <strong>décembre 2021</strong>.",
     "expertise": {
       "title": "Domaines d'expertise",
       "description": "<strong>Maître Aurélie MANIER</strong> intervient notamment dans les situations suivantes :",
@@ -17,6 +17,7 @@
         "harassment": "<strong>Situations de harcèlement</strong> au travail",
         "inaptitude": "<strong>Inaptitudes</strong>",
         "accidents": "<strong>Accidents du travail</strong>",
+        "trafficAccidents": "<strong>Accidents de la circulation</strong>",
         "diseases": "<strong>Maladies professionnelles</strong>",
         "disability": "<strong>Taux d'incapacité permanente partielle</strong>",
         "organisms": "Litiges avec les <strong>organismes sociaux</strong> (Sécurité sociale, Caisse de retraite, Maison des personnes handicapées)"
@@ -75,7 +76,7 @@
   "domains": {
     "title": "Domaines d'expertise",
     "subtitle": "Les spécialités de Maître Aurélie MANIER",
-    "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce principalement dans le domaine du <strong>Droit du travail</strong> et du <strong>Droit de la Sécurité sociale</strong>. Elle intervient dans diverses situations spécifiques détaillées ci-dessous.",
+    "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce principalement dans le domaine du <strong>Droit du travail</strong>, du <strong>Droit de la Sécurité sociale</strong> et du <strong>Dommage corporel</strong>. Elle intervient dans diverses situations spécifiques détaillées ci-dessous.",
     "expertiseTitle": "Domaines d'expertise",
     "expertiseItems": {
       "litigation": "<strong>Litiges</strong> dans le cadre d'une relation de travail ou d'un licenciement",
@@ -83,6 +84,7 @@
       "harassment": "<strong>Situations de harcèlement</strong> au travail",
       "inaptitude": "<strong>Inaptitudes</strong>",
       "accidents": "<strong>Accidents du travail</strong>",
+      "trafficAccidents": "<strong>Accidents de la circulation</strong>",
       "diseases": "<strong>Maladies professionnelles</strong>",
       "disability": "<strong>Taux d'incapacité permanente partielle</strong>",
       "organisms": "Litiges avec les <strong>organismes sociaux</strong> (Sécurité sociale, Caisse de retraite, Maison des personnes handicapées)"

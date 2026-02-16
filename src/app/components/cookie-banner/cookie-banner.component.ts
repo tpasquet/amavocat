@@ -3,10 +3,10 @@ import { CookieConsentService } from '../../services/cookie-consent.service';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
-    selector: 'app-cookie-banner',
-    templateUrl: './cookie-banner.component.html',
-    styleUrls: ['./cookie-banner.component.scss'],
-    standalone: false
+  selector: 'app-cookie-banner',
+  templateUrl: './cookie-banner.component.html',
+  styleUrls: ['./cookie-banner.component.scss'],
+  standalone: false
 })
 export class CookieBannerComponent {
   isVisible = false;
@@ -15,8 +15,7 @@ export class CookieBannerComponent {
     private cookieConsentService: CookieConsentService,
     private languageService: LanguageService
   ) {
-    // Afficher la bannière si l'utilisateur n'a pas encore donné son consentement
-    this.isVisible = !this.cookieConsentService.hasConsent();
+    // this.isVisible = !this.cookieConsentService.hasConsent();
   }
 
   get language(): string {

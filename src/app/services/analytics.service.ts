@@ -31,12 +31,7 @@ export class AnalyticsService {
       return;
     }
 
-    // Vérifier le consentement avant de charger
-    this.cookieConsentService.consent$.subscribe(consent => {
-      if (consent?.analytics && !this.scriptLoaded) {
-        this.loadUmamiScript();
-      }
-    });
+    this.loadUmamiScript();
 
     // Track page views automatiquement
     this.router.events
@@ -68,32 +63,22 @@ export class AnalyticsService {
 
   // Track une page vue
   trackPageView(url: string): void {
-    if (!this.canTrack()) {
+    if (!environment.umami.enabled || !this.scriptLoaded) {
       return;
     }
 
-    // Umami track automatiquement les pages, mais on peut le faire manuellement
     if (window.umami) {
       window.umami.track('pageview', { url });
     }
   }
 
-  // Track un événement personnalisé
   trackEvent(eventName: string, data?: any): void {
-    if (!this.canTrack()) {
+    if (!environment.umami.enabled || !this.scriptLoaded) {
       return;
     }
 
     if (window.umami) {
       window.umami.track(eventName, data);
     }
-  }
-
-  // Vérifier si on peut tracker
-  private canTrack(): boolean {
-    const consent = this.cookieConsentService.getStoredConsent();
-    return environment.umami.enabled && 
-           this.scriptLoaded && 
-           consent?.analytics === true;
   }
 }

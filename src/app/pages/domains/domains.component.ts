@@ -7,17 +7,17 @@ import { MetaService } from 'src/app/services/meta.service';
 const DomainMetaTranslations: PageMetaTranslations = {
   en: {
     title: 'Domains of Expertise | Aurélie Manier',
-    description: 'Explore the domains of expertise offered by Aurélie Manier, a labor law lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
+    description: 'Explore the domains of expertise offered by Aurélie Manier, a social law and personal injury lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
     ogTitle: 'Domains of Expertise | Aurélie Manier',
-    ogDescription: 'Explore the domains of expertise offered by Aurélie Manier, a labor law lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
+    ogDescription: 'Explore the domains of expertise offered by Aurélie Manier, a social law and personal injury lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/en/domains`
   },
   fr: {
     title: 'Domaines d\'Expertise | Aurélie Manier',
-    description: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en droit du travail à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
+    description: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en Droit Social et Dommage corporel à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
     ogTitle: 'Domaines d\'Expertise | Aurélie Manier',
-    ogDescription: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en droit du travail à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
+    ogDescription: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en Droit Social et Dommage corporel à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/fr/domains`
   }
