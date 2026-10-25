@@ -9,9 +9,9 @@
             <p class="footer-copyright">&copy; 2025 {{ 'footer.copyright' | translate }}</p>
         </div>
         <div class="footer-links">
-            <a [routerLink]="['/', language, 'mentions-legales']" (click)="navigateToLegalPage(['/', language, 'mentions-legales'])" style="cursor: pointer;">{{ 'footer.legal' | translate }}</a>
+            <a [routerLink]="['/', language, 'mentions-legales']">{{ 'footer.legal' | translate }}</a>
             <span class="separator">|</span>
-            <a [routerLink]="['/', language, 'politique-confidentialite']" (click)="navigateToLegalPage(['/', language, 'politique-confidentialite'])" style="cursor: pointer;">{{ 'footer.privacy' | translate }}</a>
+            <a [routerLink]="['/', language, 'politique-confidentialite']">{{ 'footer.privacy' | translate }}</a>
         </div>
     </div>
 </footer>

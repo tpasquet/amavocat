@@ -1,6 +1,5 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -14,7 +13,6 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private router: Router,
     private destroyRef: DestroyRef
   ) { }
 
@@ -22,12 +20,6 @@ export class FooterComponent implements OnInit {
     this.languageService.currentLang$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(lang => this.language = lang);
-  }
-
-  navigateToLegalPage(route: string[]) {
-    this.router.navigate(route).then(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
   }
 
 }

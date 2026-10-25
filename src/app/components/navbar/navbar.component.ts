@@ -78,9 +78,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   onMenuClick() {
-    console.log("menu click")
     this.menuOpened = !this.menuOpened;
-    console.log(this.menuOpened)
   }
 
   closeMenu() {

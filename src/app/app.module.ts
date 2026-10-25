@@ -18,7 +18,6 @@ import { PostDetailsComponent } from './pages/post-details/post-details.componen
 import { RoutingModule } from './routing/routing.module';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenuLanguageComponent } from './components/menu-language/menu-language.component';
 import { DomainsComponent } from './pages/domains/domains.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
@@ -45,7 +44,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     PostsComponent,
     PostCardComponent,
     PostDetailsComponent,
-    MenuLanguageComponent,
     DomainsComponent,
     LegalComponent,
     PrivacyComponent,
