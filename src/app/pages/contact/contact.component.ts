@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component } from '@angular/core';
+import { Component, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Constants } from 'src/app/global/constant';
 import { PageMetaTranslations } from 'src/app/global/types';
 import { LanguageService } from 'src/app/services/language.service';
@@ -34,7 +35,7 @@ export class ContactComponent {
   xSmall = false;
   small = false;
   
-  constructor(private languageService: LanguageService, private metaService: MetaService, private responsive: BreakpointObserver) {
+  constructor(private languageService: LanguageService, private metaService: MetaService, private destroyRef: DestroyRef, private responsive: BreakpointObserver) {
     this.responsive.observe([
       Breakpoints.Small,
       Breakpoints.XSmall,
@@ -51,8 +52,9 @@ export class ContactComponent {
   }
 
   ngOnInit() {
-    const lang = this.languageService.getCurrentLang();
-    this.metaService.setPageMeta(HomeMetaTranslations[lang]);
-
+    // Le composant est réutilisé quand seule la langue change (/fr/x -> /en/x) : on suit la langue
+    this.languageService.currentLang$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(lang => this.metaService.setPageMeta(HomeMetaTranslations[lang]));
   }
 }

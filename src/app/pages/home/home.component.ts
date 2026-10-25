@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Constants } from 'src/app/global/constant';
 import { PageMetaTranslations } from 'src/app/global/types';
 import { LanguageService } from 'src/app/services/language.service';
@@ -31,11 +32,13 @@ const HomeMetaTranslations: PageMetaTranslations = {
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private languageService: LanguageService, private metaService: MetaService) { }
+  constructor(private languageService: LanguageService, private metaService: MetaService, private destroyRef: DestroyRef) { }
 
   ngOnInit() {
-    const lang = this.languageService.getCurrentLang();
-    this.metaService.setPageMeta(HomeMetaTranslations[lang]);
+    // Le composant est réutilisé quand seule la langue change (/fr/x -> /en/x) : on suit la langue
+    this.languageService.currentLang$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(lang => this.metaService.setPageMeta(HomeMetaTranslations[lang]));
   }
 
 }
