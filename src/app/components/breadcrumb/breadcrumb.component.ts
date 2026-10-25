@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BreadcrumbService, BreadcrumbItem } from '../../services/breadcrumb.service';
 
 @Component({
@@ -7,14 +8,10 @@ import { BreadcrumbService, BreadcrumbItem } from '../../services/breadcrumb.ser
     styleUrls: ['./breadcrumb.component.scss'],
     standalone: false
 })
-export class BreadcrumbComponent implements OnInit {
-  breadcrumbs: BreadcrumbItem[] = [];
-  structuredData: string = '';
+export class BreadcrumbComponent {
+  readonly breadcrumbs$: Observable<BreadcrumbItem[]>;
 
-  constructor(private breadcrumbService: BreadcrumbService) {}
-
-  ngOnInit(): void {
-    this.breadcrumbs = this.breadcrumbService.getBreadcrumbs();
-    this.structuredData = this.breadcrumbService.getStructuredData();
+  constructor(breadcrumbService: BreadcrumbService) {
+    this.breadcrumbs$ = breadcrumbService.breadcrumbs$;
   }
 }

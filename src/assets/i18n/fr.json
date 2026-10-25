@@ -222,5 +222,8 @@
   },
   "languageSelector": {
     "label": "Changer de langue"
+  },
+  "breadcrumb": {
+    "label": "Fil d'Ariane"
   }
 }
