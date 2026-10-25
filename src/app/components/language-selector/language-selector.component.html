@@ -1,20 +1,26 @@
-<div class="language-selector" (clickOutside)="closeDropdown()">
+<div class="language-selector">
     <div class="custom-select" [class.open]="isOpen">
-        <div class="select-trigger" (click)="toggleDropdown()" tabindex="0"
-             (keydown.enter)="toggleDropdown()" (keydown.space)="toggleDropdown()"
-             [attr.aria-label]="'Changer de langue'">
+        <button type="button" class="select-trigger" (click)="toggleDropdown()"
+                aria-haspopup="true" [attr.aria-expanded]="isOpen"
+                [attr.aria-label]="'languageSelector.label' | translate">
             <span>{{ language === 'fr' ? 'Français' : 'English' }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="arrow" aria-hidden="true">
                 <path fill="#274c77" d="M1 1l4 4 4-4"/>
             </svg>
-        </div>
-        <div class="select-options" *ngIf="isOpen">
-            <div class="option" (click)="selectLanguage('fr')" [class.selected]="language === 'fr'">
-                Français
-            </div>
-            <div class="option" (click)="selectLanguage('en')" [class.selected]="language === 'en'">
-                English
-            </div>
-        </div>
+        </button>
+        <ul class="select-options" *ngIf="isOpen">
+            <li>
+                <button type="button" class="option" lang="fr" (click)="selectLanguage('fr')"
+                        [class.selected]="language === 'fr'" [attr.aria-current]="language === 'fr' ? 'true' : null">
+                    Français
+                </button>
+            </li>
+            <li>
+                <button type="button" class="option" lang="en" (click)="selectLanguage('en')"
+                        [class.selected]="language === 'en'" [attr.aria-current]="language === 'en' ? 'true' : null">
+                    English
+                </button>
+            </li>
+        </ul>
     </div>
 </div>

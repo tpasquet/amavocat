@@ -5,10 +5,10 @@
             <div class="navbar-name">{{ 'navbar.title' | translate }}</div>
             <div class="navbar-subtitle">{{ 'navbar.subtitle' | translate }}</div>
         </a>
-        <ul class="navbar-links" role="menubar">
-            <li role="none"><a class="custom-link" [routerLink]="['/', language]" role="menuitem">{{ 'navbar.home' | translate }}</a></li>
-            <li role="none"><a class="custom-link" [routerLink]="['/', language, 'domaines']" role="menuitem">{{ 'navbar.domains' | translate }}</a></li>
-            <li role="none"><a class="custom-link" [routerLink]="['/', language, 'contact']" role="menuitem">{{ 'navbar.contact' | translate }}</a></li>
+        <ul class="navbar-links">
+            <li><a class="custom-link" [routerLink]="['/', language]">{{ 'navbar.home' | translate }}</a></li>
+            <li><a class="custom-link" [routerLink]="['/', language, 'domaines']">{{ 'navbar.domains' | translate }}</a></li>
+            <li><a class="custom-link" [routerLink]="['/', language, 'contact']">{{ 'navbar.contact' | translate }}</a></li>
         </ul>
         <app-language-selector></app-language-selector>
     </div>
@@ -29,21 +29,21 @@
         <app-burger-menu [class.active]="menuOpened"></app-burger-menu>
     </button>
     <div class="menu-mobile-background" *ngIf="isMobile" [ngClass]="{'opened': menuOpened}"></div>
-    <div class="menu-mobile" [ngClass]="{'opened': menuOpened}" id="mobile-menu" role="menu">
+    <div class="menu-mobile" [ngClass]="{'opened': menuOpened}" id="mobile-menu">
         <ul>
-            <li role="none">
-                <a class="navbar-link" [routerLink]="['/', language]" (click)="closeMenu()" role="menuitem">{{ 'navbar.home' | translate }}</a>
+            <li>
+                <a class="navbar-link" [routerLink]="['/', language]" (click)="closeMenu()">{{ 'navbar.home' | translate }}</a>
             </li>
-            <li role="none">
-                <a class="navbar-link" [routerLink]="['/', language, 'domaines']" (click)="closeMenu()" role="menuitem">{{ 'navbar.domains' | translate }}</a>
+            <li>
+                <a class="navbar-link" [routerLink]="['/', language, 'domaines']" (click)="closeMenu()">{{ 'navbar.domains' | translate }}</a>
             </li>
-            <!-- <li role="none">
-                <a class="navbar-link" [routerLink]="['/', language, 'posts']" (click)="closeMenu()" role="menuitem">Articles</a> -->
+            <!-- <li>
+                <a class="navbar-link" [routerLink]="['/', language, 'posts']" (click)="closeMenu()">Articles</a> -->
             <!-- </li> -->
-            <li role="none">
-                <a class="navbar-link" [routerLink]="['/', language, 'contact']" (click)="closeMenu()" role="menuitem">{{ 'navbar.contact' | translate }}</a>
+            <li>
+                <a class="navbar-link" [routerLink]="['/', language, 'contact']" (click)="closeMenu()">{{ 'navbar.contact' | translate }}</a>
             </li>
-            <li role="none" class="language-mobile-item">
+            <li class="language-mobile-item">
                 <app-language-selector (languageChanged)="onLanguageChanged($event)"></app-language-selector>
             </li>
         </ul>
