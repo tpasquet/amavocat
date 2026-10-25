@@ -210,15 +210,7 @@
   "footer": {
     "copyright": "Aurélie Manier - Avocate au barreau de Lyon",
     "legal": "Mentions légales",
-    "privacy": "Politique de confidentialité",
-    "cookies": "Gérer les cookies"
-  },
-  "cookieBanner": {
-    "title": "Respect de votre vie privée",
-    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser le trafic de notre site. Vous pouvez accepter ou refuser l'utilisation de ces cookies.",
-    "learnMore": "En savoir plus",
-    "reject": "Refuser",
-    "acceptAll": "Tout accepter"
+    "privacy": "Politique de confidentialité"
   },
   "languageSelector": {
     "label": "Changer de langue"

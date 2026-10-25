@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { environment } from '../environments/environment';
-import { CookieConsentService } from './cookie-consent.service';
 
 declare global {
   interface Window {
@@ -18,10 +17,8 @@ declare global {
 export class AnalyticsService {
   private scriptLoaded = false;
 
-  constructor(
-    private router: Router,
-    private cookieConsentService: CookieConsentService
-  ) {
+  // Umami n'utilise pas de cookie : pas de consentement requis (cf. mentions légales)
+  constructor(private router: Router) {
     this.initialize();
   }
 

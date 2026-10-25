@@ -29,12 +29,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
-              "src/sitemap.xml",
-              {
-                "glob": "**/*",
-                "input": "node_modules/tarteaucitronjs",
-                "output": "/node_modules/tarteaucitronjs"
-              }
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles/main.scss"

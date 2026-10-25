@@ -10,8 +10,6 @@ import { IconologoComponent } from '../components/iconologo/iconologo.component'
 import { FooterComponent } from '../components/footer/footer.component';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
-import { CookieBannerComponent } from '../components/cookie-banner/cookie-banner.component';
-import { CookieButtonComponent } from '../components/cookie-button/cookie-button.component';
 
 
 
@@ -23,9 +21,7 @@ import { CookieButtonComponent } from '../components/cookie-button/cookie-button
     IconologoComponent,
     FooterComponent,
     BreadcrumbComponent,
-    LanguageSelectorComponent,
-    CookieBannerComponent,
-    CookieButtonComponent
+    LanguageSelectorComponent
   ],
   imports: [
     CommonModule,
@@ -35,9 +31,7 @@ import { CookieButtonComponent } from '../components/cookie-button/cookie-button
   ],
   exports: [
     LayoutComponent,
-    LanguageSelectorComponent,
-    CookieBannerComponent,
-    CookieButtonComponent
+    LanguageSelectorComponent
   ]
 })
 export class LayoutModule { }

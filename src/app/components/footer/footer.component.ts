@@ -2,7 +2,6 @@ import { Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
-import { CookieConsentService } from '../../services/cookie-consent.service';
 
 @Component({
     selector: 'app-footer',
@@ -16,7 +15,6 @@ export class FooterComponent implements OnInit {
   constructor(
     private languageService: LanguageService,
     private router: Router,
-    private cookieConsentService: CookieConsentService,
     private destroyRef: DestroyRef
   ) { }
 
@@ -30,13 +28,6 @@ export class FooterComponent implements OnInit {
     this.router.navigate(route).then(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
-
-  openCookieSettings() {
-    // Révoquer le consentement pour réafficher la bannière
-    this.cookieConsentService.revokeConsent();
-    // Recharger la page pour afficher la bannière
-    window.location.reload();
   }
 
 }
