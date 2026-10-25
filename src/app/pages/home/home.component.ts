@@ -16,9 +16,9 @@ const HomeMetaTranslations: PageMetaTranslations = {
   },
   fr: {
     title: 'Avocate en Droit Social et Dommage corporel à Lyon | Aurélie Manier',
-    description: 'Aurélie Manier est une avocate en Droit Social et Dommage corporel à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\hui pour une consultation.',
+    description: 'Aurélie Manier est une avocate en Droit Social et Dommage corporel à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\'hui pour une consultation.',
     ogTitle: 'Avocate en Droit Social et Dommage corporel à Lyon | Aurélie Manier',
-    ogDescription: 'Aurélie Manier est une avocate en Droit Social et Dommage corporel à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\hui pour une consultation.',
+    ogDescription: 'Aurélie Manier est une avocate en Droit Social et Dommage corporel à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\'hui pour une consultation.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/fr`
   }

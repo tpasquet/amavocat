@@ -12,7 +12,7 @@ const DomainMetaTranslations: PageMetaTranslations = {
     ogTitle: 'Domains of Expertise | Aurélie Manier',
     ogDescription: 'Explore the domains of expertise offered by Aurélie Manier, a social law and personal injury lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
-    canonical: `${Constants.HOSTNAME}/en/domains`
+    canonical: `${Constants.HOSTNAME}/en/domaines`
   },
   fr: {
     title: 'Domaines d\'Expertise | Aurélie Manier',
@@ -20,7 +20,7 @@ const DomainMetaTranslations: PageMetaTranslations = {
     ogTitle: 'Domaines d\'Expertise | Aurélie Manier',
     ogDescription: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en Droit Social et Dommage corporel à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
-    canonical: `${Constants.HOSTNAME}/fr/domains`
+    canonical: `${Constants.HOSTNAME}/fr/domaines`
   }
 };
 
