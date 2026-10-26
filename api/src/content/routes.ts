@@ -1,7 +1,7 @@
 import type { FastifyInstance, FastifyReply } from 'fastify';
 import { z } from 'zod';
 import type { Db } from '../db/client.js';
-import { EntryError, EntryService, serializeEntry } from './entries.js';
+import { EntryError, EntryService, entryStatus, serializeEntry } from './entries.js';
 import { describeContentType, locales, type ContentTypeRegistry } from './registry.js';
 
 const listQuery = z.object({
@@ -28,6 +28,8 @@ export interface EntriesChangedEvent {
   type: string;
   action: 'created' | 'updated' | 'deleted';
   id: string;
+  /** The entry is, or was until this change, visible on the public site */
+  affectsPublicSite: boolean;
 }
 
 export async function contentRoutes(
@@ -81,7 +83,7 @@ export async function contentRoutes(
       if (!type) return reply;
       try {
         const entry = service.create(type, request.body, request.user!.id);
-        notify({ type: type.name, action: 'created', id: entry.id });
+        notify({ type: type.name, action: 'created', id: entry.id, affectsPublicSite: entryStatus(entry) === 'published' });
         return reply.code(201).send({ entry: serializeEntry(entry) });
       } catch (error) {
         return sendEntryError(reply, error);
@@ -92,8 +94,14 @@ export async function contentRoutes(
       const type = resolveType(request.params.type, reply);
       if (!type) return reply;
       try {
+        const wasPublished = entryStatus(service.get(type, request.params.id)) === 'published';
         const entry = service.update(type, request.params.id, request.body, request.user!.id);
-        notify({ type: type.name, action: 'updated', id: entry.id });
+        notify({
+          type: type.name,
+          action: 'updated',
+          id: entry.id,
+          affectsPublicSite: wasPublished || entryStatus(entry) === 'published',
+        });
         return { entry: serializeEntry(entry) };
       } catch (error) {
         return sendEntryError(reply, error);
@@ -104,8 +112,9 @@ export async function contentRoutes(
       const type = resolveType(request.params.type, reply);
       if (!type) return reply;
       try {
+        const wasPublished = entryStatus(service.get(type, request.params.id)) === 'published';
         service.delete(type, request.params.id);
-        notify({ type: type.name, action: 'deleted', id: request.params.id });
+        notify({ type: type.name, action: 'deleted', id: request.params.id, affectsPublicSite: wasPublished });
         return reply.code(204).send();
       } catch (error) {
         return sendEntryError(reply, error);

@@ -71,7 +71,7 @@
               <label class="radio"><input type="radio" formControlName="publishMode" value="schedule" /> Programmé le…</label>
               @if (form.controls.publishMode.value === 'schedule') {
                 <input type="datetime-local" formControlName="publishAt" aria-label="Date et heure de publication" />
-                <span class="help">Le site est mis à jour automatiquement à cette date (dans les 20 minutes).</span>
+                <span class="help">Le site est mis à jour automatiquement à cette date (comptez une dizaine de minutes).</span>
               }
             </fieldset>
           }

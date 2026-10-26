@@ -69,6 +69,18 @@ All entries live in one `entries` table (field values as JSON validated by the t
 type needs no migration. Rich text is sanitized on save. Field builders live in `src/content/fields.ts`; a new kind
 of field also needs its editor component in the admin app.
 
+## Rebuilding the public site
+
+The public site is static: it embeds the published articles when it is built (`scripts/fetch-content.mts`).
+With `GITHUB_DISPATCH_TOKEN` set, the API keeps it in sync by sending a `content-changed` `repository_dispatch`
+event, which runs the site's deploy workflow:
+
+- 30 seconds after an edit that changes what the site shows (publishing, editing or deleting a published entry,
+  unpublishing); edits within those 30 seconds share one build
+- when a scheduled entry's publication date passes, checked every 5 minutes (and at startup)
+
+Failed requests are retried at the next check. Expect a published article online about 5 to 10 minutes later.
+
 ## Database
 
 Migrations are generated from `src/db/schema.ts` with `npm run db:generate` and applied automatically when the
@@ -89,9 +101,14 @@ One-time setup:
    `NODE_ENV=production COOKIE_SECURE=true DATABASE_PATH=/home/aureliemanier-avocat/data/amavocat.sqlite
    MEDIA_DIR=/home/aureliemanier-avocat/data/media ADMIN_DIR=/home/aureliemanier-avocat/api/admin
    PUBLIC_URL=https://api.aureliemanier-avocat.fr CORS_ORIGINS=https://aureliemanier-avocat.fr`.
+   Also add `GITHUB_DISPATCH_TOKEN` (step 4) to enable automatic site rebuilds.
 2. Alwaysdata, **Profile > Tokens**: create an API token.
 3. GitHub, environment `prod`: add variables `ALWAYSDATA_API_PATH=/home/aureliemanier-avocat/api/` and
    `ALWAYSDATA_API_SITE_ID=<id of the Node.js site>`, and secret `ALWAYSDATA_API_TOKEN`.
-4. After the first deploy, the backoffice is at https://api.aureliemanier-avocat.fr/admin/. Create Aurélie's account
+4. GitHub, **Settings > Developer settings > Fine-grained tokens**: create a token for `tpasquet/amavocat` only,
+   with the *Contents: Read and write* permission, and set it as `GITHUB_DISPATCH_TOKEN` on the Node.js site.
+   Then add the variable `CONTENT_API_URL=https://api.aureliemanier-avocat.fr/api` to the `prod` environment so
+   the site build includes the articles.
+5. After the first deploy, the backoffice is at https://api.aureliemanier-avocat.fr/admin/. Create Aurélie's account
    over SSH:
    `cd ~/api && DATABASE_PATH=~/data/amavocat.sqlite npm run user:create -- --email ... --name "Aurélie Manier"`.

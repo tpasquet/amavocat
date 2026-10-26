@@ -20,6 +20,9 @@ const configSchema = z.object({
     .default('')
     .transform((value) => value.split(',').map((origin) => origin.trim()).filter(Boolean)),
   COOKIE_SECURE: booleanString.default(false),
+  // Fine-grained token with "Contents: read and write" on the repository, used to trigger the site rebuild
+  GITHUB_DISPATCH_TOKEN: z.string().optional(),
+  GITHUB_REPOSITORY: z.string().default('tpasquet/amavocat'),
   SESSION_TTL_DAYS: z.coerce.number().int().positive().default(7),
 });
 
@@ -33,6 +36,8 @@ export type Config = {
   publicUrl: string;
   corsOrigins: string[];
   cookieSecure: boolean;
+  githubDispatchToken: string | undefined;
+  githubRepository: string;
   sessionTtlMs: number;
 };
 
@@ -48,6 +53,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     publicUrl: parsed.PUBLIC_URL.replace(/\/+$/, ''),
     corsOrigins: parsed.CORS_ORIGINS,
     cookieSecure: parsed.COOKIE_SECURE,
+    githubDispatchToken: parsed.GITHUB_DISPATCH_TOKEN || undefined,
+    githubRepository: parsed.GITHUB_REPOSITORY,
     sessionTtlMs: parsed.SESSION_TTL_DAYS * 24 * 60 * 60 * 1000,
   };
 }
