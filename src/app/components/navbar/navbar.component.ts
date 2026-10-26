@@ -1,10 +1,8 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/language.service';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
 
 @Component({
     selector: 'app-navbar',
@@ -21,13 +19,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   showMobileNavbar = true;
   isScrollingUp = false;
   private lastScrollTop = 0;
-  private routerSubscription?: Subscription;
+  private languageSubscription?: Subscription;
 
   constructor(
     private languageService: LanguageService,
     private responsive: BreakpointObserver,
-    private router: Router,
-    private translate: TranslateService
+    private router: Router
   ) {
     this.language = this.languageService.getCurrentLang();
 
@@ -46,17 +43,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.routerSubscription = this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.language = this.languageService.getCurrentLang();
-      });
+    this.languageSubscription = this.languageService.currentLang$
+      .subscribe(lang => this.language = lang);
   }
 
   ngOnDestroy() {
-    if (this.routerSubscription) {
-      this.routerSubscription.unsubscribe();
-    }
+    this.languageSubscription?.unsubscribe();
   }
 
   
@@ -97,23 +89,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   onLanguageChanged(newLang: string) {
     this.language = newLang;
-    this.closeMenu();
-  }
-
-  switchLanguageMobile(lang: string) {
-    this.translate.use(lang);
-    this.languageService.setCurrentLang(lang);
-    this.language = lang;
-
-    const urlSegments = this.router.url.split('/').filter(seg => seg);
-    const pathWithoutLang = urlSegments.slice(1);
-
-    if (pathWithoutLang.length > 0) {
-      this.router.navigate([lang, ...pathWithoutLang]);
-    } else {
-      this.router.navigate([lang]);
-    }
-
     this.closeMenu();
   }
 }

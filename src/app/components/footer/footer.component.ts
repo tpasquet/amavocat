@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { CookieConsentService } from '../../services/cookie-consent.service';
@@ -15,11 +16,14 @@ export class FooterComponent implements OnInit {
   constructor(
     private languageService: LanguageService,
     private router: Router,
-    private cookieConsentService: CookieConsentService
+    private cookieConsentService: CookieConsentService,
+    private destroyRef: DestroyRef
   ) { }
 
   ngOnInit(): void {
-    this.language = this.languageService.getCurrentLang();
+    this.languageService.currentLang$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(lang => this.language = lang);
   }
 
   navigateToLegalPage(route: string[]) {

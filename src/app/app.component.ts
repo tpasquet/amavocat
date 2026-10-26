@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from './services/language.service';
 import { AnalyticsService } from './services/analytics.service';
 
 @Component({
@@ -9,22 +8,15 @@ import { AnalyticsService } from './services/analytics.service';
     styleUrls: ['./app.component.scss'],
     standalone: false
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   constructor(
     private translate: TranslateService,
-    private languageService: LanguageService,
     private analyticsService: AnalyticsService // Initialise le service analytics
   ) {
     // Langues disponibles
     this.translate.addLangs(['fr', 'en']);
-    // Langue par défaut
+    // Langue par défaut (la langue active est appliquée par LanguageGuard à partir de l'URL)
     this.translate.setDefaultLang('fr');
-  }
-
-  ngOnInit() {
-    // Utiliser la langue actuelle du service
-    const currentLang = this.languageService.getCurrentLang();
-    this.translate.use(currentLang);
   }
 }

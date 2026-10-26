@@ -1,6 +1,8 @@
+import { SupportedLanguages } from "./enum";
+
 export const Constants = {
-    SUPPORTED_LANGUAGES: ['en', 'fr'],
-    DEFAULT_LANG: 'fr',
+    SUPPORTED_LANGUAGES: Object.values(SupportedLanguages),
+    DEFAULT_LANG: SupportedLanguages.FR,
     LOCAL_STORAGE: {
         LANG_KEY: 'lang'
     },
