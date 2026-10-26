@@ -1,9 +1,11 @@
 # Apache (Alwaysdata) : servir les pages prérendues sans redirection vers une URL avec slash final,
 # et l'application côté client pour les autres URL.
-DirectoryIndex index.html
-DirectorySlash Off
-
+# Pas de DirectoryIndex / DirectorySlash ici : ils exigent AllowOverride Indexes,
+# que l'hébergeur n'accorde pas (erreur 500). Les réécritures ci-dessous suffisent.
 RewriteEngine On
+
+# / -> /index.html (page prérendue de la racine)
+RewriteRule ^$ index.html [L]
 
 # /fr/contact -> /fr/contact/index.html (page prérendue)
 RewriteCond %{REQUEST_FILENAME} -d
