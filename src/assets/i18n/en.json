@@ -77,13 +77,15 @@
       "submitting": "Sending...",
       "success": "✓ Your message has been sent successfully!"
     },
-    "mapTitle": "Map of the office, 90 rue Servient, 69003 Lyon"
+    "mapTitle": "Map of the office, 90 rue Servient, 69003 Lyon",
+    "address": "Address",
+    "directions": "Directions"
   },
   "domains": {
     "title": "Areas of Expertise",
     "subtitle": "Maître Aurélie MANIER's Specialties",
     "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices primarily in the field of <strong>Labor Law</strong>, <strong>Social Security Law</strong> and <strong>Personal Injury</strong>. She intervenes in various specific situations detailed below.",
-    "expertiseTitle": "Areas of Expertise",
+    "expertiseTitle": "Situations we handle",
     "expertiseItems": {
       "litigation": "<strong>Disputes</strong> in the context of an employment relationship or dismissal",
       "safety": "<strong>Compliance with safety obligations</strong> at work",

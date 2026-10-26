@@ -2,29 +2,22 @@
     <div class="content">
         <h2>Aurélie Manier</h2>
         <p class="subtitle">Avocate en Droit Social et Dommage corporel</p>
-        <div class="row phone-container">
-            <div class="col-1">
-                <i class="bi bi-telephone text-primary" aria-hidden="true"></i>
-            </div>
+        <a class="phone-container" href="tel:+33769997560" aria-label="Téléphone : 07 69 99 75 60">
+            <i class="bi bi-telephone text-primary" aria-hidden="true"></i>
+            <span class="contact-value">07 69 99 75 60</span>
+        </a>
+        <a class="email-container" href="mailto:contact@aureliemanier-avocat.fr" aria-label="Email : contact@aureliemanier-avocat.fr">
+            <i class="bi bi-envelope text-primary" aria-hidden="true"></i>
+            <span class="contact-value">contact&#64;aureliemanier-avocat.fr</span>
+        </a>
+        <div class="address-container">
+            <i class="bi bi-geo-alt text-primary" aria-hidden="true"></i>
             <div class="col">
-                <a href="tel:+33769997560" aria-label="Téléphone : 07 69 99 75 60">07 69 99 75 60</a>
-            </div>
-        </div>
-        <div class="row email-container">
-            <div class="col-1">
-                <i class="bi bi-envelope text-primary" aria-hidden="true"></i>
-            </div>
-            <div class="col">
-                <a class="w-100" href="mailto:contact@aureliemanier-avocat.fr" aria-label="Email : contact@aureliemanier-avocat.fr">contact&#64;aureliemanier-avocat.fr</a>
-            </div>
-        </div>
-        <div class="row address-container">
-            <div class="col-1">
-                <i class="bi bi-geo-alt text-primary" aria-hidden="true"></i>
-            </div>
-            <div class="col">
-                <strong>Adresse</strong>
+                <strong>{{ 'contact.address' | translate }}</strong>
                 <p class="mb-0">90, rue Servient, 69003 Lyon</p>
+                <a class="directions-link"
+                   href="https://www.openstreetmap.org/directions?to=45.760%2C4.854"
+                   target="_blank" rel="noopener noreferrer">{{ 'contact.directions' | translate }} <span aria-hidden="true">→</span></a>
             </div>
         </div>
     </div>
