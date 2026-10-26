@@ -13,7 +13,7 @@ declare module 'fastify' {
     user: PublicUser | null;
   }
   interface FastifyInstance {
-    requireUser: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
+    requireUser: (request: FastifyRequest, reply: FastifyReply) => Promise<FastifyReply | undefined>;
   }
 }
 
@@ -41,7 +41,7 @@ export const authPlugin = fp(async (app: FastifyInstance, opts: { db: Db; config
 
   app.decorate('requireUser', async (request: FastifyRequest, reply: FastifyReply) => {
     if (!request.user) {
-      await reply.code(401).send({ error: 'unauthorized' });
+      return reply.code(401).send({ error: 'unauthorized' });
     }
   });
 
