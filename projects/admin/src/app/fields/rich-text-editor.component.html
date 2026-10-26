@@ -1,0 +1,24 @@
+<div class="editor">
+  <div class="toolbar" role="toolbar" aria-label="Mise en forme">
+    <button type="button" [class.active]="isActive('heading', { level: 2 })" (click)="run(toggleH2)" title="Titre de section">H2</button>
+    <button type="button" [class.active]="isActive('heading', { level: 3 })" (click)="run(toggleH3)" title="Sous-titre">H3</button>
+    <span class="sep"></span>
+    <button type="button" [class.active]="isActive('bold')" (click)="run(toggleBold)" title="Gras"><strong>G</strong></button>
+    <button type="button" [class.active]="isActive('italic')" (click)="run(toggleItalic)" title="Italique"><em>I</em></button>
+    <button type="button" [class.active]="isActive('underline')" (click)="run(toggleUnderline)" title="Souligné"><u>S</u></button>
+    <span class="sep"></span>
+    <button type="button" [class.active]="isActive('bulletList')" (click)="run(toggleBulletList)" title="Liste à puces">• Liste</button>
+    <button type="button" [class.active]="isActive('orderedList')" (click)="run(toggleOrderedList)" title="Liste numérotée">1. Liste</button>
+    <button type="button" [class.active]="isActive('blockquote')" (click)="run(toggleBlockquote)" title="Citation">« »</button>
+    <span class="sep"></span>
+    <button type="button" [class.active]="isActive('link')" (click)="toggleLink()" title="Lien">Lien</button>
+    <button type="button" (click)="pickImage()" [disabled]="uploading()" title="Insérer une image">
+      {{ uploading() ? 'Envoi…' : 'Image' }}
+    </button>
+    <span class="sep"></span>
+    <button type="button" (click)="run(undo)" title="Annuler">↶</button>
+    <button type="button" (click)="run(redo)" title="Rétablir">↷</button>
+  </div>
+  <div #host class="surface"></div>
+  <input #fileInput type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden (change)="uploadImage($event)" />
+</div>

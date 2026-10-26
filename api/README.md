@@ -1,6 +1,8 @@
 # amavocat API
 
 Backend of the backoffice: authentication, extensible content entries with scheduled publication, image uploads.
+It also serves the Angular admin app (`projects/admin`, built with `npm run build:admin` at the repository root)
+under `/admin/`, so the admin and the API share one origin.
 Fastify 5 + TypeScript, SQLite through Drizzle ORM, zod validation, Vitest.
 
 ## Local development
@@ -13,6 +15,10 @@ npm run user:create:dev -- --email aurelie@example.com --name "Aurélie Manier" 
 npm run dev                   # http://localhost:3000/api/health
 npm test
 ```
+
+Admin app, from the repository root: `npm run start:admin` (http://localhost:4300, proxies `/api` and `/media` to
+the API on port 3000), or `npm run build:admin` and open http://localhost:3000/admin/ (restart the API after a
+rebuild: it reads the app's files at startup).
 
 `npm run dev` and `npm run user:create:dev` load `api/.env` when it exists.
 
@@ -33,10 +39,11 @@ npm test
 | POST | `/api/admin/media` | cookie | Upload one image (multipart, JPEG/PNG/WebP/GIF, 8 MB max), returns its absolute URL |
 | GET | `/api/public/entries/:type` | no | Published entries only (`publishAt` reached), newest first (`?locale=fr`) |
 | GET | `/media/:file` | no | Uploaded images |
+| GET | `/admin/*` | no | Admin app (the app itself asks for a login) |
 
 Security notes: passwords are hashed with argon2id, only a SHA-256 of the session token is stored, the cookie is
 `HttpOnly` + `SameSite=Strict` (+ `Secure` in production), and non-GET requests from an origin outside `CORS_ORIGINS`
-are refused.
+are refused (requests from the API's own origin, i.e. the admin app, are always accepted).
 
 ## Content types
 
@@ -80,10 +87,11 @@ One-time setup:
    (outside `www/`, which the public site deploy wipes with `rsync --delete`).
    Environment variables:
    `NODE_ENV=production COOKIE_SECURE=true DATABASE_PATH=/home/aureliemanier-avocat/data/amavocat.sqlite
-   MEDIA_DIR=/home/aureliemanier-avocat/data/media PUBLIC_URL=https://api.aureliemanier-avocat.fr
-   CORS_ORIGINS=https://admin.aureliemanier-avocat.fr,https://aureliemanier-avocat.fr`.
+   MEDIA_DIR=/home/aureliemanier-avocat/data/media ADMIN_DIR=/home/aureliemanier-avocat/api/admin
+   PUBLIC_URL=https://api.aureliemanier-avocat.fr CORS_ORIGINS=https://aureliemanier-avocat.fr`.
 2. Alwaysdata, **Profile > Tokens**: create an API token.
 3. GitHub, environment `prod`: add variables `ALWAYSDATA_API_PATH=/home/aureliemanier-avocat/api/` and
    `ALWAYSDATA_API_SITE_ID=<id of the Node.js site>`, and secret `ALWAYSDATA_API_TOKEN`.
-4. After the first deploy, create Aurélie's account over SSH:
+4. After the first deploy, the backoffice is at https://api.aureliemanier-avocat.fr/admin/. Create Aurélie's account
+   over SSH:
    `cd ~/api && DATABASE_PATH=~/data/amavocat.sqlite npm run user:create -- --email ... --name "Aurélie Manier"`.

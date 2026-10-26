@@ -75,4 +75,9 @@ describe('auth', () => {
     const allowed = await login(credentials, { origin: ADMIN_ORIGIN });
     expect(allowed.statusCode).toBe(200);
   });
+
+  it('accepts requests from its own origin (admin app served by the API)', async () => {
+    const res = await login(credentials, { origin: 'https://api.example', host: 'api.example' });
+    expect(res.statusCode).toBe(200);
+  });
 });

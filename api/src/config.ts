@@ -11,6 +11,8 @@ const configSchema = z.object({
   PORT: z.coerce.number().int().positive().default(3000),
   DATABASE_PATH: z.string().default('./data/amavocat.sqlite'),
   MEDIA_DIR: z.string().default('./data/media'),
+  // Built admin app (ng build admin), served under /admin/
+  ADMIN_DIR: z.string().default('../dist/admin/browser'),
   // Public origin of the API, used to build absolute URLs of uploaded images
   PUBLIC_URL: z.url().default('http://localhost:3000'),
   CORS_ORIGINS: z
@@ -27,6 +29,7 @@ export type Config = {
   port: number;
   databasePath: string;
   mediaDir: string;
+  adminDir: string;
   publicUrl: string;
   corsOrigins: string[];
   cookieSecure: boolean;
@@ -41,6 +44,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     port: parsed.PORT,
     databasePath: parsed.DATABASE_PATH,
     mediaDir: parsed.MEDIA_DIR,
+    adminDir: parsed.ADMIN_DIR,
     publicUrl: parsed.PUBLIC_URL.replace(/\/+$/, ''),
     corsOrigins: parsed.CORS_ORIGINS,
     cookieSecure: parsed.COOKIE_SECURE,

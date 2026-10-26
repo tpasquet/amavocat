@@ -3,8 +3,8 @@ name: Deploy to Alwaysdata
 on:
   push:
     branches: [main]
-    # The API has its own workflow (api.yml)
-    paths-ignore: ['api/**', '.github/workflows/api.yml']
+    # The API and the admin app have their own workflow (api.yml)
+    paths-ignore: ['api/**', 'projects/admin/**', '.github/workflows/api.yml']
   workflow_dispatch:
 
 concurrency:
