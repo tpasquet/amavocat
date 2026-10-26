@@ -6,7 +6,6 @@ import { BurgerMenuComponent } from '../components/burger-menu/burger-menu.compo
 import { LayoutComponent } from '../components/layout/layout.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { RoutingModule } from '../routing/routing.module';
-import { IconologoComponent } from '../components/iconologo/iconologo.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
@@ -18,7 +17,6 @@ import { LanguageSelectorComponent } from '../components/language-selector/langu
     NavbarComponent,
     LayoutComponent,
     BurgerMenuComponent,
-    IconologoComponent,
     FooterComponent,
     BreadcrumbComponent,
     LanguageSelectorComponent

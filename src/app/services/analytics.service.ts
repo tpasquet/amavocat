@@ -24,7 +24,6 @@ export class AnalyticsService {
 
   private initialize(): void {
     if (!environment.umami.enabled) {
-      console.log('Analytics disabled in this environment');
       return;
     }
 
@@ -54,8 +53,6 @@ export class AnalyticsService {
 
     document.head.appendChild(script);
     this.scriptLoaded = true;
-
-    console.log('Umami Analytics loaded');
   }
 
   // Track une page vue
