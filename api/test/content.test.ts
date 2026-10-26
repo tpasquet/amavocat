@@ -48,7 +48,7 @@ describe('content entries', () => {
       publishAt: null,
       locale: 'fr',
     });
-    expect(ctx.events).toEqual([{ type: 'article', action: 'created', id: res.json().entry.id }]);
+    expect(ctx.events).toEqual([{ type: 'article', action: 'created', id: res.json().entry.id, affectsPublicSite: false }]);
   });
 
   it('validates fields against the content type', async () => {
@@ -134,6 +134,17 @@ describe('content entries', () => {
     const missing = await api('GET', `/api/admin/entries/article/${created.id}`);
     expect(missing.statusCode).toBe(404);
     expect(ctx.events.map((e) => e.action)).toEqual(['created', 'updated', 'deleted']);
+  });
+
+  it('flags the changes that alter the public site', async () => {
+    const past = new Date(Date.now() - hour).toISOString();
+    const future = new Date(Date.now() + hour).toISOString();
+    const draft = (await api('POST', '/api/admin/entries/article', article({ slug: 'a' }))).json().entry;
+    await api('PUT', `/api/admin/entries/article/${draft.id}`, { publishAt: future, data: draft.data });
+    await api('PUT', `/api/admin/entries/article/${draft.id}`, { publishAt: past, data: draft.data });
+    await api('PUT', `/api/admin/entries/article/${draft.id}`, { publishAt: null, data: draft.data });
+    await api('DELETE', `/api/admin/entries/article/${draft.id}`);
+    expect(ctx.events.map((e) => e.affectsPublicSite)).toEqual([false, false, true, true, false]);
   });
 
   it('returns 404 for an unknown content type', async () => {

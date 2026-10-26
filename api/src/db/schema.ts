@@ -57,3 +57,10 @@ export const entries = sqliteTable(
 );
 
 export type Entry = typeof entries.$inferSelect;
+
+/** Small key/value store for server state (e.g. when the last site rebuild was requested) */
+export const settings = sqliteTable('settings', {
+  key: text('key').primaryKey(),
+  value: text('value').notNull(),
+  updatedAt: integer('updated_at', { mode: 'timestamp_ms' }).notNull(),
+});

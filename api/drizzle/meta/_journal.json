@@ -15,6 +15,13 @@
       "when": 1792976586334,
       "tag": "0001_entries",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1792978148380,
+      "tag": "0002_settings",
+      "breakpoints": true
     }
   ]
 }
