@@ -1,0 +1,129 @@
+@if (loadError()) {
+  <div class="alert" role="alert">Cet élément est introuvable ou n'a pas pu être chargé.</div>
+  <a [routerLink]="['/content', type()]">Retour à la liste</a>
+} @else if (form && contentType()) {
+  @let ct = contentType()!;
+  <a class="back" [routerLink]="['/content', ct.name]">← {{ ct.label.plural }}</a>
+
+  <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+    <div class="header">
+      <h1>{{ isNew() ? 'Nouvel élément' : 'Modifier' }} <span class="type">{{ ct.label.singular }}</span></h1>
+      @if (entry(); as e) {
+        @if (ct.schedulable) {
+          <app-status-badge [entry]="e" />
+        }
+      }
+    </div>
+
+    @if (message(); as m) {
+      <div class="alert" [class.alert-success]="m.kind === 'success'" role="status">{{ m.text }}</div>
+    }
+
+    <div class="layout">
+      <div class="main card" formGroupName="data">
+        @for (field of ct.fields; track field.key) {
+          <div class="form-field">
+            @switch (field.kind) {
+              @case ('text') {
+                <label [for]="fieldId(field)">{{ field.label }}@if (field.required) { <span aria-hidden="true">*</span> }</label>
+                <input type="text" [id]="fieldId(field)" [formControlName]="field.key" [attr.maxlength]="field.max ?? null" />
+              }
+              @case ('longText') {
+                <label [for]="fieldId(field)">{{ field.label }}@if (field.required) { <span aria-hidden="true">*</span> }</label>
+                <textarea [id]="fieldId(field)" [formControlName]="field.key" [attr.maxlength]="field.max ?? null"></textarea>
+              }
+              @case ('richText') {
+                <span class="label" [id]="fieldId(field) + '-label'">{{ field.label }}@if (field.required) { <span aria-hidden="true">*</span> }</span>
+                <app-rich-text-editor [inputId]="fieldId(field)" [formControlName]="field.key" />
+              }
+              @case ('tags') {
+                <label [for]="fieldId(field)">{{ field.label }}</label>
+                <app-tags-input [inputId]="fieldId(field)" [formControlName]="field.key" />
+              }
+              @case ('image') {
+                <span class="label">{{ field.label }}</span>
+                <app-image-field [inputId]="fieldId(field)" [formControlName]="field.key" />
+              }
+              @case ('boolean') {
+                <label class="checkbox"><input type="checkbox" [formControlName]="field.key" /> {{ field.label }}</label>
+              }
+            }
+            @if (field.help) {
+              <span class="help">{{ field.help }}</span>
+            }
+            @if (field.max && (field.kind === 'text' || field.kind === 'longText')) {
+              <span class="help counter">{{ length(field.key) }} / {{ field.max }}</span>
+            }
+            @if (control(field.key).invalid && control(field.key).touched) {
+              <span class="error">Ce champ est obligatoire ou trop long.</span>
+            }
+          </div>
+        }
+      </div>
+
+      <aside class="side">
+        <div class="card">
+          @if (ct.schedulable) {
+            <fieldset class="form-field">
+              <legend class="label">Publication</legend>
+              <label class="radio"><input type="radio" formControlName="publishMode" value="draft" /> Brouillon (non visible)</label>
+              <label class="radio"><input type="radio" formControlName="publishMode" value="now" /> Publié</label>
+              <label class="radio"><input type="radio" formControlName="publishMode" value="schedule" /> Programmé le…</label>
+              @if (form.controls.publishMode.value === 'schedule') {
+                <input type="datetime-local" formControlName="publishAt" aria-label="Date et heure de publication" />
+                <span class="help">Le site est mis à jour automatiquement à cette date (dans les 20 minutes).</span>
+              }
+            </fieldset>
+          }
+
+          @if (ct.localized) {
+            <div class="form-field">
+              <label for="locale">Langue</label>
+              @if (isNew() && !translationOf()) {
+                <select id="locale" formControlName="locale">
+                  <option value="fr">Français</option>
+                  <option value="en">Anglais</option>
+                </select>
+              } @else {
+                <span id="locale">{{ localeLabels[form.controls.locale.value] }}</span>
+              }
+            </div>
+          }
+
+          <div class="form-field">
+            <label for="slug">Adresse de la page (slug)</label>
+            <input type="text" id="slug" formControlName="slug" placeholder="générée depuis le titre" />
+            <span class="help">Lettres minuscules, chiffres et tirets. Évitez de la changer une fois publiée.</span>
+            @if (form.controls.slug.invalid) {
+              <span class="error">Utilisez uniquement des minuscules sans accents, des chiffres et des tirets.</span>
+            }
+          </div>
+
+          <button class="btn save" type="submit" [disabled]="saving()">{{ saving() ? 'Enregistrement…' : 'Enregistrer' }}</button>
+        </div>
+
+        @if (ct.localized && entry()) {
+          <div class="card">
+            <h2>Traductions</h2>
+            <ul>
+              @for (t of translations(); track t.id) {
+                <li><a [routerLink]="['/content', ct.name, t.id]">Version {{ localeLabels[t.locale!] }}</a></li>
+              }
+            </ul>
+            @for (l of missingLocales(); track l) {
+              <a class="btn btn-secondary btn-small" [routerLink]="['/content', ct.name, 'new']" [queryParams]="{ translationOf: entry()!.id, locale: l }">
+                Créer la version {{ localeLabels[l] }}
+              </a>
+            }
+          </div>
+        }
+
+        @if (entry()) {
+          <button class="btn btn-danger delete" type="button" (click)="remove()">Supprimer</button>
+        }
+      </aside>
+    </div>
+  </form>
+} @else {
+  <p>Chargement…</p>
+}

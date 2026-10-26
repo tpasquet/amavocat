@@ -9,6 +9,7 @@ import { contentRoutes, type EntriesChangedEvent } from './content/routes.js';
 import { ContentTypeRegistry } from './content/registry.js';
 import { contentTypes } from './content/types/index.js';
 import { mediaRoutes } from './media/routes.js';
+import { adminRoutes } from './admin/routes.js';
 
 export async function buildApp(opts: {
   config: Config;
@@ -35,7 +36,7 @@ export async function buildApp(opts: {
       return;
     }
     const origin = request.headers.origin;
-    if (origin && !config.corsOrigins.includes(origin)) {
+    if (origin && !config.corsOrigins.includes(origin) && !isSameOrigin(origin, request.host)) {
       await reply.code(403).send({ error: 'forbidden_origin' });
     }
   });
@@ -47,8 +48,18 @@ export async function buildApp(opts: {
     onEntriesChanged: opts.onEntriesChanged,
   });
   await app.register(mediaRoutes, { config });
+  await app.register(adminRoutes, { config });
 
   app.get('/api/health', async () => ({ status: 'ok' }));
 
   return app;
+}
+
+// The admin app is served by the API itself, so its requests carry the API's own origin
+function isSameOrigin(origin: string, host: string): boolean {
+  try {
+    return new URL(origin).host === host;
+  } catch {
+    return false;
+  }
 }

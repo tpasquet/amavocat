@@ -1,0 +1,26 @@
+.login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+button {
+  width: 100%;
+  justify-content: center;
+}

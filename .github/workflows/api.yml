@@ -2,10 +2,10 @@ name: API
 
 on:
   pull_request:
-    paths: ['api/**', '.github/workflows/api.yml']
+    paths: ['api/**', 'projects/admin/**', 'angular.json', '.github/workflows/api.yml']
   push:
     branches: [main]
-    paths: ['api/**', '.github/workflows/api.yml']
+    paths: ['api/**', 'projects/admin/**', 'angular.json', '.github/workflows/api.yml']
   workflow_dispatch:
 
 concurrency:
@@ -33,11 +33,31 @@ jobs:
       - run: npm test
       - run: npm run build
 
+  admin:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build:admin
+
   deploy:
-    needs: test
+    needs: [test, admin]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: prod
+    defaults:
+      run:
+        # The first step runs before checkout, when api/ does not exist yet
+        working-directory: .
     env:
       SSH_HOST: ${{ vars.ALWAYSDATA_HOST }}
       SSH_USER: ${{ vars.ALWAYSDATA_USER }}
@@ -69,10 +89,19 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: api/package-lock.json
+          cache-dependency-path: |
+            package-lock.json
+            api/package-lock.json
 
-      - if: steps.settings.outputs.ready == 'true'
-        run: npm ci && npm run build
+      - name: Build the API and the admin app
+        if: steps.settings.outputs.ready == 'true'
+        run: |
+          (cd api && npm ci && npm run build)
+          npm ci && npm run build:admin
+          # Everything the server needs, laid out as on Alwaysdata
+          mkdir -p deploy
+          cp -r api/dist api/drizzle api/package.json api/package-lock.json deploy/
+          cp -r dist/admin/browser deploy/admin
 
       - name: Set up SSH key
         if: steps.settings.outputs.ready == 'true'
@@ -84,14 +113,14 @@ jobs:
           chmod 600 ~/.ssh/id_deploy
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Upload API and install production dependencies
+      - name: Upload API + admin and install production dependencies
         if: steps.settings.outputs.ready == 'true'
         run: |
           # The database and .env live outside the uploaded files and are never deleted
           rsync -az --delete \
             --exclude node_modules --exclude .env --exclude data \
             -e "ssh -i ~/.ssh/id_deploy" \
-            dist drizzle package.json package-lock.json \
+            deploy/ \
             "$SSH_USER@$SSH_HOST:${API_PATH%/}/"
           ssh -i ~/.ssh/id_deploy "$SSH_USER@$SSH_HOST" "cd '${API_PATH%/}' && npm ci --omit=dev"
 

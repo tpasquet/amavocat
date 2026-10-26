@@ -1,0 +1,16 @@
+<header class="topbar">
+  <a class="brand" routerLink="/">Backoffice <span>Aurélie Manier</span></a>
+  <nav aria-label="Contenus">
+    @for (type of contentTypes(); track type.name) {
+      <a [routerLink]="['/content', type.name]" routerLinkActive="active">{{ type.label.plural }}</a>
+    }
+  </nav>
+  <div class="account">
+    <span class="user">{{ auth.user()?.displayName }}</span>
+    <button class="btn btn-secondary btn-small" type="button" (click)="logout()">Se déconnecter</button>
+  </div>
+</header>
+
+<main class="content">
+  <router-outlet />
+</main>

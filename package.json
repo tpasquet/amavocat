@@ -11,7 +11,9 @@
     "build:ssr": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadless"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
+    "start:admin": "ng serve admin",
+    "build:admin": "ng build admin"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,10 @@
     "@angular/router": "^19.2.15",
     "@angular/ssr": "^19.2.19",
     "@ngx-translate/core": "^17.0.0",
+    "@tiptap/core": "^3.32.0",
+    "@tiptap/extension-image": "^3.32.0",
+    "@tiptap/pm": "^3.32.0",
+    "@tiptap/starter-kit": "^3.32.0",
     "bootstrap-icons": "^1.10.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

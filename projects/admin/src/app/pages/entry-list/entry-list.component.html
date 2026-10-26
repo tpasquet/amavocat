@@ -1,0 +1,74 @@
+@if (contentType(); as ct) {
+  <div class="header">
+    <h1>{{ ct.label.plural }}</h1>
+    <a class="btn" [routerLink]="['/content', ct.name, 'new']">Nouvel élément</a>
+  </div>
+
+  <div class="filters">
+    @if (ct.localized) {
+      <label>
+        Langue
+        <select [value]="locale()" (change)="locale.set($any($event.target).value)">
+          <option value="">Toutes</option>
+          <option value="fr">Français</option>
+          <option value="en">Anglais</option>
+        </select>
+      </label>
+    }
+    @if (ct.schedulable) {
+      <label>
+        Statut
+        <select [value]="status()" (change)="status.set($any($event.target).value)">
+          <option value="">Tous</option>
+          <option value="draft">Brouillons</option>
+          <option value="scheduled">Programmés</option>
+          <option value="published">Publiés</option>
+        </select>
+      </label>
+    }
+  </div>
+
+  @if (error()) {
+    <div class="alert" role="alert">Impossible de charger la liste. Réessayez dans un instant.</div>
+  } @else if (loading()) {
+    <p class="muted">Chargement…</p>
+  } @else if (entries().length === 0) {
+    <div class="card empty">
+      <p>Aucun élément pour l'instant.</p>
+      <a class="btn" [routerLink]="['/content', ct.name, 'new']">Créer le premier</a>
+    </div>
+  } @else {
+    <table class="card">
+      <thead>
+        <tr>
+          <th scope="col">Titre</th>
+          @if (ct.localized) {
+            <th scope="col">Langue</th>
+          }
+          @if (ct.schedulable) {
+            <th scope="col">Statut</th>
+          }
+          <th scope="col">Modifié le</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (entry of entries(); track entry.id) {
+          <tr>
+            <td>
+              <a [routerLink]="['/content', ct.name, entry.id]">{{ title(entry) }}</a>
+            </td>
+            @if (ct.localized) {
+              <td class="locale">{{ entry.locale }}</td>
+            }
+            @if (ct.schedulable) {
+              <td><app-status-badge [entry]="entry" /></td>
+            }
+            <td>{{ entry.updatedAt | date: 'd MMM y, HH:mm' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+} @else {
+  <p class="muted">Chargement…</p>
+}
