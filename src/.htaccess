@@ -1,0 +1,16 @@
+# Apache (Alwaysdata) : servir les pages prérendues sans redirection vers une URL avec slash final,
+# et l'application côté client pour les autres URL.
+DirectoryIndex index.html
+DirectorySlash Off
+
+RewriteEngine On
+
+# /fr/contact -> /fr/contact/index.html (page prérendue)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Toute autre URL inconnue : application rendue côté client (elle redirige vers la bonne langue)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.csr.html [L]
