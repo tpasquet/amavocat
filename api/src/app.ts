@@ -5,8 +5,17 @@ import rateLimit from '@fastify/rate-limit';
 import type { Config } from './config.js';
 import type { Db } from './db/client.js';
 import { authPlugin } from './auth/plugin.js';
+import { contentRoutes, type EntriesChangedEvent } from './content/routes.js';
+import { ContentTypeRegistry } from './content/registry.js';
+import { contentTypes } from './content/types/index.js';
+import { mediaRoutes } from './media/routes.js';
 
-export async function buildApp(opts: { config: Config; db: Db }) {
+export async function buildApp(opts: {
+  config: Config;
+  db: Db;
+  registry?: ContentTypeRegistry;
+  onEntriesChanged?: (event: EntriesChangedEvent) => void;
+}) {
   const { config, db } = opts;
 
   const app = Fastify({
@@ -32,6 +41,12 @@ export async function buildApp(opts: { config: Config; db: Db }) {
   });
 
   await app.register(authPlugin, { db, config });
+  await app.register(contentRoutes, {
+    db,
+    registry: opts.registry ?? new ContentTypeRegistry(contentTypes),
+    onEntriesChanged: opts.onEntriesChanged,
+  });
+  await app.register(mediaRoutes, { config });
 
   app.get('/api/health', async () => ({ status: 'ok' }));
 
