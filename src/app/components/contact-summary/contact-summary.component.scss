@@ -36,29 +36,41 @@
         gap: 1rem;
         padding: 1rem;
         background-color: $light;
+        border-left: 4px solid transparent;
         border-radius: 0;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background-color: color.adjust($light, $lightness: -3%);
-        }
+        transition: background-color 0.3s ease, border-color 0.3s ease;
 
         i {
             font-size: 1.5rem;
             flex-shrink: 0;
         }
+    }
 
-        a {
-            color: #333;
+    .phone-container,
+    .email-container {
+        color: $primary;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            background-color: color.adjust($light, $lightness: -3%);
+            border-left-color: $primary;
+            color: $primary;
             text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-            word-break: break-all;
-
-            &:hover {
-                color: $primary;
-            }
         }
+
+        .contact-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+    }
+
+    .directions-link {
+        display: inline-block;
+        margin-top: 0.35rem;
+        font-weight: 600;
+        color: $primary;
     }
 }
 
@@ -91,8 +103,12 @@
                 font-size: 1.1rem;
             }
 
-            a, strong, p {
+            strong, p, .directions-link {
                 font-size: 0.85rem;
+            }
+
+            .contact-value {
+                font-size: 1rem;
             }
         }
     }

@@ -77,13 +77,15 @@
       "submitting": "Envoi en cours...",
       "success": "✓ Votre message a été envoyé avec succès !"
     },
-    "mapTitle": "Plan d'accès au cabinet, 90 rue Servient, 69003 Lyon"
+    "mapTitle": "Plan d'accès au cabinet, 90 rue Servient, 69003 Lyon",
+    "address": "Adresse",
+    "directions": "Itinéraire"
   },
   "domains": {
     "title": "Domaines d'expertise",
     "subtitle": "Les spécialités de Maître Aurélie MANIER",
     "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce principalement dans le domaine du <strong>Droit du travail</strong>, du <strong>Droit de la Sécurité sociale</strong> et du <strong>Dommage corporel</strong>. Elle intervient dans diverses situations spécifiques détaillées ci-dessous.",
-    "expertiseTitle": "Domaines d'expertise",
+    "expertiseTitle": "Situations traitées",
     "expertiseItems": {
       "litigation": "<strong>Litiges</strong> dans le cadre d'une relation de travail ou d'un licenciement",
       "safety": "<strong>Respect de l'obligation de sécurité</strong> au travail",

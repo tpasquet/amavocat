@@ -2,8 +2,7 @@
 @import '../../../styles/variables';
 
 .breadcrumb-container {
-  padding: 1rem 0;
-  margin-bottom: 1.5rem;
+  padding: 0.25rem 0;
 }
 
 .breadcrumb {
@@ -28,6 +27,9 @@
   }
 
   a {
+    // Keeps the 44px touch target from the accessibility styles but centers the label in it
+    display: inline-flex;
+    align-items: center;
     color: $primary;
     text-decoration: none;
     transition: color 0.2s ease;
