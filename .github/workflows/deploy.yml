@@ -1,4 +1,4 @@
-name: Déploiement Alwaysdata
+name: Deploy to Alwaysdata
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
 
       - run: npm run build:prod
 
-      - name: Configurer la clé SSH
+      - name: Set up SSH key
         env:
           SSH_KEY: ${{ secrets.ALWAYSDATA_SSH_KEY }}
           SSH_HOST: ${{ secrets.ALWAYSDATA_HOST }}
@@ -34,7 +34,7 @@ jobs:
           chmod 600 ~/.ssh/id_deploy
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Envoyer le site sur Alwaysdata
+      - name: Upload site to Alwaysdata
         env:
           SSH_HOST: ${{ secrets.ALWAYSDATA_HOST }}
           SSH_USER: ${{ secrets.ALWAYSDATA_USER }}
