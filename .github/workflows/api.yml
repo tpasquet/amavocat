@@ -1,0 +1,105 @@
+name: API
+
+on:
+  pull_request:
+    paths: ['api/**', '.github/workflows/api.yml']
+  push:
+    branches: [main]
+    paths: ['api/**', '.github/workflows/api.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: api-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: api
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  deploy:
+    needs: test
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: prod
+    env:
+      SSH_HOST: ${{ vars.ALWAYSDATA_HOST }}
+      SSH_USER: ${{ vars.ALWAYSDATA_USER }}
+      API_PATH: ${{ vars.ALWAYSDATA_API_PATH }}
+      API_SITE_ID: ${{ vars.ALWAYSDATA_API_SITE_ID }}
+    steps:
+      - name: Check deploy settings
+        id: settings
+        run: |
+          if [ -z "$API_PATH" ] || [ -z "$API_SITE_ID" ]; then
+            echo "::notice::ALWAYSDATA_API_PATH / ALWAYSDATA_API_SITE_ID are not set in the prod environment, skipping the API deploy"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # rsync --delete must only ever touch the API folder: never the home directory or the public site
+          case "${API_PATH%/}" in
+            ""|"."|"~"|"/home"|"/home/$SSH_USER"|"/home/$SSH_USER/www"|"/home/$SSH_USER/www/"*)
+              echo "::error::ALWAYSDATA_API_PATH must be a dedicated folder outside www/, not '$API_PATH'"
+              exit 1
+              ;;
+          esac
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - if: steps.settings.outputs.ready == 'true'
+        uses: actions/checkout@v4
+
+      - if: steps.settings.outputs.ready == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - if: steps.settings.outputs.ready == 'true'
+        run: npm ci && npm run build
+
+      - name: Set up SSH key
+        if: steps.settings.outputs.ready == 'true'
+        env:
+          SSH_KEY: ${{ secrets.ALWAYSDATA_SSH_KEY }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload API and install production dependencies
+        if: steps.settings.outputs.ready == 'true'
+        run: |
+          # The database and .env live outside the uploaded files and are never deleted
+          rsync -az --delete \
+            --exclude node_modules --exclude .env --exclude data \
+            -e "ssh -i ~/.ssh/id_deploy" \
+            dist drizzle package.json package-lock.json \
+            "$SSH_USER@$SSH_HOST:${API_PATH%/}/"
+          ssh -i ~/.ssh/id_deploy "$SSH_USER@$SSH_HOST" "cd '${API_PATH%/}' && npm ci --omit=dev"
+
+      - name: Restart the Node.js site
+        if: steps.settings.outputs.ready == 'true'
+        env:
+          ALWAYSDATA_API_TOKEN: ${{ secrets.ALWAYSDATA_API_TOKEN }}
+        run: |
+          curl --fail-with-body -sS -X POST \
+            -u "$ALWAYSDATA_API_TOKEN account=$SSH_USER:" \
+            "https://api.alwaysdata.com/v1/site/$API_SITE_ID/restart/"
