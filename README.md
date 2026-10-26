@@ -14,6 +14,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Prerendering
+
+`ng build` prerenders the routes listed in `prerender-routes.txt` (one static HTML file per page and language, in `dist/amavocat-app/browser/<lang>/<page>/index.html`) so search engines and social networks get the content and meta tags without running JavaScript. Add a line there when a page is added, along with `src/sitemap.xml`.
+
+`src/.htaccess` (Apache, Alwaysdata) serves these files under URLs without a trailing slash and falls back to `index.csr.html` (the client-side app) for any other URL.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

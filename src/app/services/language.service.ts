@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -22,7 +22,8 @@ export class LanguageService {
     constructor(
         private router: Router,
         private translate: TranslateService,
-        @Inject(DOCUMENT) private document: Document
+        @Inject(DOCUMENT) private document: Document,
+        @Inject(PLATFORM_ID) private platformId: object
     ) {
         this.currentLangSubject = new BehaviorSubject(this.getPreferredLanguage());
         this.currentLang$ = this.currentLangSubject.asObservable();
@@ -62,11 +63,18 @@ export class LanguageService {
     }
 
     private getBrowserLanguage(): string | null {
+        // Node also defines `navigator`: only the visitor's browser language is meaningful
+        if (!isPlatformBrowser(this.platformId)) {
+            return null;
+        }
         // "en-US" -> "en"
-        return typeof navigator === 'undefined' ? null : navigator.language?.slice(0, 2) ?? null;
+        return navigator.language?.slice(0, 2) ?? null;
     }
 
     private getLanguageFromLocalStorage(): string | null {
+        if (!isPlatformBrowser(this.platformId)) {
+            return null;
+        }
         try {
             return localStorage.getItem(Constants.LOCAL_STORAGE.LANG_KEY);
         } catch {
@@ -75,10 +83,13 @@ export class LanguageService {
     }
 
     private storeLanguage(lang: SupportedLanguages): void {
+        if (!isPlatformBrowser(this.platformId)) {
+            return;
+        }
         try {
             localStorage.setItem(Constants.LOCAL_STORAGE.LANG_KEY, lang);
         } catch {
-            // Storage unavailable (private mode, SSR): the URL still carries the language.
+            // Storage unavailable (private mode): the URL still carries the language.
         }
     }
 }

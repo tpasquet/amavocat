@@ -1,0 +1,10 @@
+/fr
+/en
+/fr/domaines
+/en/domaines
+/fr/contact
+/en/contact
+/fr/mentions-legales
+/en/mentions-legales
+/fr/politique-confidentialite
+/en/politique-confidentialite
