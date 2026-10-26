@@ -31,14 +31,20 @@ const HomeMetaTranslations: PageMetaTranslations = {
     standalone: false
 })
 export class HomeComponent implements OnInit {
+  language: string;
 
-  constructor(private languageService: LanguageService, private metaService: MetaService, private destroyRef: DestroyRef) { }
+  constructor(private languageService: LanguageService, private metaService: MetaService, private destroyRef: DestroyRef) {
+    this.language = this.languageService.getCurrentLang();
+  }
 
   ngOnInit() {
     // Le composant est réutilisé quand seule la langue change (/fr/x -> /en/x) : on suit la langue
     this.languageService.currentLang$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(lang => this.metaService.setPageMeta(HomeMetaTranslations[lang]));
+      .subscribe(lang => {
+        this.language = lang;
+        this.metaService.setPageMeta(HomeMetaTranslations[lang]);
+      });
   }
 
 }

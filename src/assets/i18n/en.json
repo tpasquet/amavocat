@@ -49,6 +49,10 @@
         "fees": "<strong>Fees</strong> discussed in advance and adapted to the client's financial situation",
         "transparent": "<strong>All steps</strong> of the procedure are reviewed with you to avoid bad surprises."
       }
+    },
+    "cta": {
+      "appointment": "Book an appointment",
+      "domains": "See areas of practice"
     }
   },
   "contact": {
@@ -217,5 +221,11 @@
   },
   "breadcrumb": {
     "label": "Breadcrumb"
+  },
+  "cta": {
+    "title": "Need advice?",
+    "text": "A first phone call to review your situation.",
+    "callLabel": "Call 07 69 99 75 60",
+    "email": "Send an email"
   }
 }

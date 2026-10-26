@@ -49,6 +49,10 @@
         "fees": "<strong>Honoraires</strong> discutés en amont et adaptés à la situation financière du client",
         "transparent": "<strong>Toutes les étapes</strong> de la procédure sont vues avec vous pour éviter les mauvaises surprises."
       }
+    },
+    "cta": {
+      "appointment": "Prendre rendez-vous",
+      "domains": "Voir les domaines"
     }
   },
   "contact": {
@@ -217,5 +221,11 @@
   },
   "breadcrumb": {
     "label": "Fil d'Ariane"
+  },
+  "cta": {
+    "title": "Besoin d'un conseil ?",
+    "text": "Premier échange par téléphone pour faire le point sur votre situation.",
+    "callLabel": "Appeler le 07 69 99 75 60",
+    "email": "Écrire un e-mail"
   }
 }

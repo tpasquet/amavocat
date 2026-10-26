@@ -113,3 +113,49 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 800px;
     }
 }
+// Call-to-action buttons (home hero, contact block)
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    border: 2px solid $primary;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+}
+
+.cta-button--primary {
+    background-color: $primary;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        background-color: $dark;
+        border-color: $dark;
+        color: #fff;
+    }
+}
+
+.cta-button--outline {
+    background-color: transparent;
+    color: $primary;
+
+    &:hover,
+    &:focus {
+        background-color: $light;
+        color: $primary;
+    }
+}
