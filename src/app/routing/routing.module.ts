@@ -22,8 +22,10 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
+        // Ancienne URL de l'accueil : redirigée pour éviter un doublon de /:lang
         path: 'accueil',
-        component: HomeComponent
+        redirectTo: '',
+        pathMatch: 'full'
       },
       {
         path: 'domaines',

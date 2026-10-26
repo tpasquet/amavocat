@@ -1,3 +1,4 @@
+import { environment } from "../environments/environment";
 import { SupportedLanguages } from "./enum";
 
 export const Constants = {
@@ -6,5 +7,5 @@ export const Constants = {
     LOCAL_STORAGE: {
         LANG_KEY: 'lang'
     },
-    HOSTNAME: 'https://aureliemanier-avocat.fr',
+    HOSTNAME: environment.hostname,
 }
