@@ -1,0 +1,13 @@
+<article class="article-card">
+    <img *ngIf="article.image" class="article-card-image" [src]="article.image.url" [alt]="article.image.alt" loading="lazy">
+    <div class="article-card-body">
+        <p class="article-card-date"><time [attr.datetime]="article.publishedAt">{{ date }}</time></p>
+        <h2 class="article-card-title">
+            <a [routerLink]="['/', lang, 'articles', article.slug]">{{ article.title }}</a>
+        </h2>
+        <p *ngIf="article.description" class="article-card-description">{{ article.description }}</p>
+        <ul *ngIf="article.tags.length" class="article-tags" [attr.aria-label]="'articles.tags' | translate">
+            <li *ngFor="let tag of article.tags">{{ tag }}</li>
+        </ul>
+    </div>
+</article>

@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BurgerMenuComponent } from '../components/burger-menu/burger-menu.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
-import { RoutingModule } from '../routing/routing.module';
+import { RouterModule } from '@angular/router';
 import { FooterComponent } from '../components/footer/footer.component';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
@@ -25,7 +25,8 @@ import { ContactCtaComponent } from '../components/contact-cta/contact-cta.compo
   ],
   imports: [
     CommonModule,
-    RoutingModule,
+    // RouterModule, not RoutingModule: lazy modules import LayoutModule and must not re-register the routes
+    RouterModule,
     FormsModule,
     TranslateModule
   ],

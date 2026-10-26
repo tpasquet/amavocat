@@ -1,5 +1,0 @@
-<div class="posts-container">
-    <ng-container *ngFor="let post of (posts$ |async)">
-        <app-post-card [post]="post" (readPostClicked)="goToPost($event)"></app-post-card>
-    </ng-container>
-</div>

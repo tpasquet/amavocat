@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/language.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
+import articlesMeta from '../../../../generated/articles-meta.json';
+import { SupportedLanguages } from 'src/app/global/enum';
 
 @Component({
     selector: 'app-navbar',
@@ -19,6 +21,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   showMobileNavbar = true;
   isScrollingUp = false;
   private lastScrollTop = 0;
+  /** Published articles per language, counted when the site was built */
+  private readonly articleCounts: Record<string, number> = articlesMeta;
   private languageSubscription?: Subscription;
 
   constructor(
@@ -40,6 +44,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
           this.isMobile = false;
         }
       });
+  }
+
+  /** The Articles link only appears once articles are published in the current language */
+  get hasArticles(): boolean {
+    return (this.articleCounts[this.language as SupportedLanguages] ?? 0) > 0;
   }
 
   ngOnInit() {

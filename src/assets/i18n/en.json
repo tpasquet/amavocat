@@ -4,7 +4,8 @@
     "domains": "Areas of Practice",
     "contact": "Contact",
     "title": "Aurélie Manier",
-    "subtitle": "Social Law and Personal Injury Attorney in Lyon"
+    "subtitle": "Social Law and Personal Injury Attorney in Lyon",
+    "articles": "Articles"
   },
   "home": {
     "title": "Aurélie Manier, social law and personal injury lawyer in Lyon",
@@ -229,5 +230,12 @@
     "text": "A first phone call to review your situation.",
     "callLabel": "Call 07 69 99 75 60",
     "email": "Send an email"
+  },
+  "articles": {
+    "title": "Articles",
+    "intro": "Insights and news on employment law, social security law and personal injury.",
+    "empty": "No articles published yet.",
+    "tags": "Topics",
+    "back": "All articles"
   }
 }

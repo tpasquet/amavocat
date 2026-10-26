@@ -1,0 +1,28 @@
+<div class="page-container container-fluid" *ngIf="article">
+    <main class="main-layout" id="main-content">
+        <div class="content-wrapper">
+            <article class="bloc article">
+                <header class="article-header">
+                    <p class="article-meta">
+                        <time [attr.datetime]="article.publishedAt">{{ date }}</time>
+                    </p>
+                    <h1>{{ article.title }}</h1>
+                    <p *ngIf="article.subtitle" class="article-subtitle">{{ article.subtitle }}</p>
+                    <ul *ngIf="article.tags.length" class="article-tags" [attr.aria-label]="'articles.tags' | translate">
+                        <li *ngFor="let tag of article.tags">{{ tag }}</li>
+                    </ul>
+                </header>
+
+                <img *ngIf="article.image" class="article-image" [src]="article.image.url" [alt]="article.image.alt">
+
+                <div class="article-body" [innerHTML]="article.body"></div>
+
+                <p class="article-back">
+                    <a [routerLink]="['/', lang, 'articles']">← {{ 'articles.back' | translate }}</a>
+                </p>
+            </article>
+
+            <app-contact-cta></app-contact-cta>
+        </div>
+    </main>
+</div>

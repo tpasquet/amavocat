@@ -9,8 +9,6 @@ import { DomainsComponent } from '../pages/domains/domains.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { LegalComponent } from '../pages/legal/legal.component';
 import { PrivacyComponent } from '../pages/privacy/privacy.component';
-// import { PostDetailsComponent } from '../pages/post-details/post-details.component';
-// import { PostsComponent } from '../pages/posts/posts.component';
 
 const routes: Routes = [
   {
@@ -43,16 +41,11 @@ const routes: Routes = [
         path: 'politique-confidentialite',
         component: PrivacyComponent
       },
-      // {
-      //   path: 'posts',
-      //   component: PostsComponent,
-      //   children: [
-      //     {
-      //       path: 'posts/:id',
-      //       component: PostDetailsComponent
-      //     },
-      //   ]
-      // },
+      {
+        // Lazy: the chunk embeds every published article (generated/articles.json)
+        path: 'articles',
+        loadChildren: () => import('../pages/articles/articles.module').then(m => m.ArticlesModule)
+      },
     ]
   },
   {

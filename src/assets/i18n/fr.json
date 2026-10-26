@@ -4,7 +4,8 @@
     "domains": "Domaines",
     "contact": "Contact",
     "title": "Aurélie Manier",
-    "subtitle": "Avocate en Droit Social et Dommage corporel à Lyon"
+    "subtitle": "Avocate en Droit Social et Dommage corporel à Lyon",
+    "articles": "Articles"
   },
   "home": {
     "title": "Maître Aurélie Manier, avocate en droit social et dommage corporel à Lyon",
@@ -229,5 +230,12 @@
     "text": "Premier échange par téléphone pour faire le point sur votre situation.",
     "callLabel": "Appeler le 07 69 99 75 60",
     "email": "Écrire un e-mail"
+  },
+  "articles": {
+    "title": "Articles",
+    "intro": "Décryptages et actualités en droit du travail, droit de la sécurité sociale et dommage corporel.",
+    "empty": "Aucun article publié pour l'instant.",
+    "tags": "Thèmes",
+    "back": "Tous les articles"
   }
 }

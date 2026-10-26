@@ -46,3 +46,6 @@ nul
 *.tmp
 *.temp
 *~
+
+# Content fetched from the backoffice API at build time (scripts/fetch-content.mts)
+/generated

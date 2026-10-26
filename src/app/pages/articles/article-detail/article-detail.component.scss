@@ -1,0 +1,88 @@
+@import "./../../../../styles/variables";
+
+.article-header h1 {
+    color: $primary;
+    margin-bottom: 0.5rem;
+}
+
+.article-meta {
+    margin: 0 0 0.5rem;
+    color: #5b6878;
+    font-size: 0.95rem;
+}
+
+.article-subtitle {
+    font-size: 1.2rem;
+    color: $dark;
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 0 1.5rem;
+
+    li {
+        padding: 0.15rem 0.6rem;
+        font-size: 0.85rem;
+        background-color: $light;
+        color: $dark;
+    }
+}
+
+.article-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+// Content written in the backoffice editor
+.article-body {
+    ::ng-deep {
+        h2,
+        h3,
+        h4 {
+            margin-top: 2rem;
+            color: $dark;
+        }
+
+        p,
+        li {
+            line-height: 1.7;
+        }
+
+        a {
+            color: $primary;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid $secondary;
+            color: #3c4a5a;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.article-back {
+    margin-top: 2rem;
+
+    a {
+        color: $primary;
+    }
+}
