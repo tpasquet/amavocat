@@ -4,6 +4,10 @@
             <h1 class="sr-only">{{ 'home.title' | translate }}</h1>
             <section class="bloc">
                 <p class="intro-text" [innerHTML]="'home.intro' | translate"></p>
+                <div class="hero-actions">
+                    <a class="cta-button cta-button--primary" [routerLink]="['/', language, 'contact']">{{ 'home.cta.appointment' | translate }}</a>
+                    <a class="cta-button cta-button--outline" [routerLink]="['/', language, 'domaines']">{{ 'home.cta.domains' | translate }}</a>
+                </div>
                 <img class="img-fluid profile-image mobile-only" 
                     src="../../../assets/img/profile-picture-home.jpg"
                     srcset="../../../assets/img/profile-picture-home-350w.jpg 350w,
@@ -64,6 +68,8 @@
                     <li [innerHTML]="'home.values.items.transparent' | translate"></li>
                 </ul>
             </section>
+
+            <app-contact-cta></app-contact-cta>
         </div>
 
     </main>

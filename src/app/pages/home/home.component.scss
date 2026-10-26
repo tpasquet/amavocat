@@ -31,6 +31,13 @@
     }
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
 .profile-image {
     width: 100%;
     height: auto;

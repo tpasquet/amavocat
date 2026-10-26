@@ -9,6 +9,7 @@ import { RoutingModule } from '../routing/routing.module';
 import { FooterComponent } from '../components/footer/footer.component';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
+import { ContactCtaComponent } from '../components/contact-cta/contact-cta.component';
 
 
 
@@ -19,7 +20,8 @@ import { LanguageSelectorComponent } from '../components/language-selector/langu
     BurgerMenuComponent,
     FooterComponent,
     BreadcrumbComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    ContactCtaComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { LanguageSelectorComponent } from '../components/language-selector/langu
   ],
   exports: [
     LayoutComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    ContactCtaComponent
   ]
 })
 export class LayoutModule { }
