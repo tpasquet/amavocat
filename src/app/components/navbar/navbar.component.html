@@ -6,9 +6,9 @@
             <div class="navbar-subtitle">{{ 'navbar.subtitle' | translate }}</div>
         </a>
         <ul class="navbar-links">
-            <li><a class="custom-link" [routerLink]="['/', language]">{{ 'navbar.home' | translate }}</a></li>
-            <li><a class="custom-link" [routerLink]="['/', language, 'domaines']">{{ 'navbar.domains' | translate }}</a></li>
-            <li><a class="custom-link" [routerLink]="['/', language, 'contact']">{{ 'navbar.contact' | translate }}</a></li>
+            <li><a class="custom-link" [routerLink]="['/', language]" routerLinkActive="is-active" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{ exact: true }">{{ 'navbar.home' | translate }}</a></li>
+            <li><a class="custom-link" [routerLink]="['/', language, 'domaines']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.domains' | translate }}</a></li>
+            <li><a class="custom-link" [routerLink]="['/', language, 'contact']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.contact' | translate }}</a></li>
         </ul>
         <app-language-selector></app-language-selector>
     </div>
@@ -32,16 +32,16 @@
     <div class="menu-mobile" [ngClass]="{'opened': menuOpened}" id="mobile-menu">
         <ul>
             <li>
-                <a class="navbar-link" [routerLink]="['/', language]" (click)="closeMenu()">{{ 'navbar.home' | translate }}</a>
+                <a class="navbar-link" [routerLink]="['/', language]" routerLinkActive="is-active" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'navbar.home' | translate }}</a>
             </li>
             <li>
-                <a class="navbar-link" [routerLink]="['/', language, 'domaines']" (click)="closeMenu()">{{ 'navbar.domains' | translate }}</a>
+                <a class="navbar-link" [routerLink]="['/', language, 'domaines']" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'navbar.domains' | translate }}</a>
             </li>
             <!-- <li>
                 <a class="navbar-link" [routerLink]="['/', language, 'posts']" (click)="closeMenu()">Articles</a> -->
             <!-- </li> -->
             <li>
-                <a class="navbar-link" [routerLink]="['/', language, 'contact']" (click)="closeMenu()">{{ 'navbar.contact' | translate }}</a>
+                <a class="navbar-link" [routerLink]="['/', language, 'contact']" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'navbar.contact' | translate }}</a>
             </li>
             <li class="language-mobile-item">
                 <app-language-selector (languageChanged)="onLanguageChanged($event)"></app-language-selector>

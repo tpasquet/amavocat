@@ -94,7 +94,8 @@
         transition: transform 0.3s;
     }
 
-    &:hover::before {
+    &:hover::before,
+    &.is-active::before {
         transform: scaleX(1);
         transform-origin: left;
     }
@@ -245,6 +246,7 @@
             transition: background 0.3s;
 
             &:hover { background: rgba(255,255,255,0.2); }
+            &.is-active { background: rgba(255,255,255,0.45); }
             &:focus { outline: none; }
             &:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
         }
