@@ -3,17 +3,27 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prestart": "npm run content",
     "start": "ng serve",
+    "prestart:dev": "npm run content",
     "start:dev": "ng serve --configuration dev",
+    "prebuild": "npm run content",
     "build": "ng build",
+    "prebuild:dev": "npm run content",
     "build:dev": "ng build --configuration dev",
+    "prebuild:prod": "npm run content",
     "build:prod": "ng build --configuration production",
+    "prebuild:ssr": "npm run content",
     "build:ssr": "ng build --configuration production",
+    "prewatch": "npm run content",
     "watch": "ng build --watch --configuration development",
+    "pretest": "npm run content",
     "test": "ng test",
+    "pretest:ci": "npm run content",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
     "start:admin": "ng serve admin",
-    "build:admin": "ng build admin"
+    "build:admin": "ng build admin",
+    "content": "node scripts/fetch-content.mts"
   },
   "private": true,
   "dependencies": {

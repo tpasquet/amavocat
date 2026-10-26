@@ -23,6 +23,7 @@ const SEGMENT_LABEL_KEYS: Record<string, string> = {
   'contact': 'navbar.contact',
   'mentions-legales': 'footer.legal',
   'politique-confidentialite': 'footer.privacy',
+  'articles': 'navbar.articles',
 };
 
 const STRUCTURED_DATA_ID = 'breadcrumb-structured-data';
@@ -33,6 +34,9 @@ const STRUCTURED_DATA_ID = 'breadcrumb-structured-data';
 export class BreadcrumbService {
   /** Translated breadcrumbs of the current page, updated on navigation and language change. */
   readonly breadcrumbs$: Observable<BreadcrumbItem[]>;
+
+  /** Labels of pages whose last segment is not a fixed word (an article's slug), set by those pages */
+  private readonly pageLabels = new Map<string, string>();
 
   constructor(
     private router: Router,
@@ -55,6 +59,15 @@ export class BreadcrumbService {
     this.breadcrumbs$.subscribe(breadcrumbs => this.setStructuredData(breadcrumbs));
   }
 
+  /**
+   * Names the page at `url` in the breadcrumb (instead of its URL segment). Call it while the page is
+   * being created, before the navigation ends. The label goes through the translate pipe, which returns
+   * text that is not a translation key unchanged.
+   */
+  setPageLabel(url: string, label: string): void {
+    this.pageLabels.set(url, label);
+  }
+
   private buildBreadcrumbKeys(url: string): BreadcrumbKey[] {
     const [lang, ...segments] = url.split(/[?#]/)[0].split('/').filter(segment => segment);
     if (!isSupportedLanguage(lang)) {
@@ -65,7 +78,7 @@ export class BreadcrumbService {
     const breadcrumbs: BreadcrumbKey[] = [{ labelKey: HOME_LABEL_KEY, url: currentUrl }];
     for (const segment of segments) {
       currentUrl += `/${segment}`;
-      breadcrumbs.push({ labelKey: SEGMENT_LABEL_KEYS[segment] ?? segment, url: currentUrl });
+      breadcrumbs.push({ labelKey: this.pageLabels.get(currentUrl) ?? SEGMENT_LABEL_KEYS[segment] ?? segment, url: currentUrl });
     }
     return breadcrumbs;
   }

@@ -1,0 +1,13 @@
+<div class="page-container container-fluid">
+    <main class="main-layout" id="main-content">
+        <div class="content-wrapper">
+            <section class="bloc">
+                <h1>{{ 'articles.title' | translate }}</h1>
+                <p>{{ 'articles.intro' | translate }}</p>
+
+                <p *ngIf="articles.length === 0" class="articles-empty">{{ 'articles.empty' | translate }}</p>
+                <app-article-card *ngFor="let article of articles; trackBy: trackById" [article]="article" [lang]="lang"></app-article-card>
+            </section>
+        </div>
+    </main>
+</div>

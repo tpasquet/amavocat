@@ -8,6 +8,7 @@
         <ul class="navbar-links">
             <li><a class="custom-link" [routerLink]="['/', language]" routerLinkActive="is-active" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{ exact: true }">{{ 'navbar.home' | translate }}</a></li>
             <li><a class="custom-link" [routerLink]="['/', language, 'domaines']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.domains' | translate }}</a></li>
+            <li *ngIf="hasArticles"><a class="custom-link" [routerLink]="['/', language, 'articles']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.articles' | translate }}</a></li>
             <li><a class="custom-link" [routerLink]="['/', language, 'contact']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.contact' | translate }}</a></li>
         </ul>
         <app-language-selector></app-language-selector>
@@ -37,9 +38,9 @@
             <li>
                 <a class="navbar-link" [routerLink]="['/', language, 'domaines']" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'navbar.domains' | translate }}</a>
             </li>
-            <!-- <li>
-                <a class="navbar-link" [routerLink]="['/', language, 'posts']" (click)="closeMenu()">Articles</a> -->
-            <!-- </li> -->
+            <li *ngIf="hasArticles">
+                <a class="navbar-link" [routerLink]="['/', language, 'articles']" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'navbar.articles' | translate }}</a>
+            </li>
             <li>
                 <a class="navbar-link" [routerLink]="['/', language, 'contact']" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'navbar.contact' | translate }}</a>
             </li>

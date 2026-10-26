@@ -25,7 +25,11 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build:prod
+      - name: Build (with the articles published in the backoffice)
+        env:
+          # Unset: the site is built without articles. Set: the API must answer, or the build fails
+          CONTENT_API_URL: ${{ vars.CONTENT_API_URL }}
+        run: npm run build:prod
 
       - name: Set up SSH key
         env:

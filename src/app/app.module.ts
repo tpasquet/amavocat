@@ -10,15 +10,12 @@ import fr from '../assets/i18n/fr.json';
 import { AppComponent } from './app.component';
 import { ContactSummaryComponent } from './components/contact-summary/contact-summary.component';
 import { MessageFormComponent } from './components/message-form/message-form.component';
-import { PostCardComponent } from './components/post-card/post-card.component';
 import { Constants } from './global/constant';
 import { SupportedLanguages } from './global/enum';
 import { isSupportedLanguage } from './utils/language';
 import { LayoutModule } from './modules/layout.module';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
-import { PostsComponent } from './pages/posts/posts.component';
-import { PostDetailsComponent } from './pages/post-details/post-details.component';
 import { RoutingModule } from './routing/routing.module';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -49,9 +46,6 @@ export class BundledTranslateLoader implements TranslateLoader {
     ContactComponent,
     MessageFormComponent,
     ContactSummaryComponent,
-    PostsComponent,
-    PostCardComponent,
-    PostDetailsComponent,
     DomainsComponent,
     LegalComponent,
     PrivacyComponent,

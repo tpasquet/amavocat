@@ -32,4 +32,18 @@ describe('MetaService', () => {
     expect(href('link[rel="alternate"][hreflang="x-default"]')).toBe(`${Constants.HOSTNAME}/fr/domaines`);
     expect(document.head.querySelector('meta[property="og:locale"]')?.getAttribute('content')).toBe('en_GB');
   });
+
+  it('uses explicit alternates for pages whose path differs by language, and drops missing ones', () => {
+    service.setPageMeta({
+      title: 'Article',
+      description: 'description',
+      ogTitle: 'Article',
+      ogDescription: 'description',
+      canonical: `${Constants.HOSTNAME}/en/articles/divorce`,
+      alternates: { en: `${Constants.HOSTNAME}/en/articles/divorce` }
+    });
+    expect(href('link[rel="alternate"][hreflang="en"]')).toBe(`${Constants.HOSTNAME}/en/articles/divorce`);
+    expect(document.head.querySelector('link[rel="alternate"][hreflang="fr"]')).toBeNull();
+    expect(href('link[rel="alternate"][hreflang="x-default"]')).toBe(`${Constants.HOSTNAME}/en/articles/divorce`);
+  });
 });
