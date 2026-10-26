@@ -10,6 +10,7 @@
 }
 
 .select-trigger {
+    font-family: inherit;
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(39, 76, 119, 0.2);
     padding: 0.4rem 0.8rem;
@@ -29,9 +30,9 @@
         border-color: rgba(39, 76, 119, 0.3);
     }
 
-    &:focus {
-        outline: none;
-        border-color: rgba(39, 76, 119, 0.3);
+    &:focus-visible {
+        outline: 3px solid $primary;
+        outline-offset: 2px;
     }
 
     .arrow {
@@ -54,9 +55,18 @@
     border-radius: 0;
     z-index: 1000;
     overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .option {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    text-align: left;
     padding: 0.4rem 0.8rem;
     font-size: 16px;
     font-weight: 600;

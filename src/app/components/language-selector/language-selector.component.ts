@@ -1,4 +1,4 @@
-import { Component, DestroyRef, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, DestroyRef, ElementRef, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SupportedLanguages } from 'src/app/global/enum';
 import { LanguageService } from 'src/app/services/language.service';
@@ -16,7 +16,8 @@ export class LanguageSelectorComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private destroyRef: DestroyRef
+    private destroyRef: DestroyRef,
+    private elementRef: ElementRef<HTMLElement>
   ) {
     this.language = this.languageService.getCurrentLang();
   }
@@ -33,6 +34,18 @@ export class LanguageSelectorComponent implements OnInit {
 
   closeDropdown() {
     this.isOpen = false;
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onDocumentClick(target: EventTarget | null) {
+    if (this.isOpen && !this.elementRef.nativeElement.contains(target as Node | null)) {
+      this.closeDropdown();
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    this.closeDropdown();
   }
 
   selectLanguage(lang: 'fr' | 'en') {
