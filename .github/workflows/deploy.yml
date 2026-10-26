@@ -12,6 +12,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - uses: actions/checkout@v4
 
@@ -27,7 +28,7 @@ jobs:
       - name: Set up SSH key
         env:
           SSH_KEY: ${{ secrets.ALWAYSDATA_SSH_KEY }}
-          SSH_HOST: ${{ secrets.ALWAYSDATA_HOST }}
+          SSH_HOST: ${{ vars.ALWAYSDATA_HOST }}
         run: |
           install -m 700 -d ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy
@@ -36,10 +37,17 @@ jobs:
 
       - name: Upload site to Alwaysdata
         env:
-          SSH_HOST: ${{ secrets.ALWAYSDATA_HOST }}
-          SSH_USER: ${{ secrets.ALWAYSDATA_USER }}
-          DEPLOY_PATH: ${{ secrets.ALWAYSDATA_PATH }}
+          SSH_HOST: ${{ vars.ALWAYSDATA_HOST }}
+          SSH_USER: ${{ vars.ALWAYSDATA_USER }}
+          DEPLOY_PATH: ${{ vars.ALWAYSDATA_PATH }}
         run: |
+          # rsync --delete must never target the account's home directory
+          case "${DEPLOY_PATH%/}" in
+            ""|"."|"~"|"/home/$SSH_USER"|"/home")
+              echo "::error::ALWAYSDATA_PATH must point to the site folder, not '$DEPLOY_PATH'"
+              exit 1
+              ;;
+          esac
           rsync -az --delete \
             -e "ssh -i ~/.ssh/id_deploy" \
             dist/amavocat-app/browser/ \
