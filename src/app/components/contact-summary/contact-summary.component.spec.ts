@@ -1,23 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
+import { configureComponentTest } from '../../../testing/test-helpers';
 import { ContactSummaryComponent } from './contact-summary.component';
 
 describe('ContactSummaryComponent', () => {
-  let component: ContactSummaryComponent;
-  let fixture: ComponentFixture<ContactSummaryComponent>;
-
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ContactSummaryComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(ContactSummaryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    await configureComponentTest(ContactSummaryComponent);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(ContactSummaryComponent);
+    fixture.detectChanges();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 });

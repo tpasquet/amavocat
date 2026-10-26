@@ -1,25 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
+import { configureComponentTest } from '../../../testing/test-helpers';
 import { BurgerMenuComponent } from './burger-menu.component';
 
 describe('BurgerMenuComponent', () => {
-  let component: BurgerMenuComponent;
-  let fixture: ComponentFixture<BurgerMenuComponent>;
-
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BurgerMenuComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BurgerMenuComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    await configureComponentTest(BurgerMenuComponent);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(BurgerMenuComponent);
+    fixture.detectChanges();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 });
