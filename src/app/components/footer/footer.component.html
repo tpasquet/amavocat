@@ -12,8 +12,6 @@
             <a [routerLink]="['/', language, 'mentions-legales']" (click)="navigateToLegalPage(['/', language, 'mentions-legales'])" style="cursor: pointer;">{{ 'footer.legal' | translate }}</a>
             <span class="separator">|</span>
             <a [routerLink]="['/', language, 'politique-confidentialite']" (click)="navigateToLegalPage(['/', language, 'politique-confidentialite'])" style="cursor: pointer;">{{ 'footer.privacy' | translate }}</a>
-            <span class="separator">|</span>
-            <a href="javascript:void(0)" (click)="openCookieSettings()" style="cursor: pointer;">{{ 'footer.cookies' | translate }}</a>
         </div>
     </div>
 </footer>

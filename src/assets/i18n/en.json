@@ -210,15 +210,7 @@
   "footer": {
     "copyright": "Aurélie Manier - Attorney at the Lyon Bar",
     "legal": "Legal Notice",
-    "privacy": "Privacy Policy",
-    "cookies": "Manage cookies"
-  },
-  "cookieBanner": {
-    "title": "Respect for your privacy",
-    "description": "We use cookies to improve your browsing experience and analyze our site traffic. You can accept or refuse the use of these cookies.",
-    "learnMore": "Learn more",
-    "reject": "Reject",
-    "acceptAll": "Accept all"
+    "privacy": "Privacy Policy"
   },
   "languageSelector": {
     "label": "Change language"
