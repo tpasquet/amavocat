@@ -1,20 +1,23 @@
 <div class="language-selector" [class.open]="isOpen">
-    <button type="button" class="select-trigger" (click)="toggleDropdown()"
-            aria-haspopup="listbox" [attr.aria-expanded]="isOpen"
-            [attr.aria-label]="'languageSelector.label' | translate">
+    <!-- Disclosure button: its name ("Langue : Français") contains the visible text, as WCAG 2.5.3 requires -->
+    <button #trigger type="button" class="select-trigger" (click)="toggleDropdown()"
+            [attr.aria-expanded]="isOpen" [attr.aria-controls]="listId">
         <i class="bi bi-globe2" aria-hidden="true"></i>
+        <span class="sr-only">{{ 'languageSelector.prefix' | translate }} </span>
         <span class="select-value">{{ language === 'fr' ? 'Français' : 'English' }}</span>
         <i class="bi bi-chevron-down select-chevron" aria-hidden="true"></i>
     </button>
-    <ul class="select-options" role="listbox" *ngIf="isOpen" [attr.aria-label]="'languageSelector.label' | translate">
-        <li role="option" lang="fr" [attr.aria-selected]="language === 'fr'">
-            <button type="button" class="option" [class.selected]="language === 'fr'" (click)="selectLanguage('fr')">
+    <ul class="select-options" [id]="listId" *ngIf="isOpen" [attr.aria-label]="'languageSelector.label' | translate">
+        <li>
+            <button type="button" class="option" lang="fr" [class.selected]="language === 'fr'"
+                    [attr.aria-current]="language === 'fr' ? 'true' : null" (click)="selectLanguage('fr')">
                 Français
                 <i *ngIf="language === 'fr'" class="bi bi-check-lg" aria-hidden="true"></i>
             </button>
         </li>
-        <li role="option" lang="en" [attr.aria-selected]="language === 'en'">
-            <button type="button" class="option" [class.selected]="language === 'en'" (click)="selectLanguage('en')">
+        <li>
+            <button type="button" class="option" lang="en" [class.selected]="language === 'en'"
+                    [attr.aria-current]="language === 'en' ? 'true' : null" (click)="selectLanguage('en')">
                 English
                 <i *ngIf="language === 'en'" class="bi bi-check-lg" aria-hidden="true"></i>
             </button>

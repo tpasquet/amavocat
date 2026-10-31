@@ -1,5 +1,5 @@
-<nav class="navbar-desktop" *ngIf="!showBurgerMenu" [class.fixed-top]="isScrollingUp" aria-label="Navigation principale">
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<nav class="navbar-desktop" *ngIf="!showBurgerMenu" [class.fixed-top]="isScrollingUp" [attr.aria-label]="'a11y.mainNav' | translate">
+    <a href="#main-content" class="skip-link" (click)="skipToContent($event)">{{ 'a11y.skipToContent' | translate }}</a>
     <div class="navbar-content">
         <a [routerLink]="['/', language]" class="navbar-title">
             <div class="navbar-name">{{ 'navbar.title' | translate }}</div>
@@ -17,18 +17,20 @@
         </div>
     </div>
 </nav>
-<nav class="navbar-mobile-container" *ngIf="showBurgerMenu" [class.fixed-top]="isScrollingUp" aria-label="Navigation principale mobile">
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<nav class="navbar-mobile-container" *ngIf="showBurgerMenu" [class.fixed-top]="isScrollingUp" [attr.aria-label]="'a11y.mainNav' | translate" (keydown)="onMobileNavKeydown($event)">
+    <a href="#main-content" class="skip-link" (click)="skipToContent($event)">{{ 'a11y.skipToContent' | translate }}</a>
     <a [routerLink]="['/', language]" class="navbar-mobile-title">
         <div class="navbar-mobile-name">{{ 'navbar.title' | translate }}</div>
         <div class="navbar-mobile-subtitle">{{ 'navbar.subtitle' | translate }}</div>
     </a>
-    <button class="burger-menu-container"
+    <button #burgerButton
+            type="button"
+            class="burger-menu-container"
             *ngIf="showBurgerMenu"
             [ngClass]="{'opened': menuOpened}"
             (click)="onMenuClick()"
             [attr.aria-expanded]="menuOpened"
-            aria-label="Menu de navigation"
+            [attr.aria-label]="'a11y.menu' | translate"
             aria-controls="mobile-menu">
         <app-burger-menu [class.active]="menuOpened"></app-burger-menu>
     </button>

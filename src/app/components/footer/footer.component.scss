@@ -21,6 +21,11 @@
             color: $light;
             text-decoration: underline;
         }
+
+        // The default focus ring is the footer's own blue: white stays visible on it
+        &:focus-visible {
+            outline-color: #fff;
+        }
     }
 }
 
@@ -114,11 +119,14 @@
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0 0.5rem;
 
     a {
         padding: 0.25rem 0;
+        // Three links: on a phone a whole link goes to the next line rather than breaking inside
+        white-space: nowrap;
     }
 
     .separator {
@@ -127,5 +135,14 @@
 
     .separator {
         color: rgba(255, 255, 255, 0.5);
+    }
+
+    // Links are 44 px tall touch targets here and may wrap: spacing replaces the separators
+    @media (max-width: 768px) {
+        gap: 0 1.25rem;
+
+        .separator {
+            display: none;
+        }
     }
 }

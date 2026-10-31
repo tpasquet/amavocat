@@ -94,7 +94,8 @@
       "office": "At the office",
       "video": "By videoconference",
       "phone": "By phone"
-    }
+    },
+    "openStreetMap": "View on OpenStreetMap"
   },
   "domains": {
     "title": "Areas of Expertise",
@@ -235,10 +236,12 @@
     "tagline": "Social Law and Personal Injury Attorney",
     "bar": "Attorney at the Lyon Bar",
     "contactTitle": "Contact",
-    "officeTitle": "Office"
+    "officeTitle": "Office",
+    "accessibility": "Accessibility"
   },
   "languageSelector": {
-    "label": "Change language"
+    "label": "Change language",
+    "prefix": "Language:"
   },
   "breadcrumb": {
     "label": "Breadcrumb"
@@ -275,5 +278,53 @@
   "mobileBar": {
     "call": "Call",
     "email": "Email"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main navigation",
+    "menu": "Navigation menu",
+    "newWindow": "(opens in a new window)",
+    "phone": "Phone: 07 69 99 75 60",
+    "email": "Email: contact@aureliemanier-avocat.fr",
+    "quickContact": "Quick contact"
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "intro": "Aurélie Manier wants everyone to be able to use this website and contact the office, whatever their disability or the way they browse. This statement applies to <strong>aureliemanier-avocat.fr</strong>.",
+    "status": {
+      "title": "Compliance status",
+      "content": "The website has not yet been fully audited against the French accessibility standard (RGAA) by an external body. It is <strong>partially compliant</strong>: an internal review carried out on 31 October 2026 against the international WCAG 2.1 level AA guidelines found no remaining errors on the pages tested after fixes, but it does not cover every RGAA criterion."
+    },
+    "measures": {
+      "title": "What has been done",
+      "items": {
+        "keyboard": "The whole website can be used with a keyboard; the selected element always has a visible outline, and a \"Skip to main content\" link bypasses the menu.",
+        "screenReader": "Pages are structured with headings and regions (header, navigation, content, footer), images are described, and links that open a new window say so.",
+        "contrast": "Text has sufficient contrast with its background.",
+        "zoom": "Content stays readable, without horizontal scrolling, at up to 400% zoom or on a small screen.",
+        "motion": "Animations are turned off when you have asked your system to reduce motion.",
+        "media": "The website has no video or audio content; the office can be contacted in writing (email or post) as well as by phone."
+      }
+    },
+    "limits": {
+      "title": "Known limitations",
+      "items": {
+        "map": "The map on the Contact page is provided by OpenStreetMap and may be hard to use with a keyboard or a screen reader. The office address and a directions link are given as text next to it.",
+        "external": "External websites linked from this one (OpenStreetMap, French National Bar Council, hosting provider) are not covered by this statement."
+      }
+    },
+    "testing": {
+      "title": "How the website was checked",
+      "content": "Automated tests with the axe-core tool on every page, in French and English, on desktop and mobile; manual tests of keyboard navigation, focus visibility, zoom and text spacing in the Chromium browser. The website is built with HTML, CSS and JavaScript."
+    },
+    "contact": {
+      "title": "Report a problem",
+      "content": "If you cannot access any content or service on this website, write to or call the office: we will reply and provide the information in another form.",
+      "post": "Post"
+    },
+    "date": {
+      "label": "Statement drawn up on",
+      "value": "31 October 2026"
+    }
   }
 }

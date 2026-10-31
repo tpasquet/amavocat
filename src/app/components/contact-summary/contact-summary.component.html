@@ -11,11 +11,11 @@
                 <p class="subtitle">{{ 'footer.tagline' | translate }}</p>
             </div>
         </div>
-        <a class="phone-container" href="tel:+33769997560" aria-label="Téléphone : 07 69 99 75 60">
+        <a class="phone-container" href="tel:+33769997560" [attr.aria-label]="'a11y.phone' | translate">
             <i class="bi bi-telephone text-primary" aria-hidden="true"></i>
             <span class="contact-value">07 69 99 75 60</span>
         </a>
-        <a class="email-container" href="mailto:contact@aureliemanier-avocat.fr" aria-label="Email : contact@aureliemanier-avocat.fr">
+        <a class="email-container" href="mailto:contact@aureliemanier-avocat.fr" [attr.aria-label]="'a11y.email' | translate">
             <i class="bi bi-envelope text-primary" aria-hidden="true"></i>
             <span class="contact-value">contact&#64;aureliemanier-avocat.fr</span>
         </a>
@@ -26,7 +26,7 @@
                 <p class="mb-0">90, rue Servient, 69003 Lyon</p>
                 <a class="directions-link"
                    href="https://www.openstreetmap.org/directions?to=45.7603%2C4.8501"
-                   target="_blank" rel="noopener noreferrer">{{ 'contact.directions' | translate }} <span aria-hidden="true">→</span></a>
+                   target="_blank" rel="noopener noreferrer">{{ 'contact.directions' | translate }} <span aria-hidden="true">→</span> <span class="sr-only">{{ 'a11y.newWindow' | translate }}</span></a>
             </div>
         </div>
         <div class="hours-container">

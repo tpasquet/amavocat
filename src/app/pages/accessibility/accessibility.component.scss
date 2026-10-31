@@ -1,0 +1,40 @@
+@import "./../../../styles/mixins";
+@import "./../../../styles/fonts";
+
+.page-container {
+    height: 100%;
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.accessibility-content {
+  width: 100%;
+  
+  h1 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+  
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+  }
+  
+  p, ul, li {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: black;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+}
