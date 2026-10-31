@@ -94,7 +94,8 @@
       "office": "At the office",
       "video": "By videoconference",
       "phone": "By phone"
-    }
+    },
+    "openStreetMap": "View on OpenStreetMap"
   },
   "domains": {
     "title": "Areas of Expertise",
@@ -238,7 +239,8 @@
     "officeTitle": "Office"
   },
   "languageSelector": {
-    "label": "Change language"
+    "label": "Change language",
+    "prefix": "Language:"
   },
   "breadcrumb": {
     "label": "Breadcrumb"
@@ -275,5 +277,14 @@
   "mobileBar": {
     "call": "Call",
     "email": "Email"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main navigation",
+    "menu": "Navigation menu",
+    "newWindow": "(opens in a new window)",
+    "phone": "Phone: 07 69 99 75 60",
+    "email": "Email: contact@aureliemanier-avocat.fr",
+    "quickContact": "Quick contact"
   }
 }

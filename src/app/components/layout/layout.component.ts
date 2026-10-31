@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef } from '@angular/core';
+import { PageFocusService } from 'src/app/services/page-focus.service';
 
 @Component({
     selector: 'app-layout',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['./layout.component.scss'],
     standalone: false
 })
-export class LayoutComponent { }
+export class LayoutComponent {
+  constructor(pageFocus: PageFocusService, destroyRef: DestroyRef) {
+    pageFocus.focusMainContentOnNavigation(destroyRef);
+  }
+}

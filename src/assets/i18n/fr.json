@@ -94,7 +94,8 @@
       "office": "Au cabinet",
       "video": "En visioconférence",
       "phone": "Par téléphone"
-    }
+    },
+    "openStreetMap": "Voir sur OpenStreetMap"
   },
   "domains": {
     "title": "Domaines d'expertise",
@@ -238,7 +239,8 @@
     "officeTitle": "Cabinet"
   },
   "languageSelector": {
-    "label": "Changer de langue"
+    "label": "Changer de langue",
+    "prefix": "Langue :"
   },
   "breadcrumb": {
     "label": "Fil d'Ariane"
@@ -275,5 +277,14 @@
   "mobileBar": {
     "call": "Appeler",
     "email": "Écrire"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu principal",
+    "mainNav": "Navigation principale",
+    "menu": "Menu de navigation",
+    "newWindow": "(nouvelle fenêtre)",
+    "phone": "Téléphone : 07 69 99 75 60",
+    "email": "E-mail : contact@aureliemanier-avocat.fr",
+    "quickContact": "Contact rapide"
   }
 }

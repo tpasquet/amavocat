@@ -1,8 +1,8 @@
-<div class="mobile-action-bar" *ngIf="visible">
+<aside class="mobile-action-bar" *ngIf="visible" [attr.aria-label]="'a11y.quickContact' | translate">
     <a class="action action--call" href="tel:+33769997560" [attr.aria-label]="'cta.callLabel' | translate">
         <i class="bi bi-telephone" aria-hidden="true"></i>{{ 'mobileBar.call' | translate }}
     </a>
     <a class="action action--mail" href="mailto:contact@aureliemanier-avocat.fr">
         <i class="bi bi-envelope" aria-hidden="true"></i>{{ 'mobileBar.email' | translate }}
     </a>
-</div>
+</aside>

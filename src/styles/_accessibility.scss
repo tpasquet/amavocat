@@ -18,7 +18,17 @@
     left: 10px;
     opacity: 1;
     pointer-events: auto;
+    // The global a:focus colour is a dark blue, unreadable on this background
+    color: white;
+    outline-color: white;
+    outline-offset: -5px;
   }
+}
+
+// <main> receives focus from the skip link and after each navigation (PageFocusService):
+// it is not an interactive control, so it gets no focus ring
+main[tabindex="-1"]:focus {
+  outline: none;
 }
 
 // Focus indicators for all interactive elements

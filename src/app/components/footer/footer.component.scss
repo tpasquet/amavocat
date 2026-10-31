@@ -21,6 +21,11 @@
             color: $light;
             text-decoration: underline;
         }
+
+        // The default focus ring is the footer's own blue: white stays visible on it
+        &:focus-visible {
+            outline-color: #fff;
+        }
     }
 }
 

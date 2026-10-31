@@ -60,6 +60,12 @@ $bar-height: 56px;
             color: #fff;
             background-color: $dark;
         }
+
+        // The default blue ring is barely visible on this dark background: white ring inside the button
+        &:focus-visible {
+            outline-color: #fff;
+            outline-offset: -7px;
+        }
     }
 
     .action--mail {
