@@ -219,7 +219,11 @@
   "footer": {
     "copyright": "Aurélie Manier - Attorney at the Lyon Bar",
     "legal": "Legal Notice",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "tagline": "Social Law and Personal Injury Attorney",
+    "bar": "Attorney at the Lyon Bar",
+    "contactTitle": "Contact",
+    "officeTitle": "Office"
   },
   "languageSelector": {
     "label": "Change language"
