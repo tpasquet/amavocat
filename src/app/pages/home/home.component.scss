@@ -150,7 +150,7 @@
 
     li {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 0.75rem;
         margin: 0 !important;
         padding: 0.5rem 0;
@@ -167,5 +167,10 @@
         font-size: 1.25rem;
         color: $primary;
         background-color: $light;
+    }
+
+    // The global span rule forces 18px lines; use the list's own line-height
+    span {
+        line-height: inherit;
     }
 }
