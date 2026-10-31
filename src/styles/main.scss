@@ -43,14 +43,11 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin: 0 auto;
     z-index: 0;
-    padding: 1.5rem;
-    background-color: #f8f9fa;
-    border-radius: 0;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
 
     @media (min-width: 768px) {
         padding: 3rem 0;
-        background-color: transparent;
-        border-bottom: 1px solid #e0e0e0;
     }
 
     &-title {
@@ -70,18 +67,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.bloc:not(:last-child) {
-    margin-bottom: 2rem;
-
-    @media (min-width: 768px) {
-        margin-bottom: 0;
-    }
-}
-
 .bloc:last-child {
-    @media (min-width: 768px) {
-        border-bottom: none;
-    }
+    border-bottom: none;
 }
 
 .content-wrapper > .bloc:first-child {
@@ -131,11 +118,15 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     text-decoration: none;
     border: 2px solid $primary;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 
     &:hover,
     &:focus {
         text-decoration: none;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
     }
 
     @media (max-width: 767px) {

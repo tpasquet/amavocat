@@ -10,6 +10,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
 import { ContactCtaComponent } from '../components/contact-cta/contact-cta.component';
+import { ExpertiseGridComponent } from '../components/expertise-grid/expertise-grid.component';
 
 
 
@@ -21,7 +22,8 @@ import { ContactCtaComponent } from '../components/contact-cta/contact-cta.compo
     FooterComponent,
     BreadcrumbComponent,
     LanguageSelectorComponent,
-    ContactCtaComponent
+    ContactCtaComponent,
+    ExpertiseGridComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { ContactCtaComponent } from '../components/contact-cta/contact-cta.compo
   exports: [
     LayoutComponent,
     LanguageSelectorComponent,
-    ContactCtaComponent
+    ContactCtaComponent,
+    ExpertiseGridComponent
   ]
 })
 export class LayoutModule { }

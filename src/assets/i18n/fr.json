@@ -5,10 +5,13 @@
     "contact": "Contact",
     "title": "Aurélie Manier",
     "subtitle": "Avocate en Droit Social et Dommage corporel à Lyon",
-    "articles": "Articles"
+    "articles": "Articles",
+    "appointment": "Prendre rendez-vous"
   },
   "home": {
     "title": "Maître Aurélie Manier, avocate en droit social et dommage corporel à Lyon",
+    "kicker": "Avocate au barreau de Lyon",
+    "portraitAlt": "Portrait de Maître Aurélie Manier",
     "intro": "Avocate à Lyon, <strong>Maître Aurélie MANIER</strong> exerce son activité dans le domaine du <strong>Droit du travail</strong>, du <strong>Droit de la Sécurité sociale</strong> et du <strong>Dommage corporel</strong>. Elle a prêté serment en <strong>décembre 2021</strong>.",
     "expertise": {
       "title": "Domaines d'expertise",
@@ -237,5 +240,21 @@
     "empty": "Aucun article publié pour l'instant.",
     "tags": "Thèmes",
     "back": "Tous les articles"
+  },
+  "expertise": {
+    "groups": {
+      "labor": {
+        "title": "Droit du travail",
+        "lead": "Salariés et employeurs"
+      },
+      "socialSecurity": {
+        "title": "Droit de la Sécurité sociale",
+        "lead": "Face aux organismes sociaux"
+      },
+      "personalInjury": {
+        "title": "Dommage corporel",
+        "lead": "Indemnisation des victimes"
+      }
+    }
   }
 }

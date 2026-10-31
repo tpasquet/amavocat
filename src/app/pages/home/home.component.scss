@@ -1,3 +1,4 @@
+@import "./../../../styles/variables";
 @import "./../../../styles/mixins";
 @import "./../../../styles/fonts";
 
@@ -21,13 +22,48 @@
     z-index: 0;
 }
 
+.hero {
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 1rem;
+    }
+}
+
+.hero-text {
+    flex: 1 1 auto;
+}
+
+.hero-kicker {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0.75rem;
+    padding-left: 1.1rem;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $primary;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0.7rem;
+        height: 3px;
+        background-color: $secondary;
+    }
+}
+
 .intro-text {
     font-size: 18px;
     line-height: 1.5;
 
     @media (min-width: 768px) {
         font-size: 22px;
-        line-height: 1.6;
+        line-height: 1.5;
     }
 }
 
@@ -36,37 +72,29 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 1rem;
+
+    @media (min-width: 768px) {
+        margin-top: 1.5rem;
+    }
 }
 
 .profile-image {
+    display: block;
     width: 100%;
+    max-width: 250px;
     height: auto;
     aspect-ratio: 2 / 3;
-    border-radius: 0;
-    max-width: 250px;
-    display: block;
-    margin: 1rem auto 0 auto;
-
-    &.desktop-only {
-        display: none;
-    }
+    object-fit: cover;
+    margin: 1.5rem auto 0;
 
     @media (min-width: 768px) {
-        &.mobile-only {
-            display: none;
-        }
-
-        &.desktop-only {
-            display: block;
-            max-width: 350px;
-            min-width: 300px;
-            float: right;
-            margin: 0 0 1rem 2rem;
-        }
+        flex: 0 0 280px;
+        max-width: 280px;
+        margin: 0;
     }
 }
 
-// The fonts partial resets list padding: on mobile, bring the bullets back inside the grey cards
+// The fonts partial resets list padding: on mobile, bring the bullets back inside the block
 .bloc ul {
     @media (max-width: 767px) {
         padding-left: 1.2rem;

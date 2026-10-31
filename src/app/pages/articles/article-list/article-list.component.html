@@ -2,7 +2,7 @@
     <main class="main-layout" id="main-content">
         <div class="content-wrapper">
             <section class="bloc">
-                <h1>{{ 'articles.title' | translate }}</h1>
+                <h1 class="page-title">{{ 'articles.title' | translate }}</h1>
                 <p>{{ 'articles.intro' | translate }}</p>
 
                 <p *ngIf="articles.length === 0" class="articles-empty">{{ 'articles.empty' | translate }}</p>
