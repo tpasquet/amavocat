@@ -34,14 +34,15 @@
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 2rem;
 
-    @media (min-width: 768px) {
-        padding: 0 2rem;
+    @media (max-width: 1199px) {
+        gap: 1.5rem;
     }
 }
 
 .navbar-title {
+    flex-shrink: 0;
     text-align: left;
     text-decoration: none;
     cursor: pointer;
@@ -74,6 +75,10 @@
     padding: 0;
 
     li { margin: 0; }
+
+    @media (max-width: 1199px) {
+        gap: 1.25rem;
+    }
 }
 
 .custom-link {
@@ -133,6 +138,11 @@
 
     &:focus { outline: none; }
     &:focus-visible { outline: 3px solid $primary; outline-offset: 3px; }
+
+    // The Contact link is enough on narrow desktops; the button comes back when the bar has room
+    @media (max-width: 1199px) {
+        display: none;
+    }
 }
 
 .burger-menu-container {

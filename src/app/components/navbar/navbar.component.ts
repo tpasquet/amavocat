@@ -35,7 +35,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ) {
     this.language = this.languageService.getCurrentLang();
 
-    this.responsive.observe('(max-width: 700px)')
+    // Below the lg breakpoint the full bar (title, links, button, language) no longer fits on one line
+    this.responsive.observe('(max-width: 991px)')
       .subscribe(result => {
         if (result.matches) {
           this.showBurgerMenu = true;
