@@ -5,6 +5,7 @@ export const environment: Environment = {
   dev: false,
   hostname: 'http://localhost:4200',
   apiUrl: 'http://localhost:3000/api',
+  contactForm: true,
   umami: {
     // Désactivé en local : l'identifiant est celui de la prod, les visites locales y seraient comptées
     enabled: false,

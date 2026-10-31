@@ -17,12 +17,14 @@
                 <h2>{{ 'privacy.collection.title' | translate }}</h2>
                 <p>{{ 'privacy.collection.intro' | translate }}</p>
                 <ul>
+                    <li [innerHTML]="'privacy.collection.items.contactForm' | translate"></li>
                     <li [innerHTML]="'privacy.collection.items.analytics' | translate"></li>
                 </ul>
 
                 <h2>{{ 'privacy.purpose.title' | translate }}</h2>
                 <p>{{ 'privacy.purpose.intro' | translate }}</p>
                 <ul>
+                    <li>{{ 'privacy.purpose.items.contactForm' | translate }}</li>
                     <li>{{ 'privacy.purpose.items.analytics' | translate }}</li>
                     <li>{{ 'privacy.purpose.items.stats' | translate }}</li>
                 </ul>
@@ -68,7 +70,7 @@
                 </p>
 
                 <p>
-                    <strong>{{ 'privacy.lastUpdate' | translate }} :</strong> Décembre 2025
+                    <strong>{{ 'privacy.lastUpdate' | translate }}&nbsp;:</strong> {{ 'privacy.lastUpdateDate' | translate }}
                 </p>
             </section>
             </div>
