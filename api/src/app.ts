@@ -10,12 +10,16 @@ import { ContentTypeRegistry } from './content/registry.js';
 import { contentTypes } from './content/types/index.js';
 import { mediaRoutes } from './media/routes.js';
 import { adminRoutes } from './admin/routes.js';
+import { contactRoutes } from './contact/routes.js';
+import { smtpMailer, type Mailer } from './contact/mailer.js';
 
 export async function buildApp(opts: {
   config: Config;
   db: Db;
   registry?: ContentTypeRegistry;
   onEntriesChanged?: (event: EntriesChangedEvent) => void;
+  /** Overrides the SMTP mailer built from the config (tests) */
+  mailer?: Mailer;
 }) {
   const { config, db } = opts;
 
@@ -27,7 +31,7 @@ export async function buildApp(opts: {
 
   await app.register(cookie);
   await app.register(cors, { origin: config.corsOrigins, credentials: true });
-  // Opt-in per route (login); other routes are not rate limited for now
+  // Opt-in per route (login, contact form); other routes are not rate limited for now
   await app.register(rateLimit, { global: false });
 
   // Cookies are SameSite=Strict; also refuse state-changing requests coming from unknown origins
@@ -49,6 +53,10 @@ export async function buildApp(opts: {
   });
   await app.register(mediaRoutes, { config });
   await app.register(adminRoutes, { config });
+  await app.register(contactRoutes, {
+    mailer: opts.mailer ?? (config.contact ? smtpMailer(config.contact.smtp) : undefined),
+    settings: config.contact,
+  });
 
   app.get('/api/health', async () => ({ status: 'ok' }));
 

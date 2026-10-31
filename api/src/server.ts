@@ -29,6 +29,10 @@ if (config.githubDispatchToken) {
   app.log.warn('GITHUB_DISPATCH_TOKEN is not set: the public site will not be rebuilt automatically');
 }
 
+if (!config.contact) {
+  app.log.warn('SMTP_HOST / CONTACT_TO / CONTACT_FROM are not set: the contact form will answer 503');
+}
+
 deleteExpiredSessions(db);
 const cleanup = setInterval(() => deleteExpiredSessions(db), 60 * 60 * 1000);
 cleanup.unref();

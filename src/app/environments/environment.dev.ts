@@ -5,6 +5,8 @@ export const environment: Environment = {
   dev: true,
   hostname: 'https://dev.aurelie-manier.fr',
   apiUrl: 'https://api-dev.aurelie-manier.fr/api',
+  // Pas d'API de dev déployée
+  contactForm: false,
   umami: {
     // Désactivé tant qu'un site Umami de dev n'est pas créé
     enabled: false,

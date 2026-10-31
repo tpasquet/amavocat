@@ -65,21 +65,37 @@
     "infoTitle": "Informations de contact",
     "formTitle": "Envoyez-nous un message",
     "form": {
-      "title": "Contacter Maitre Manier",
+      "title": "Envoyer un message",
+      "intro": "Décrivez brièvement votre situation : Maître Manier vous recontacte pour en parler ou convenir d'un rendez-vous.",
+      "requiredNote": "Les champs marqués d'un astérisque (*) sont obligatoires.",
       "firstName": "Prénom",
-      "firstNamePlaceholder": "Saisissez votre prénom",
       "lastName": "Nom",
-      "lastNamePlaceholder": "Saisissez votre nom",
-      "phone": "Téléphone",
-      "phonePlaceholder": "Saisissez votre numéro de téléphone",
       "email": "Email",
-      "emailPlaceholder": "Saisissez votre adresse email",
-      "message": "Message",
-      "messagePlaceholder": "Saisissez la raison de votre prise de contact",
-      "required": "requis",
-      "submit": "Envoyer",
-      "submitting": "Envoi en cours...",
-      "success": "✓ Votre message a été envoyé avec succès !"
+      "emailHint": "Pour vous répondre. Format attendu : nom@exemple.fr",
+      "phone": "Téléphone",
+      "optional": "facultatif",
+      "message": "Votre message",
+      "messageHint": "5 000 caractères maximum. Inutile de joindre des documents à ce stade.",
+      "honeypot": "Ne pas remplir ce champ",
+      "consent": "J'accepte que les informations saisies soient utilisées pour répondre à ma demande.",
+      "privacyLink": "Comment mes données sont-elles utilisées ?",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours…",
+      "success": "Votre message a bien été envoyé.",
+      "successText": "Maître Manier vous répondra dans les meilleurs délais, par email ou par téléphone.",
+      "another": "Écrire un autre message",
+      "errors": {
+        "firstName": "Indiquez votre prénom.",
+        "lastName": "Indiquez votre nom.",
+        "emailRequired": "Indiquez votre adresse email.",
+        "emailFormat": "Adresse email invalide. Exemple : nom@exemple.fr",
+        "phone": "Numéro invalide : utilisez uniquement des chiffres, espaces, +, - ou parenthèses.",
+        "message": "Écrivez votre message.",
+        "consent": "Cochez cette case pour que nous puissions vous répondre.",
+        "rateLimited": "Trop de messages ont été envoyés depuis votre connexion. Réessayez dans une heure, ou contactez le cabinet directement :",
+        "invalid": "Certaines informations n'ont pas été acceptées. Vérifiez le formulaire, ou contactez le cabinet directement :",
+        "unavailable": "Votre message n'a pas pu être envoyé. Réessayez plus tard, ou contactez le cabinet directement :"
+      }
     },
     "mapTitle": "Plan d'accès au cabinet, 90 rue Servient, 69003 Lyon",
     "address": "Adresse",
@@ -169,30 +185,32 @@
     },
     "collection": {
       "title": "Données collectées",
-      "intro": "Nous utilisons Umami Analytics, une solution d'analyse respectueuse de la vie privée et conforme au RGPD. Les données collectées sont :",
+      "intro": "Selon votre utilisation du site, nous collectons les données suivantes :",
       "items": {
-        "analytics": "<strong>Données analytiques anonymisées</strong> : pages visitées, durée de visite, appareil utilisé (sans identification personnelle)"
+        "contactForm": "<strong>Formulaire de contact</strong> : prénom, nom, adresse email, téléphone (facultatif) et contenu de votre message, uniquement si vous l'envoyez",
+        "analytics": "<strong>Données analytiques anonymisées</strong> (Umami Analytics) : pages visitées, durée de visite, appareil utilisé (sans identification personnelle)"
       }
     },
     "purpose": {
       "title": "Finalités du traitement",
-      "intro": "Les données analytiques sont collectées pour les finalités suivantes :",
+      "intro": "Ces données sont utilisées pour les finalités suivantes :",
       "items": {
+        "contactForm": "Répondre aux demandes envoyées via le formulaire de contact et, le cas échéant, convenir d'un rendez-vous",
         "analytics": "Améliorer l'expérience utilisateur du site",
         "stats": "Analyser le trafic et l'utilisation du site de manière anonyme"
       }
     },
     "legal": {
       "title": "Base légale",
-      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : pour l'utilisation des cookies analytiques<br><strong>L'intérêt légitime</strong> : pour améliorer le site et son contenu"
+      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : pour les messages envoyés via le formulaire de contact (case à cocher). Vous pouvez le retirer à tout moment en écrivant à contact@aureliemanier-avocat.fr<br><strong>L'intérêt légitime</strong> : pour la mesure d'audience anonyme, afin d'améliorer le site et son contenu"
     },
     "recipients": {
       "title": "Destinataires des données",
-      "content": "Vos données personnelles sont destinées uniquement à <strong>Aurélie MANIER</strong> et ne sont <strong>jamais vendues ni partagées</strong> avec des tiers, sauf obligation légale."
+      "content": "Vos données personnelles sont destinées uniquement à <strong>Aurélie MANIER</strong> et ne sont <strong>jamais vendues ni partagées</strong> avec des tiers, sauf obligation légale.<br><br>Les messages du formulaire de contact transitent par les serveurs de notre hébergeur, <strong>Alwaysdata</strong> (Paris, France), qui agit en tant que sous-traitant et n'y a pas accès pour son propre compte. Ils ne sont pas enregistrés sur le site : ils sont transmis directement par email au cabinet."
     },
     "retention": {
       "title": "Durée de conservation",
-      "content": "Les données analytiques anonymisées sont conservées pour une durée maximale de <strong>13 mois</strong> conformément aux recommandations de la CNIL."
+      "content": "Les messages envoyés via le formulaire de contact sont conservés dans la messagerie du cabinet au maximum <strong>3 ans</strong> après le dernier échange s'ils ne donnent pas lieu à un dossier ; dans le cas contraire, ils sont conservés avec le dossier pendant la durée imposée par les règles de la profession d'avocat.<br><br>Les données analytiques anonymisées sont conservées pour une durée maximale de <strong>13 mois</strong> conformément aux recommandations de la CNIL."
     },
     "rights": {
       "title": "Vos droits",
@@ -227,7 +245,8 @@
       "title": "Contact",
       "content": "Pour toute question concernant cette politique de confidentialité ou vos données personnelles, contactez-nous :"
     },
-    "lastUpdate": "Dernière mise à jour"
+    "lastUpdate": "Dernière mise à jour",
+    "lastUpdateDate": "31 octobre 2026"
   },
   "footer": {
     "copyright": "Aurélie Manier - Avocate au barreau de Lyon",
