@@ -104,3 +104,68 @@
         }
     }
 }
+
+// Consultation modes: three tiles with an icon
+.consultation-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 1rem 0 0 !important;
+
+    @media (max-width: 599px) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        margin: 0 !important;
+        padding: 1.25rem 1rem;
+        text-align: center;
+        line-height: 1.4;
+        background-color: #fff;
+        border: 1px solid #dfe5ee;
+        border-top: 4px solid $secondary;
+    }
+
+    i {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-size: 2rem;
+        color: $primary;
+    }
+}
+
+// Firm values: two columns with a small icon
+.values-grid {
+    display: grid;
+    gap: 0.75rem 1.25rem;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 1rem 0 0 !important;
+
+    @media (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin: 0 !important;
+        padding: 0.5rem 0;
+        line-height: 1.45;
+    }
+
+    i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.25rem;
+        color: $primary;
+        background-color: $light;
+    }
+}

@@ -220,7 +220,11 @@
   "footer": {
     "copyright": "Aurélie Manier - Avocate au barreau de Lyon",
     "legal": "Mentions légales",
-    "privacy": "Politique de confidentialité"
+    "privacy": "Politique de confidentialité",
+    "tagline": "Avocate en Droit Social et Dommage corporel",
+    "bar": "Avocate au barreau de Lyon",
+    "contactTitle": "Contact",
+    "officeTitle": "Cabinet"
   },
   "languageSelector": {
     "label": "Changer de langue"

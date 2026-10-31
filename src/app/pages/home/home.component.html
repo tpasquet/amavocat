@@ -38,22 +38,22 @@
             <section class="bloc">
                 <h2 class="bloc-title big-underline">{{ 'home.consultations.title' | translate }}</h2>
                 <p [innerHTML]="'home.consultations.description' | translate"></p>
-                <ul>
-                    <li [innerHTML]="'home.consultations.items.office' | translate"></li>
-                    <li [innerHTML]="'home.consultations.items.video' | translate"></li>
-                    <li [innerHTML]="'home.consultations.items.phone' | translate"></li>
+                <ul class="consultation-tiles">
+                    <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span [innerHTML]="'home.consultations.items.office' | translate"></span></li>
+                    <li><i class="bi bi-camera-video" aria-hidden="true"></i><span [innerHTML]="'home.consultations.items.video' | translate"></span></li>
+                    <li><i class="bi bi-telephone" aria-hidden="true"></i><span [innerHTML]="'home.consultations.items.phone' | translate"></span></li>
                 </ul>
             </section>
 
             <section class="bloc">
                 <h2 class="bloc-title big-underline">{{ 'home.values.title' | translate }}</h2>
-                <ul>
-                    <li [innerHTML]="'home.values.items.simple' | translate"></li>
-                    <li [innerHTML]="'home.values.items.amicable' | translate"></li>
-                    <li [innerHTML]="'home.values.items.secret' | translate"></li>
-                    <li [innerHTML]="'home.values.items.trust' | translate"></li>
-                    <li [innerHTML]="'home.values.items.fees' | translate"></li>
-                    <li [innerHTML]="'home.values.items.transparent' | translate"></li>
+                <ul class="values-grid">
+                    <li><i class="bi bi-chat-left-text" aria-hidden="true"></i><span [innerHTML]="'home.values.items.simple' | translate"></span></li>
+                    <li><i class="bi bi-people" aria-hidden="true"></i><span [innerHTML]="'home.values.items.amicable' | translate"></span></li>
+                    <li><i class="bi bi-lock" aria-hidden="true"></i><span [innerHTML]="'home.values.items.secret' | translate"></span></li>
+                    <li><i class="bi bi-hand-thumbs-up" aria-hidden="true"></i><span [innerHTML]="'home.values.items.trust' | translate"></span></li>
+                    <li><i class="bi bi-cash-coin" aria-hidden="true"></i><span [innerHTML]="'home.values.items.fees' | translate"></span></li>
+                    <li><i class="bi bi-signpost-split" aria-hidden="true"></i><span [innerHTML]="'home.values.items.transparent' | translate"></span></li>
                 </ul>
             </section>
 
