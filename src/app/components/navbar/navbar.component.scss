@@ -1,5 +1,9 @@
 @import "../../../styles/variables";
 
+:host {
+    display: block;
+}
+
 .navbar-desktop {
     position: relative;
     width: 100%;

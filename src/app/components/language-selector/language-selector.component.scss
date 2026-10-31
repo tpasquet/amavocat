@@ -2,83 +2,98 @@
 
 .language-selector {
     position: relative;
-}
-
-.custom-select {
-    position: relative;
     user-select: none;
 }
 
+// Same size and outline as the appointment button next to it
 .select-trigger {
-    font-family: inherit;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(39, 76, 119, 0.2);
-    padding: 0.4rem 0.8rem;
-    border-radius: 0;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 16px;
-    font-weight: 600;
-    color: $primary;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
     gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $primary;
+    background-color: transparent;
+    border: 2px solid $primary;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-color: rgba(39, 76, 119, 0.3);
+    &:hover,
+    .open & {
+        background-color: rgba(255, 255, 255, 0.4);
     }
 
-    &:focus-visible {
-        outline: 3px solid $primary;
-        outline-offset: 2px;
-    }
+    &:focus { outline: none; }
+    &:focus-visible { outline: 3px solid $primary; outline-offset: 3px; }
 
-    .arrow {
-        flex-shrink: 0;
-        transition: transform 0.2s ease;
+    .bi-globe2 {
+        font-size: 1rem;
     }
 }
 
-.custom-select.open .arrow {
-    transform: rotate(180deg);
+.select-chevron {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+
+    .open & {
+        transform: rotate(180deg);
+    }
 }
 
 .select-options {
     position: absolute;
-    top: calc(100% + 2px);
-    left: 0;
+    top: calc(100% + 6px);
     right: 0;
-    background-color: #b7d0ec;
-    border: 1px solid rgba(39, 76, 119, 0.2);
-    border-radius: 0;
-    z-index: 1000;
-    overflow: hidden;
-    list-style: none;
+    min-width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0.25rem 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid $primary;
+    box-shadow: 0 8px 24px rgba(21, 44, 64, 0.15);
+    z-index: 1000;
+
+    // Centred under the trigger in the mobile menu
+    @media (max-width: 700px) {
+        left: 0;
+    }
 }
 
 .option {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     width: 100%;
-    border: none;
-    background: transparent;
+    padding: 0.6rem 0.9rem;
     font-family: inherit;
-    text-align: left;
-    padding: 0.4rem 0.8rem;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
     color: $primary;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    transition: background-color 0.15s ease;
 
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.3);
+    &:hover,
+    &:focus-visible {
+        background-color: $light;
     }
 
+    &:focus { outline: none; }
+    &:focus-visible { outline: 3px solid $primary; outline-offset: -3px; }
+
     &.selected {
-        background-color: rgba(255, 255, 255, 0.2);
+        font-weight: 700;
+    }
+
+    .bi-check-lg {
+        font-size: 1rem;
     }
 }
