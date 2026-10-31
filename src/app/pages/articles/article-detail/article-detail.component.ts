@@ -89,7 +89,15 @@ export class ArticleDetailComponent implements OnInit {
       'dateModified': article.updatedAt,
       'inLanguage': lang,
       'mainEntityOfPage': url(lang, article.slug),
-      'author': { '@type': 'Person', 'name': AUTHOR, 'jobTitle': lang === SupportedLanguages.FR ? 'Avocate' : 'Lawyer' },
+      // @ids match the graph in src/index.html, so the article is attached to the lawyer and her firm
+      'author': {
+        '@type': 'Person',
+        '@id': `${Constants.HOSTNAME}/#aurelie-manier`,
+        'name': AUTHOR,
+        'jobTitle': lang === SupportedLanguages.FR ? 'Avocate' : 'Lawyer',
+        'url': `${Constants.HOSTNAME}/${lang}`,
+      },
+      'publisher': { '@id': `${Constants.HOSTNAME}/#cabinet` },
       ...(article.image ? { 'image': article.image.url } : {}),
     }, this.destroyRef);
   }

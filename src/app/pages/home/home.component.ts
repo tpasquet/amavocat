@@ -7,18 +7,18 @@ import { MetaService } from 'src/app/services/meta.service';
 
 const HomeMetaTranslations: PageMetaTranslations = {
   en: {
-    title: 'Social Law and Personal Injury Lawyer in Lyon | Aurélie Manier',
-    description: 'Aurélie Manier is a social law and personal injury lawyer in Lyon with expertise in handling complex employment disputes, including discrimination, harassment, and wage and hour issues. Contact Aurélie Manier today for a consultation.',
-    ogTitle: 'Social Law and Personal Injury Lawyer in Lyon | Aurélie Manier',
-    ogDescription: 'Aurélie Manier is a social law and personal injury lawyer in Lyon with expertise in handling complex employment disputes, including discrimination, harassment, and wage and hour issues. Contact Aurélie Manier today for a consultation.',
+    title: 'Employment & Personal Injury Lawyer in Lyon | Aurélie Manier',
+    description: 'Aurélie Manier, lawyer in Lyon: dismissal, workplace harassment, work accidents, occupational diseases and road accidents. At the office, by video or phone.',
+    ogTitle: 'Employment & Personal Injury Lawyer in Lyon | Aurélie Manier',
+    ogDescription: 'Aurélie Manier, lawyer in Lyon: dismissal, workplace harassment, work accidents, occupational diseases and road accidents. At the office, by video or phone.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/en`
   },
   fr: {
-    title: 'Avocate en Droit Social et Dommage corporel à Lyon | Aurélie Manier',
-    description: 'Aurélie Manier est une avocate en Droit Social et Dommage corporel à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\'hui pour une consultation.',
-    ogTitle: 'Avocate en Droit Social et Dommage corporel à Lyon | Aurélie Manier',
-    ogDescription: 'Aurélie Manier est une avocate en Droit Social et Dommage corporel à Lyon spécialisée dans la gestion de litiges complexes en matière d\'emploi, notamment la discrimination, le harcèlement et les problèmes de salaire et d\'heures. Contactez Aurélie Manier aujourd\'hui pour une consultation.',
+    title: 'Avocate droit social et dommage corporel à Lyon | Aurélie Manier',
+    description: 'Maître Aurélie Manier, avocate à Lyon 3e : licenciement, harcèlement, accident du travail, maladie professionnelle, accident de la route. Cabinet ou visio.',
+    ogTitle: 'Avocate droit social et dommage corporel à Lyon | Aurélie Manier',
+    ogDescription: 'Maître Aurélie Manier, avocate à Lyon 3e : licenciement, harcèlement, accident du travail, maladie professionnelle, accident de la route. Cabinet ou visio.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/fr`
   }

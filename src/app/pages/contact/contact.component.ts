@@ -6,20 +6,20 @@ import { PageMetaTranslations } from 'src/app/global/types';
 import { LanguageService } from 'src/app/services/language.service';
 import { MetaService } from 'src/app/services/meta.service';
 
-const HomeMetaTranslations: PageMetaTranslations = {
+const ContactMetaTranslations: PageMetaTranslations = {
   en: {
-    title: 'Contact Aurélie Manier, Social Law and Personal Injury Attorney in Lyon',
-    description: 'Looking for a social law and personal injury attorney in Lyon? Contact Aurélie Manier for a confidential and effective legal consultation. Get help with your employment and employer-employee relationship issues.',
-    ogTitle: 'Contact Aurélie Manier, Social Law and Personal Injury Attorney in Lyon',
-    ogDescription: 'Looking for a social law and personal injury attorney in Lyon? Contact Aurélie Manier for a confidential and effective legal consultation. Get help with your employment and employer-employee relationship issues.',
+    title: 'Contact & Appointments | Aurélie Manier, Lawyer in Lyon',
+    description: 'Book an appointment with Aurélie Manier, employment and personal injury lawyer: office at 90 rue Servient, Lyon 3rd, or by video call or phone.',
+    ogTitle: 'Contact & Appointments | Aurélie Manier, Lawyer in Lyon',
+    ogDescription: 'Book an appointment with Aurélie Manier, employment and personal injury lawyer: office at 90 rue Servient, Lyon 3rd, or by video call or phone.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/en/contact`
   },
   fr: {
-    title: 'Contactez Aurélie Manier, Avocate en Droit Social et Dommage corporel à Lyon',
-    description: 'Besoin d\'un avocat en Droit Social et Dommage corporel à Lyon ? Contactez Aurélie Manier pour une consultation juridique confidentielle et efficace. Obtenez de l\'aide pour vos problèmes de travail et de relations employeur-employé.',
-    ogTitle: 'Contactez Aurélie Manier, Avocate en Droit Social et Dommage corporel à Lyon',
-    ogDescription: 'Besoin d\'un avocat en Droit Social et Dommage corporel à Lyon ? Contactez Aurélie Manier pour une consultation juridique confidentielle et efficace. Obtenez de l\'aide pour vos problèmes de travail et de relations employeur-employé.',
+    title: 'Contact et rendez-vous | Aurélie Manier, avocate à Lyon',
+    description: 'Prenez rendez-vous avec Maître Aurélie Manier, avocate en droit social et dommage corporel : cabinet au 90 rue Servient, Lyon 3e, en visio ou par téléphone.',
+    ogTitle: 'Contact et rendez-vous | Aurélie Manier, avocate à Lyon',
+    ogDescription: 'Prenez rendez-vous avec Maître Aurélie Manier, avocate en droit social et dommage corporel : cabinet au 90 rue Servient, Lyon 3e, en visio ou par téléphone.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/fr/contact`
   }
@@ -55,6 +55,6 @@ export class ContactComponent {
     // Le composant est réutilisé quand seule la langue change (/fr/x -> /en/x) : on suit la langue
     this.languageService.currentLang$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(lang => this.metaService.setPageMeta(HomeMetaTranslations[lang]));
+      .subscribe(lang => this.metaService.setPageMeta(ContactMetaTranslations[lang]));
   }
 }

@@ -118,8 +118,14 @@ function sitemap(articles: Article[]): string {
     urls.push(`  <url>\n    <loc>${hostname}/${locale}/articles</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
   }
   for (const article of articles) {
-    const alternates = [[article.locale, article.slug], ...Object.entries(article.translations)]
-      .map(([locale, slug]) => `    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(`${hostname}/${locale}/articles/${slug}`)}"/>`)
+    const versions = Object.fromEntries([[article.locale, article.slug], ...Object.entries(article.translations)]) as Partial<Record<Locale, string>>;
+    // Same rule as MetaService: x-default is the French version when it exists, otherwise the article itself
+    const xDefault: [string, string] = versions.fr ? ['fr', versions.fr] : [article.locale, article.slug];
+    const alternates = [...Object.entries(versions), xDefault]
+      .map(([locale, slug], i, all) => {
+        const hreflang = i === all.length - 1 ? 'x-default' : locale;
+        return `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${escapeXml(`${hostname}/${locale}/articles/${slug}`)}"/>`;
+      })
       .join('\n');
     urls.push(
       `  <url>\n    <loc>${escapeXml(hostname + articleUrl(article))}</loc>\n    <lastmod>${article.updatedAt.slice(0, 10)}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${alternates}\n  </url>`,
