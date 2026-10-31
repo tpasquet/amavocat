@@ -9,6 +9,7 @@ import { DomainsComponent } from '../pages/domains/domains.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { LegalComponent } from '../pages/legal/legal.component';
 import { PrivacyComponent } from '../pages/privacy/privacy.component';
+import { AccessibilityComponent } from '../pages/accessibility/accessibility.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'politique-confidentialite',
         component: PrivacyComponent
+      },
+      {
+        path: 'accessibilite',
+        component: AccessibilityComponent
       },
       {
         // Lazy: the chunk embeds every published article (generated/articles.json)

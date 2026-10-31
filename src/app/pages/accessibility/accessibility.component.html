@@ -1,0 +1,46 @@
+<div class="page-container container-fluid">
+    <main class="main-layout" id="main-content">
+        <div class="content-wrapper">
+            <div class="accessibility-content">
+                <section class="bloc">
+                    <h1>{{ 'accessibility.title' | translate }}</h1>
+                    <p [innerHTML]="'accessibility.intro' | translate"></p>
+
+                    <h2>{{ 'accessibility.status.title' | translate }}</h2>
+                    <p [innerHTML]="'accessibility.status.content' | translate"></p>
+
+                    <h2>{{ 'accessibility.measures.title' | translate }}</h2>
+                    <ul>
+                        <li>{{ 'accessibility.measures.items.keyboard' | translate }}</li>
+                        <li>{{ 'accessibility.measures.items.screenReader' | translate }}</li>
+                        <li>{{ 'accessibility.measures.items.contrast' | translate }}</li>
+                        <li>{{ 'accessibility.measures.items.zoom' | translate }}</li>
+                        <li>{{ 'accessibility.measures.items.motion' | translate }}</li>
+                        <li>{{ 'accessibility.measures.items.media' | translate }}</li>
+                    </ul>
+
+                    <h2>{{ 'accessibility.limits.title' | translate }}</h2>
+                    <ul>
+                        <li>{{ 'accessibility.limits.items.map' | translate }}</li>
+                        <li>{{ 'accessibility.limits.items.external' | translate }}</li>
+                    </ul>
+
+                    <h2>{{ 'accessibility.testing.title' | translate }}</h2>
+                    <p>{{ 'accessibility.testing.content' | translate }}</p>
+
+                    <h2>{{ 'accessibility.contact.title' | translate }}</h2>
+                    <p>{{ 'accessibility.contact.content' | translate }}</p>
+                    <p>
+                        {{ 'legal.editor.email' | translate }} : <a href="mailto:contact@aureliemanier-avocat.fr">contact&#64;aureliemanier-avocat.fr</a><br>
+                        {{ 'legal.editor.phone' | translate }} : <a href="tel:+33769997560">07 69 99 75 60</a><br>
+                        {{ 'accessibility.contact.post' | translate }} : 90, rue Servient, 69003 Lyon
+                    </p>
+
+                    <p>
+                        <strong>{{ 'accessibility.date.label' | translate }} :</strong> {{ 'accessibility.date.value' | translate }}
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>

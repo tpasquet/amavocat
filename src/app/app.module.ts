@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DomainsComponent } from './pages/domains/domains.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { AccessibilityComponent } from './pages/accessibility/accessibility.component';
 
 const TRANSLATIONS: Record<SupportedLanguages, TranslationObject> = {
   [SupportedLanguages.FR]: fr,
@@ -49,6 +50,7 @@ export class BundledTranslateLoader implements TranslateLoader {
     DomainsComponent,
     LegalComponent,
     PrivacyComponent,
+    AccessibilityComponent,
   ],
   imports: [
     BrowserModule,

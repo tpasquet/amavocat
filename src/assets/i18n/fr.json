@@ -236,7 +236,8 @@
     "tagline": "Avocate en Droit Social et Dommage corporel",
     "bar": "Avocate au barreau de Lyon",
     "contactTitle": "Contact",
-    "officeTitle": "Cabinet"
+    "officeTitle": "Cabinet",
+    "accessibility": "Accessibilité"
   },
   "languageSelector": {
     "label": "Changer de langue",
@@ -286,5 +287,44 @@
     "phone": "Téléphone : 07 69 99 75 60",
     "email": "E-mail : contact@aureliemanier-avocat.fr",
     "quickContact": "Contact rapide"
+  },
+  "accessibility": {
+    "title": "Accessibilité",
+    "intro": "Maître Aurélie Manier souhaite que chacun puisse consulter ce site et prendre contact avec le cabinet, quel que soit son handicap ou sa manière de naviguer. Cette déclaration s'applique au site <strong>aureliemanier-avocat.fr</strong>.",
+    "status": {
+      "title": "État de conformité",
+      "content": "Le site n'a pas encore fait l'objet d'un audit de conformité complet au référentiel général d'amélioration de l'accessibilité (RGAA) par un organisme extérieur. Il est <strong>partiellement conforme</strong> : une vérification interne menée le 31 octobre 2026, selon les règles internationales WCAG 2.1 niveau AA, n'a plus relevé d'erreur sur les pages testées après corrections, mais elle ne couvre pas l'ensemble des critères du RGAA."
+    },
+    "measures": {
+      "title": "Ce qui a été mis en place",
+      "items": {
+        "keyboard": "Le site se parcourt entièrement au clavier ; l'élément sélectionné est toujours entouré d'un contour visible, et un lien « Aller au contenu principal » permet de passer le menu.",
+        "screenReader": "Les pages sont structurées par des titres et des zones (en-tête, navigation, contenu, pied de page), les images sont décrites et les liens qui ouvrent une nouvelle fenêtre le signalent.",
+        "contrast": "Les textes respectent un contraste suffisant avec leur fond.",
+        "zoom": "Le contenu reste lisible, sans défilement horizontal, avec un zoom jusqu'à 400 % ou sur un petit écran.",
+        "motion": "Les animations sont désactivées lorsque vous avez demandé à réduire les animations dans votre système.",
+        "media": "Le site ne contient ni vidéo ni contenu audio ; le cabinet peut être contacté par écrit (e-mail ou courrier) comme par téléphone."
+      }
+    },
+    "limits": {
+      "title": "Limites connues",
+      "items": {
+        "map": "La carte de la page Contact est fournie par OpenStreetMap et peut être difficile à utiliser au clavier ou avec un lecteur d'écran. L'adresse du cabinet et un lien d'itinéraire sont donnés en texte à côté.",
+        "external": "Les sites extérieurs vers lesquels renvoient certains liens (OpenStreetMap, Conseil national des barreaux, hébergeur) ne relèvent pas de cette déclaration."
+      }
+    },
+    "testing": {
+      "title": "Comment le site a été vérifié",
+      "content": "Tests automatiques avec l'outil axe-core sur toutes les pages, en français et en anglais, sur ordinateur et sur mobile ; tests manuels de navigation au clavier, de la visibilité du focus, du zoom et de l'espacement du texte, dans le navigateur Chromium. Le site est construit en HTML, CSS et JavaScript."
+    },
+    "contact": {
+      "title": "Signaler un problème",
+      "content": "Si vous ne parvenez pas à accéder à un contenu ou à un service du site, écrivez ou téléphonez au cabinet : nous vous répondrons et vous fournirons l'information sous une autre forme.",
+      "post": "Courrier"
+    },
+    "date": {
+      "label": "Déclaration établie le",
+      "value": "31 octobre 2026"
+    }
   }
 }

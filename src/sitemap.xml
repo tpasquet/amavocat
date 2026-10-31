@@ -112,4 +112,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aureliemanier-avocat.fr/fr/politique-confidentialite"/>
   </url>
 
+  <!-- Page accessibilité FR -->
+  <url>
+    <loc>https://aureliemanier-avocat.fr/fr/accessibilite</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/accessibilite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aureliemanier-avocat.fr/en/accessibilite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aureliemanier-avocat.fr/fr/accessibilite"/>
+  </url>
+
+  <!-- Page accessibilité EN -->
+  <url>
+    <loc>https://aureliemanier-avocat.fr/en/accessibilite</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/accessibilite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aureliemanier-avocat.fr/en/accessibilite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aureliemanier-avocat.fr/fr/accessibilite"/>
+  </url>
+
 </urlset>

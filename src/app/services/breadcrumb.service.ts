@@ -23,6 +23,7 @@ const SEGMENT_LABEL_KEYS: Record<string, string> = {
   'contact': 'navbar.contact',
   'mentions-legales': 'footer.legal',
   'politique-confidentialite': 'footer.privacy',
+  'accessibilite': 'footer.accessibility',
   'articles': 'navbar.articles',
 };
 

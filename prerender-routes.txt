@@ -8,3 +8,5 @@
 /en/mentions-legales
 /fr/politique-confidentialite
 /en/politique-confidentialite
+/fr/accessibilite
+/en/accessibilite
