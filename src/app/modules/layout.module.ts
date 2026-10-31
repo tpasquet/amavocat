@@ -11,6 +11,7 @@ import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.compone
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
 import { ContactCtaComponent } from '../components/contact-cta/contact-cta.component';
 import { ExpertiseGridComponent } from '../components/expertise-grid/expertise-grid.component';
+import { MobileActionBarComponent } from '../components/mobile-action-bar/mobile-action-bar.component';
 
 
 
@@ -23,7 +24,8 @@ import { ExpertiseGridComponent } from '../components/expertise-grid/expertise-g
     BreadcrumbComponent,
     LanguageSelectorComponent,
     ContactCtaComponent,
-    ExpertiseGridComponent
+    ExpertiseGridComponent,
+    MobileActionBarComponent
   ],
   imports: [
     CommonModule,

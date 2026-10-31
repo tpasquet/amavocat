@@ -1,0 +1,74 @@
+@import "../../../styles/variables";
+
+$bar-height: 56px;
+
+:host {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    // The host reserves the bar's height at the end of the page so the footer stays reachable
+    :host {
+        display: block;
+        height: $bar-height;
+    }
+
+    .mobile-action-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 900;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: $bar-height;
+        padding-bottom: env(safe-area-inset-bottom);
+        background-color: #fff;
+        border-top: 1px solid #dfe5ee;
+        box-shadow: 0 -4px 16px rgba(21, 44, 64, 0.08);
+    }
+
+    .action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+
+        i {
+            font-size: 1.1rem;
+        }
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            outline-offset: -3px;
+        }
+    }
+
+    .action--call {
+        color: #fff;
+        background-color: $primary;
+
+        &:hover,
+        &:focus-visible {
+            color: #fff;
+            background-color: $dark;
+        }
+    }
+
+    .action--mail {
+        color: $primary;
+
+        &:hover,
+        &:focus-visible {
+            color: $primary;
+            background-color: $light;
+        }
+    }
+}

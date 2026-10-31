@@ -82,7 +82,18 @@
     },
     "mapTitle": "Plan d'accès au cabinet, 90 rue Servient, 69003 Lyon",
     "address": "Adresse",
-    "directions": "Itinéraire"
+    "directions": "Itinéraire",
+    "hours": {
+      "title": "Horaires",
+      "days": "Du lundi au vendredi, 9h – 18h",
+      "note": "Sur rendez-vous"
+    },
+    "modes": {
+      "title": "Modes de consultation",
+      "office": "Au cabinet",
+      "video": "En visioconférence",
+      "phone": "Par téléphone"
+    }
   },
   "domains": {
     "title": "Domaines d'expertise",
@@ -259,5 +270,9 @@
         "lead": "Indemnisation des victimes"
       }
     }
+  },
+  "mobileBar": {
+    "call": "Appeler",
+    "email": "Écrire"
   }
 }
