@@ -1,26 +1,23 @@
-<div class="language-selector">
-    <div class="custom-select" [class.open]="isOpen">
-        <button type="button" class="select-trigger" (click)="toggleDropdown()"
-                aria-haspopup="true" [attr.aria-expanded]="isOpen"
-                [attr.aria-label]="'languageSelector.label' | translate">
-            <span>{{ language === 'fr' ? 'Français' : 'English' }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="arrow" aria-hidden="true">
-                <path fill="#274c77" d="M1 1l4 4 4-4"/>
-            </svg>
-        </button>
-        <ul class="select-options" *ngIf="isOpen">
-            <li>
-                <button type="button" class="option" lang="fr" (click)="selectLanguage('fr')"
-                        [class.selected]="language === 'fr'" [attr.aria-current]="language === 'fr' ? 'true' : null">
-                    Français
-                </button>
-            </li>
-            <li>
-                <button type="button" class="option" lang="en" (click)="selectLanguage('en')"
-                        [class.selected]="language === 'en'" [attr.aria-current]="language === 'en' ? 'true' : null">
-                    English
-                </button>
-            </li>
-        </ul>
-    </div>
+<div class="language-selector" [class.open]="isOpen">
+    <button type="button" class="select-trigger" (click)="toggleDropdown()"
+            aria-haspopup="listbox" [attr.aria-expanded]="isOpen"
+            [attr.aria-label]="'languageSelector.label' | translate">
+        <i class="bi bi-globe2" aria-hidden="true"></i>
+        <span class="select-value">{{ language === 'fr' ? 'Français' : 'English' }}</span>
+        <i class="bi bi-chevron-down select-chevron" aria-hidden="true"></i>
+    </button>
+    <ul class="select-options" role="listbox" *ngIf="isOpen" [attr.aria-label]="'languageSelector.label' | translate">
+        <li role="option" lang="fr" [attr.aria-selected]="language === 'fr'">
+            <button type="button" class="option" [class.selected]="language === 'fr'" (click)="selectLanguage('fr')">
+                Français
+                <i *ngIf="language === 'fr'" class="bi bi-check-lg" aria-hidden="true"></i>
+            </button>
+        </li>
+        <li role="option" lang="en" [attr.aria-selected]="language === 'en'">
+            <button type="button" class="option" [class.selected]="language === 'en'" (click)="selectLanguage('en')">
+                English
+                <i *ngIf="language === 'en'" class="bi bi-check-lg" aria-hidden="true"></i>
+            </button>
+        </li>
+    </ul>
 </div>
