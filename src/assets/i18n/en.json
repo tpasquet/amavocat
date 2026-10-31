@@ -83,7 +83,18 @@
     },
     "mapTitle": "Map of the office, 90 rue Servient, 69003 Lyon",
     "address": "Address",
-    "directions": "Directions"
+    "directions": "Directions",
+    "hours": {
+      "title": "Opening hours",
+      "days": "Monday to Friday, 9am – 6pm",
+      "note": "By appointment"
+    },
+    "modes": {
+      "title": "Consultation modes",
+      "office": "At the office",
+      "video": "By videoconference",
+      "phone": "By phone"
+    }
   },
   "domains": {
     "title": "Areas of Expertise",
@@ -260,5 +271,9 @@
         "lead": "Compensation for victims"
       }
     }
+  },
+  "mobileBar": {
+    "call": "Call",
+    "email": "Email"
   }
 }
