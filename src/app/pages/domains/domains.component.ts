@@ -7,18 +7,18 @@ import { MetaService } from 'src/app/services/meta.service';
 
 const DomainMetaTranslations: PageMetaTranslations = {
   en: {
-    title: 'Domains of Expertise | Aurélie Manier',
-    description: 'Explore the domains of expertise offered by Aurélie Manier, a social law and personal injury lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
-    ogTitle: 'Domains of Expertise | Aurélie Manier',
-    ogDescription: 'Explore the domains of expertise offered by Aurélie Manier, a social law and personal injury lawyer in Lyon. Specializing in employment disputes, discrimination, harassment, and wage issues.',
+    title: 'Dismissal, Harassment, Work Accidents | Lawyer in Lyon',
+    description: 'Employment disputes and dismissal, harassment, unfitness for work, work and road accidents, occupational diseases, social security disputes in Lyon.',
+    ogTitle: 'Dismissal, Harassment, Work Accidents | Lawyer in Lyon',
+    ogDescription: 'Employment disputes and dismissal, harassment, unfitness for work, work and road accidents, occupational diseases, social security disputes in Lyon.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/en/domaines`
   },
   fr: {
-    title: 'Domaines d\'Expertise | Aurélie Manier',
-    description: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en Droit Social et Dommage corporel à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
-    ogTitle: 'Domaines d\'Expertise | Aurélie Manier',
-    ogDescription: 'Découvrez les domaines d\'expertise offerts par Aurélie Manier, avocate en Droit Social et Dommage corporel à Lyon. Spécialisée dans les litiges liés à l\'emploi, la discrimination, le harcèlement et les questions salariales.',
+    title: 'Licenciement, harcèlement, accident du travail | Avocate Lyon',
+    description: 'Litiges du travail et licenciement, harcèlement, inaptitude, accidents du travail et de la route, maladies professionnelles, litiges avec la Sécurité sociale.',
+    ogTitle: 'Licenciement, harcèlement, accident du travail | Avocate Lyon',
+    ogDescription: 'Litiges du travail et licenciement, harcèlement, inaptitude, accidents du travail et de la route, maladies professionnelles, litiges avec la Sécurité sociale.',
     ogImage: `${Constants.HOSTNAME}/assets/img/profile-picture-home.jpg`,
     canonical: `${Constants.HOSTNAME}/fr/domaines`
   }
