@@ -11,7 +11,10 @@
             <li *ngIf="hasArticles"><a class="custom-link" [routerLink]="['/', language, 'articles']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.articles' | translate }}</a></li>
             <li><a class="custom-link" [routerLink]="['/', language, 'contact']" routerLinkActive="is-active" ariaCurrentWhenActive="page">{{ 'navbar.contact' | translate }}</a></li>
         </ul>
-        <app-language-selector></app-language-selector>
+        <div class="navbar-actions">
+            <a class="navbar-cta" [routerLink]="['/', language, 'contact']">{{ 'navbar.appointment' | translate }}</a>
+            <app-language-selector></app-language-selector>
+        </div>
     </div>
 </nav>
 <nav class="navbar-mobile-container" *ngIf="showBurgerMenu" [class.fixed-top]="isScrollingUp" aria-label="Navigation principale mobile">

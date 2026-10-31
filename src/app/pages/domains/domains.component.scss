@@ -39,7 +39,7 @@
     max-width: 400px;
 }
 
-// The fonts partial resets list padding: on mobile, bring the bullets back inside the grey cards
+// The fonts partial resets list padding: on mobile, bring the bullets back inside the block
 .bloc ul {
     @media (max-width: 767px) {
         padding-left: 1.2rem;

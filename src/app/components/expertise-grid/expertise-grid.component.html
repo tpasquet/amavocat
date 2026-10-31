@@ -1,0 +1,10 @@
+<div class="expertise-group" *ngFor="let group of groups">
+    <h3 class="expertise-group-title">{{ 'expertise.groups.' + group.key + '.title' | translate }}</h3>
+    <p class="expertise-group-lead">{{ 'expertise.groups.' + group.key + '.lead' | translate }}</p>
+    <ul class="expertise-cards">
+        <li class="expertise-card" *ngFor="let item of group.items">
+            <i class="bi" [ngClass]="item.icon" aria-hidden="true"></i>
+            <span [innerHTML]="itemsKey + '.' + item.key | translate"></span>
+        </li>
+    </ul>
+</div>

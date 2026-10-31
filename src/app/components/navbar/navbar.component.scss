@@ -1,20 +1,18 @@
 @import "../../../styles/variables";
 
-.navbar-desktop-wrapper {
-    position: relative;
-}
-
 .navbar-desktop {
     position: relative;
     width: 100%;
     z-index: 999;
     background-color: #b7d0ec;
     padding: 1rem 0;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 0 rgba(39, 76, 119, 0.15);
 
     &.fixed-top {
         position: fixed;
         animation: slideDown 0.3s;
+        box-shadow: 0 4px 18px rgba(21, 44, 64, 0.12);
     }
 }
 
@@ -76,7 +74,7 @@
     position: relative;
     text-decoration: none;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 19px;
     color: $primary !important;
     background: none;
     border: none;
@@ -102,6 +100,33 @@
 
     &:focus { outline: none; }
     &:focus-visible { outline: 3px solid $primary; outline-offset: 4px; }
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-cta {
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #fff !important;
+    background-color: $primary;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        background-color: $dark;
+        text-decoration: none;
+    }
+
+    &:focus { outline: none; }
+    &:focus-visible { outline: 3px solid $primary; outline-offset: 3px; }
 }
 
 .burger-menu-container {
@@ -148,11 +173,13 @@
     width: 100%;
     left: 0;
     right: 0;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 0 rgba(39, 76, 119, 0.15);
 
     &.fixed-top {
         position: fixed;
         animation: slideDown 0.3s;
+        box-shadow: 0 4px 18px rgba(21, 44, 64, 0.12);
     }
 }
 
@@ -250,64 +277,9 @@
             &:focus { outline: none; }
             &:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
         }
-
-        button {
-            display: block;
-            position: relative;
-            color: #fff;
-            text-decoration: none;
-            overflow: hidden;
-            font-family: Nunito, Helvetica, Arial, sans-serif;
-            font-size: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px 16px;
-
-            &:focus {
-                outline: 3px solid $primary;
-                outline-offset: 2px;
-            }
-        }
     }
 }
 
 .language-mobile-item {
     margin-top: 3rem !important;
-}
-
-.language-mobile-selector {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.language-mobile-btn {
-    background: none;
-    border: 2px solid $primary;
-    font-size: 32px;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    opacity: 0.6;
-
-    &:hover {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-
-    &.active {
-        opacity: 1;
-        border-color: $primary;
-        background-color: rgba(39, 76, 119, 0.1);
-        transform: scale(1.1);
-    }
-
-    &:focus { outline: none; }
-    &:focus-visible {
-        outline: 3px solid $primary;
-        outline-offset: 2px;
-    }
 }

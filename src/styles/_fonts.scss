@@ -79,16 +79,19 @@ ul {
     }
 }
 
-.big-underline {
+// Highlighter stroke behind the lower half of a title (section titles and page titles)
+.big-underline,
+.page-title {
     display: inline-block;
     position: relative;
+    z-index: 0;
 
     &::before {
         content: "";
         position: absolute;
         width: 100%;
-        height: 100%;
-        top: 10px;
+        height: 45%;
+        bottom: -2px;
         left: 6px;
         background-color: #b7d0ec;
         z-index: -1;

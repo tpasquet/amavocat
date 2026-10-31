@@ -5,10 +5,12 @@
     "contact": "Contact",
     "title": "Aurélie Manier",
     "subtitle": "Social Law and Personal Injury Attorney in Lyon",
-    "articles": "Articles"
+    "articles": "Articles",
+    "appointment": "Book an appointment"
   },
   "home": {
     "title": "Aurélie Manier, social law and personal injury lawyer in Lyon",
+    "kicker": "Attorney at the Lyon Bar",
     "intro": "Attorney in Lyon, <strong>Maître Aurélie MANIER</strong> practices in the field of <strong>Labor Law</strong>, <strong>Social Security Law</strong> and <strong>Personal Injury</strong>. She was sworn in in <strong>December 2021</strong>.",
     "expertise": {
       "title": "Areas of Expertise",
@@ -237,5 +239,21 @@
     "empty": "No articles published yet.",
     "tags": "Topics",
     "back": "All articles"
+  },
+  "expertise": {
+    "groups": {
+      "labor": {
+        "title": "Labor Law",
+        "lead": "Employees and employers"
+      },
+      "socialSecurity": {
+        "title": "Social Security Law",
+        "lead": "Dealing with social organizations"
+      },
+      "personalInjury": {
+        "title": "Personal Injury",
+        "lead": "Compensation for victims"
+      }
+    }
   }
 }

@@ -2,42 +2,29 @@
     <main class="main-layout" id="main-content">
         <div class="content-wrapper">
             <h1 class="sr-only">{{ 'home.title' | translate }}</h1>
-            <section class="bloc">
-                <p class="intro-text" [innerHTML]="'home.intro' | translate"></p>
-                <div class="hero-actions">
-                    <a class="cta-button cta-button--primary" [routerLink]="['/', language, 'contact']">{{ 'home.cta.appointment' | translate }}</a>
-                    <a class="cta-button cta-button--outline" [routerLink]="['/', language, 'domaines']">{{ 'home.cta.domains' | translate }}</a>
+            <section class="bloc hero">
+                <div class="hero-text">
+                    <p class="hero-kicker">{{ 'home.kicker' | translate }}</p>
+                    <p class="intro-text" [innerHTML]="'home.intro' | translate"></p>
+                    <div class="hero-actions">
+                        <a class="cta-button cta-button--primary" [routerLink]="['/', language, 'contact']">{{ 'home.cta.appointment' | translate }}</a>
+                        <a class="cta-button cta-button--outline" [routerLink]="['/', language, 'domaines']">{{ 'home.cta.domains' | translate }}</a>
+                    </div>
                 </div>
-                <img class="img-fluid profile-image mobile-only" 
+                <img class="profile-image"
                     src="../../../assets/img/profile-picture-home.jpg"
                     srcset="../../../assets/img/profile-picture-home-350w.jpg 350w,
                             ../../../assets/img/profile-picture-home-525w.jpg 525w,
                             ../../../assets/img/profile-picture-home.jpg 700w"
-                    sizes="(max-width: 768px) 250px, 350px"
+                    sizes="(max-width: 767px) 250px, 280px"
+                    fetchpriority="high"
                     alt="Portrait de Maître Aurélie Manier">
             </section>
 
-            <section class="bloc bloc-with-image">
-                <img class="img-fluid profile-image desktop-only" 
-                    src="../../../assets/img/profile-picture-home.jpg"
-                    srcset="../../../assets/img/profile-picture-home-350w.jpg 350w,
-                            ../../../assets/img/profile-picture-home-525w.jpg 525w,
-                            ../../../assets/img/profile-picture-home.jpg 700w"
-                    sizes="350px"
-                    alt="Portrait de Maître Aurélie Manier">
+            <section class="bloc">
                 <h2 class="bloc-title big-underline">{{ 'home.expertise.title' | translate }}</h2>
                 <p [innerHTML]="'home.expertise.description' | translate"></p>
-                <ul>
-                    <li [innerHTML]="'home.expertise.items.litigation' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.safety' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.harassment' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.inaptitude' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.accidents' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.trafficAccidents' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.diseases' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.disability' | translate"></li>
-                    <li [innerHTML]="'home.expertise.items.organisms' | translate"></li>
-                </ul>
+                <app-expertise-grid itemsKey="home.expertise.items"></app-expertise-grid>
             </section>
 
             <section class="bloc">
