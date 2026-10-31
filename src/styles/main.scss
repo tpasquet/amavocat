@@ -118,7 +118,8 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.01em;
     line-height: 1.2;
     text-decoration: none;
-    border: 1.5px solid $primary;
+    border: 1.5px solid transparent;
+    border-radius: 6px;
     transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
     &:hover,
@@ -137,6 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-button--primary {
     background-color: $primary;
+    border-color: $primary;
     color: #fff;
     box-shadow: 0 1px 0 rgba(21, 44, 64, 0.25), 0 10px 22px -10px rgba(39, 76, 119, 0.65);
 
@@ -162,13 +164,24 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+// Tonal secondary button: light grey fill, no border
 .cta-button--outline {
-    background-color: transparent;
+    background-color: $light;
     color: $primary;
 
     &:hover,
     &:focus {
-        background-color: $light;
+        background-color: $secondary;
         color: $primary;
+    }
+
+    // On the grey contact block the tonal fill would vanish: use white there
+    .contact-cta & {
+        background-color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: $secondary;
+        }
     }
 }
