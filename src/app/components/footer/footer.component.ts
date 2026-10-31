@@ -10,6 +10,8 @@ import { LanguageService } from '../../services/language.service';
 })
 export class FooterComponent implements OnInit {
   language: string = 'fr';
+  // Evaluated at runtime in the browser, so the prerendered year never goes stale
+  readonly currentYear = new Date().getFullYear();
 
   constructor(
     private languageService: LanguageService,
