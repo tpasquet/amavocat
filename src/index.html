@@ -40,9 +40,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<!-- Nunito, self-hosted (variable font, latin subset, SIL OFL): no request to Google, no render-blocking CSS -->
+  <link rel="preload" href="assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-display: swap;
+      font-weight: 200 1000;
+      src: url('assets/fonts/nunito-latin-wght-normal.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
 
   <!-- Schema.org structured data: one graph, so search engines see a single law firm and lawyer -->
   <script type="application/ld+json">
@@ -69,8 +78,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 45.7578,
-          "longitude": 4.8320
+          "latitude": 45.7603,
+          "longitude": 4.8501
         },
         "areaServed": {
           "@type": "City",
@@ -107,7 +116,11 @@
         "image": "https://aureliemanier-avocat.fr/assets/img/profile-picture-home.jpg",
         "url": "https://aureliemanier-avocat.fr/fr",
         "worksFor": { "@id": "https://aureliemanier-avocat.fr/#cabinet" },
-        "memberOf": { "@type": "Organization", "name": "Barreau de Lyon" }
+        "memberOf": { "@type": "Organization", "name": "Barreau de Lyon", "url": "https://www.barreaulyon.com" },
+        "sameAs": [
+          "https://www.barreaulyon.com/annuaire/avocat/manier-aurelie/",
+          "https://www.linkedin.com/in/aur%C3%A9lie-manier/"
+        ]
       },
       {
         "@type": "WebSite",

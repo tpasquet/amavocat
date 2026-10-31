@@ -5,7 +5,7 @@
   <!-- Page d'accueil FR -->
   <url>
     <loc>https://aureliemanier-avocat.fr/fr</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr"/>
@@ -16,7 +16,7 @@
   <!-- Page d'accueil EN -->
   <url>
     <loc>https://aureliemanier-avocat.fr/en</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr"/>
@@ -27,7 +27,7 @@
   <!-- Page domaines FR -->
   <url>
     <loc>https://aureliemanier-avocat.fr/fr/domaines</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/domaines"/>
@@ -38,7 +38,7 @@
   <!-- Page domaines EN -->
   <url>
     <loc>https://aureliemanier-avocat.fr/en/domaines</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/domaines"/>
@@ -49,7 +49,7 @@
   <!-- Page contact FR -->
   <url>
     <loc>https://aureliemanier-avocat.fr/fr/contact</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/contact"/>
@@ -60,7 +60,7 @@
   <!-- Page contact EN -->
   <url>
     <loc>https://aureliemanier-avocat.fr/en/contact</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/contact"/>
@@ -71,7 +71,7 @@
   <!-- Page mentions légales FR -->
   <url>
     <loc>https://aureliemanier-avocat.fr/fr/mentions-legales</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/mentions-legales"/>
@@ -82,7 +82,7 @@
   <!-- Page mentions légales EN -->
   <url>
     <loc>https://aureliemanier-avocat.fr/en/mentions-legales</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/mentions-legales"/>
@@ -93,7 +93,7 @@
   <!-- Page politique de confidentialité FR -->
   <url>
     <loc>https://aureliemanier-avocat.fr/fr/politique-confidentialite</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/politique-confidentialite"/>
@@ -104,7 +104,7 @@
   <!-- Page politique de confidentialité EN -->
   <url>
     <loc>https://aureliemanier-avocat.fr/en/politique-confidentialite</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://aureliemanier-avocat.fr/fr/politique-confidentialite"/>
