@@ -60,6 +60,13 @@
     @media (max-width: 991px) {
         left: 0;
     }
+
+    // Neutralise the global list typography (desktop li margin and line-height)
+    li {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
 }
 
 .option {
@@ -95,5 +102,6 @@
 
     .bi-check-lg {
         font-size: 1rem;
+        line-height: 1;
     }
 }
