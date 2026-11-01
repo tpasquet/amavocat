@@ -122,7 +122,10 @@ jobs:
             -e "ssh -i ~/.ssh/id_deploy" \
             deploy/ \
             "$SSH_USER@$SSH_HOST:${API_PATH%/}/"
-          ssh -i ~/.ssh/id_deploy "$SSH_USER@$SSH_HOST" "cd '${API_PATH%/}' && npm ci --omit=dev"
+          # Non-interactive SSH sessions get the system Node (20): install with the Node 22 the site runs,
+          # so native modules (better-sqlite3, argon2) are built for the right ABI
+          ssh -i ~/.ssh/id_deploy "$SSH_USER@$SSH_HOST" \
+            "export PATH=/usr/alwaysdata/nodejs/22/bin:\$PATH && cd '${API_PATH%/}' && npm ci --omit=dev"
 
       - name: Restart the Node.js site
         if: steps.settings.outputs.ready == 'true'
