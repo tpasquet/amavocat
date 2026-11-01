@@ -1,6 +1,7 @@
 # amavocat API
 
-Backend of the backoffice: authentication, extensible content entries with scheduled publication, image uploads.
+Backend of the backoffice: authentication, extensible content entries with scheduled publication, image uploads,
+and the public site's contact form.
 It also serves the Angular admin app (`projects/admin`, built with `npm run build:admin` at the repository root)
 under `/admin/`, so the admin and the API share one origin.
 Fastify 5 + TypeScript, SQLite through Drizzle ORM, zod validation, Vitest.
@@ -38,12 +39,29 @@ rebuild: it reads the app's files at startup).
 | DELETE | `/api/admin/entries/:type/:id` | cookie | Delete |
 | POST | `/api/admin/media` | cookie | Upload one image (multipart, JPEG/PNG/WebP/GIF, 8 MB max), returns its absolute URL |
 | GET | `/api/public/entries/:type` | no | Published entries only (`publishAt` reached), newest first (`?locale=fr`) |
+| POST | `/api/contact` | no | Contact form, emails the message to `CONTACT_TO` (see below). Limited to 5 messages / hour / IP |
 | GET | `/media/:file` | no | Uploaded images |
 | GET | `/admin/*` | no | Admin app (the app itself asks for a login) |
 
 Security notes: passwords are hashed with argon2id, only a SHA-256 of the session token is stored, the cookie is
 `HttpOnly` + `SameSite=Strict` (+ `Secure` in production), and non-GET requests from an origin outside `CORS_ORIGINS`
 are refused (requests from the API's own origin, i.e. the admin app, are always accepted).
+
+## Contact form
+
+`POST /api/contact` takes `{ firstName, lastName, email, phone?, message, consent: true, locale?, website?, elapsedMs? }`
+and answers `202 { status: 'sent' }`, `400 { error: 'invalid_body', fields }`, `429` (rate limit), `502` (SMTP
+error) or `503` (SMTP not configured). The message is emailed to `CONTACT_TO` with the visitor as `Reply-To`, so
+replying to the email answers them directly; it is **not stored** by the API, and its content is never logged.
+
+Anti-spam, without captcha or cookies: a hidden `website` field that only bots fill, a minimum of 2 seconds between
+displaying the form and submitting it (`elapsedMs`), the rate limit, and the origin check (browsers on other sites
+are refused). Filtered messages get the same `202` answer, so bots cannot tell.
+
+SMTP settings (all optional; the form stays disabled until `SMTP_HOST`, `CONTACT_TO` and `CONTACT_FROM` are set):
+`SMTP_HOST`, `SMTP_PORT` (587), `SMTP_SECURE` (`false` = STARTTLS required, `true` for port 465), `SMTP_USER`,
+`SMTP_PASSWORD`, `CONTACT_TO`, `CONTACT_FROM`. With an Alwaysdata mailbox: `SMTP_HOST=smtp-aureliemanier-avocat.alwaysdata.net`,
+`SMTP_USER` / `SMTP_PASSWORD` = the mailbox address and password, `CONTACT_FROM` = that same address.
 
 ## Content types
 
@@ -101,7 +119,8 @@ One-time setup:
    `NODE_ENV=production COOKIE_SECURE=true DATABASE_PATH=/home/aureliemanier-avocat/data/amavocat.sqlite
    MEDIA_DIR=/home/aureliemanier-avocat/data/media ADMIN_DIR=/home/aureliemanier-avocat/api/admin
    PUBLIC_URL=https://api.aureliemanier-avocat.fr CORS_ORIGINS=https://aureliemanier-avocat.fr`.
-   Also add `GITHUB_DISPATCH_TOKEN` (step 4) to enable automatic site rebuilds.
+   Also add `GITHUB_DISPATCH_TOKEN` (step 4) to enable automatic site rebuilds, and the `SMTP_*` / `CONTACT_*`
+   variables (see [Contact form](#contact-form)) to enable the contact form.
 2. Alwaysdata, **Profile > Tokens**: create an API token.
 3. GitHub, environment `prod`: add variables `ALWAYSDATA_API_PATH=/home/aureliemanier-avocat/api/` and
    `ALWAYSDATA_API_SITE_ID=<id of the Node.js site>`, and secret `ALWAYSDATA_API_TOKEN`.

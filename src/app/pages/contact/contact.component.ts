@@ -2,6 +2,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Constants } from 'src/app/global/constant';
+import { environment } from 'src/app/environments/environment';
 import { PageMetaTranslations } from 'src/app/global/types';
 import { LanguageService } from 'src/app/services/language.service';
 import { MetaService } from 'src/app/services/meta.service';
@@ -31,6 +32,7 @@ const ContactMetaTranslations: PageMetaTranslations = {
     standalone: false
 })
 export class ContactComponent {
+  readonly contactForm = environment.contactForm;
 
   xSmall = false;
   small = false;

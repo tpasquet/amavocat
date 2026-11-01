@@ -65,21 +65,37 @@
     "infoTitle": "Contact Information",
     "formTitle": "Send us a message",
     "form": {
-      "title": "Contact Maitre Manier",
-      "firstName": "First Name",
-      "firstNamePlaceholder": "Enter your first name",
-      "lastName": "Last Name",
-      "lastNamePlaceholder": "Enter your last name",
-      "phone": "Phone",
-      "phonePlaceholder": "Enter your phone number",
+      "title": "Send a message",
+      "intro": "Briefly describe your situation: Maître Manier will get back to you to discuss it or arrange an appointment.",
+      "requiredNote": "Fields marked with an asterisk (*) are required.",
+      "firstName": "First name",
+      "lastName": "Last name",
       "email": "Email",
-      "emailPlaceholder": "Enter your email address",
-      "message": "Message",
-      "messagePlaceholder": "Enter the reason for contacting us",
-      "required": "required",
-      "submit": "Send",
-      "submitting": "Sending...",
-      "success": "✓ Your message has been sent successfully!"
+      "emailHint": "So we can reply. Expected format: name@example.com",
+      "phone": "Phone",
+      "optional": "optional",
+      "message": "Your message",
+      "messageHint": "5,000 characters maximum. No need to send documents at this stage.",
+      "honeypot": "Leave this field empty",
+      "consent": "I agree that the information I enter is used to answer my request.",
+      "privacyLink": "How is my data used?",
+      "submit": "Send the message",
+      "submitting": "Sending…",
+      "success": "Your message has been sent.",
+      "successText": "Maître Manier will reply as soon as possible, by email or phone.",
+      "another": "Write another message",
+      "errors": {
+        "firstName": "Enter your first name.",
+        "lastName": "Enter your last name.",
+        "emailRequired": "Enter your email address.",
+        "emailFormat": "Invalid email address. Example: name@example.com",
+        "phone": "Invalid number: use only digits, spaces, +, - or brackets.",
+        "message": "Write your message.",
+        "consent": "Tick this box so we can reply to you.",
+        "rateLimited": "Too many messages were sent from your connection. Try again in an hour, or contact the office directly:",
+        "invalid": "Some information was not accepted. Check the form, or contact the office directly:",
+        "unavailable": "Your message could not be sent. Try again later, or contact the office directly:"
+      }
     },
     "mapTitle": "Map of the office, 90 rue Servient, 69003 Lyon",
     "address": "Address",
@@ -169,30 +185,32 @@
     },
     "collection": {
       "title": "Data Collected",
-      "intro": "We use Umami Analytics, a privacy-friendly and GDPR-compliant analytics solution. The data collected is:",
+      "intro": "Depending on how you use the site, we collect the following data:",
       "items": {
-        "analytics": "<strong>Anonymized analytical data</strong>: pages visited, visit duration, device used (without personal identification)"
+        "contactForm": "<strong>Contact form</strong>: first name, last name, email address, phone (optional) and the content of your message, only if you send it",
+        "analytics": "<strong>Anonymized analytical data</strong> (Umami Analytics): pages visited, visit duration, device used (without personal identification)"
       }
     },
     "purpose": {
       "title": "Processing Purposes",
-      "intro": "Analytical data is collected for the following purposes:",
+      "intro": "This data is used for the following purposes:",
       "items": {
+        "contactForm": "Answer requests sent through the contact form and, where relevant, arrange an appointment",
         "analytics": "Improve user experience on the site",
         "stats": "Analyze traffic and site usage anonymously"
       }
     },
     "legal": {
       "title": "Legal Basis",
-      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: for the use of analytical cookies<br><strong>Legitimate interest</strong>: to improve the site and its content"
+      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: for messages sent through the contact form (checkbox). You can withdraw it at any time by writing to contact@aureliemanier-avocat.fr<br><strong>Legitimate interest</strong>: for anonymous audience measurement, to improve the site and its content"
     },
     "recipients": {
       "title": "Data Recipients",
-      "content": "Your personal data is intended only for <strong>Aurélie MANIER</strong> and is <strong>never sold or shared</strong> with third parties, except for legal obligations."
+      "content": "Your personal data is intended only for <strong>Aurélie MANIER</strong> and is <strong>never sold or shared</strong> with third parties, except for legal obligations.<br><br>Contact form messages pass through the servers of our host, <strong>Alwaysdata</strong> (Paris, France), which acts as a processor and does not access them for its own purposes. They are not stored on the site: they are emailed directly to the office."
     },
     "retention": {
       "title": "Retention Period",
-      "content": "Anonymized analytical data is kept for a maximum period of <strong>13 months</strong> in accordance with CNIL recommendations."
+      "content": "Messages sent through the contact form are kept in the office's mailbox for a maximum of <strong>3 years</strong> after the last exchange if they do not lead to a case; otherwise, they are kept with the case file for the period required by the rules of the legal profession.<br><br>Anonymized analytical data is kept for a maximum period of <strong>13 months</strong> in accordance with CNIL recommendations."
     },
     "rights": {
       "title": "Your Rights",
@@ -227,7 +245,8 @@
       "title": "Contact",
       "content": "For any questions regarding this privacy policy or your personal data, contact us:"
     },
-    "lastUpdate": "Last update"
+    "lastUpdate": "Last update",
+    "lastUpdateDate": "31 October 2026"
   },
   "footer": {
     "copyright": "Aurélie Manier - Attorney at the Lyon Bar",

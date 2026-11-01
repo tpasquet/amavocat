@@ -24,6 +24,14 @@ const configSchema = z.object({
   GITHUB_DISPATCH_TOKEN: z.string().optional(),
   GITHUB_REPOSITORY: z.string().default('tpasquet/amavocat'),
   SESSION_TTL_DAYS: z.coerce.number().int().positive().default(7),
+  // Contact form: SMTP server used to email the messages, and their recipient / sender addresses
+  SMTP_HOST: z.string().optional(),
+  SMTP_PORT: z.coerce.number().int().positive().default(587),
+  SMTP_SECURE: booleanString.default(false),
+  SMTP_USER: z.string().optional(),
+  SMTP_PASSWORD: z.string().optional(),
+  CONTACT_TO: z.string().optional(),
+  CONTACT_FROM: z.string().optional(),
 });
 
 export type Config = {
@@ -39,6 +47,14 @@ export type Config = {
   githubDispatchToken: string | undefined;
   githubRepository: string;
   sessionTtlMs: number;
+  /** Undefined until SMTP_HOST, CONTACT_TO and CONTACT_FROM are all set: the contact form then answers 503 */
+  contact:
+    | {
+        smtp: { host: string; port: number; secure: boolean; user: string | undefined; password: string | undefined };
+        to: string;
+        from: string;
+      }
+    | undefined;
 };
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
@@ -56,5 +72,19 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     githubDispatchToken: parsed.GITHUB_DISPATCH_TOKEN || undefined,
     githubRepository: parsed.GITHUB_REPOSITORY,
     sessionTtlMs: parsed.SESSION_TTL_DAYS * 24 * 60 * 60 * 1000,
+    contact:
+      parsed.SMTP_HOST && parsed.CONTACT_TO && parsed.CONTACT_FROM
+        ? {
+            smtp: {
+              host: parsed.SMTP_HOST,
+              port: parsed.SMTP_PORT,
+              secure: parsed.SMTP_SECURE,
+              user: parsed.SMTP_USER || undefined,
+              password: parsed.SMTP_PASSWORD || undefined,
+            },
+            to: parsed.CONTACT_TO,
+            from: parsed.CONTACT_FROM,
+          }
+        : undefined,
   };
 }
