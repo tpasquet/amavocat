@@ -202,7 +202,7 @@
     },
     "legal": {
       "title": "Base légale",
-      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : pour les messages envoyés via le formulaire de contact (case à cocher). Vous pouvez le retirer à tout moment en écrivant à contact@aureliemanier-avocat.fr<br><strong>L'intérêt légitime</strong> : pour la mesure d'audience anonyme, afin d'améliorer le site et son contenu"
+      "content": "Le traitement de vos données repose sur :<br><br><strong>Votre consentement</strong> : pour les messages envoyés via le formulaire de contact (case à cocher). Vous pouvez le retirer à tout moment en écrivant au cabinet (formulaire de contact ou contact@aureliemanier-avocat.fr)<br><strong>L'intérêt légitime</strong> : pour la mesure d'audience anonyme, afin d'améliorer le site et son contenu"
     },
     "recipients": {
       "title": "Destinataires des données",
@@ -223,7 +223,7 @@
         "portability": "<strong>Droit à la portabilité</strong> : récupérer vos données dans un format structuré",
         "complaint": "<strong>Droit de réclamation</strong> : introduire une réclamation auprès de la CNIL"
       },
-      "exercise": "Pour exercer ces droits, contactez-nous à l'adresse : <a href=\"mailto:contact@aureliemanier-avocat.fr\">contact@aureliemanier-avocat.fr</a>"
+      "exercise": "Pour exercer ces droits, écrivez-nous avec le formulaire de contact ou à l'adresse indiquée ci-dessous, dans la rubrique « Contact »."
     },
     "security": {
       "title": "Sécurité des données",
@@ -269,7 +269,8 @@
     "title": "Besoin d'un conseil ?",
     "text": "Premier échange par téléphone pour faire le point sur votre situation.",
     "callLabel": "Appeler le 07 69 99 75 60",
-    "email": "Écrire un e-mail"
+    "message": "Écrire un message",
+    "messageLabel": "Écrire un message au cabinet avec le formulaire de contact"
   },
   "articles": {
     "title": "Articles",
@@ -296,7 +297,7 @@
   },
   "mobileBar": {
     "call": "Appeler",
-    "email": "Écrire"
+    "message": "Écrire"
   },
   "a11y": {
     "skipToContent": "Aller au contenu principal",
@@ -305,7 +306,9 @@
     "newWindow": "(nouvelle fenêtre)",
     "phone": "Téléphone : 07 69 99 75 60",
     "email": "E-mail : contact@aureliemanier-avocat.fr",
-    "quickContact": "Contact rapide"
+    "quickContact": "Contact rapide",
+    "contactForm": "Formulaire de contact",
+    "contactFormLink": "écrire un message depuis la page Contact"
   },
   "accessibility": {
     "title": "Accessibilité",
@@ -322,7 +325,7 @@
         "contrast": "Les textes respectent un contraste suffisant avec leur fond.",
         "zoom": "Le contenu reste lisible, sans défilement horizontal, avec un zoom jusqu'à 400 % ou sur un petit écran.",
         "motion": "Les animations sont désactivées lorsque vous avez demandé à réduire les animations dans votre système.",
-        "media": "Le site ne contient ni vidéo ni contenu audio ; le cabinet peut être contacté par écrit (e-mail ou courrier) comme par téléphone."
+        "media": "Le site ne contient ni vidéo ni contenu audio ; le cabinet peut être contacté par écrit (formulaire de contact, e-mail ou courrier) comme par téléphone."
       }
     },
     "limits": {
@@ -338,7 +341,7 @@
     },
     "contact": {
       "title": "Signaler un problème",
-      "content": "Si vous ne parvenez pas à accéder à un contenu ou à un service du site, écrivez ou téléphonez au cabinet : nous vous répondrons et vous fournirons l'information sous une autre forme.",
+      "content": "Si vous ne parvenez pas à accéder à un contenu ou à un service du site, écrivez au cabinet (formulaire de contact ou e-mail) ou téléphonez-lui : nous vous répondrons et vous fournirons l'information sous une autre forme.",
       "post": "Courrier"
     },
     "date": {

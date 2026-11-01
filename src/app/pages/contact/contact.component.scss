@@ -75,3 +75,9 @@
     }
 
 }
+
+// Keeps the form clear of the fixed navbar when a "write a message" link scrolls to it
+.contact-form-section app-message-form {
+    display: block;
+    scroll-margin-top: 110px;
+}

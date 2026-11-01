@@ -10,6 +10,7 @@
                 <h2>{{ 'privacy.controller.title' | translate }}</h2>
                 <p [innerHTML]="'privacy.controller.content' | translate"></p>
                 <p>
+                    {{ 'a11y.contactForm' | translate }} : <a [routerLink]="['/', language, 'contact']" fragment="message">{{ 'a11y.contactFormLink' | translate }}</a><br>
                     Email : contact&#64;aureliemanier-avocat.fr<br>
                     {{ 'legal.editor.phone' | translate }} : 07 69 99 75 60
                 </p>
@@ -65,6 +66,7 @@
                 <h2>{{ 'privacy.contact.title' | translate }}</h2>
                 <p [innerHTML]="'privacy.contact.content' | translate"></p>
                 <p>
+                    {{ 'a11y.contactForm' | translate }} : <a [routerLink]="['/', language, 'contact']" fragment="message">{{ 'a11y.contactFormLink' | translate }}</a><br>
                     Email : <a href="mailto:contact@aureliemanier-avocat.fr">contact&#64;aureliemanier-avocat.fr</a><br>
                     {{ 'legal.editor.phone' | translate }} : 07 69 99 75 60
                 </p>

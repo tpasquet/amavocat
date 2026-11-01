@@ -32,6 +32,7 @@ const AccessibilityMetaTranslations: PageMetaTranslations = {
     standalone: false
 })
 export class AccessibilityComponent implements OnInit {
+  language: string = 'fr';
 
   constructor(
     private languageService: LanguageService,
@@ -44,6 +45,9 @@ export class AccessibilityComponent implements OnInit {
     this.viewportScroller.scrollToPosition([0, 0]);
     this.languageService.currentLang$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(lang => this.metaService.setPageMeta(AccessibilityMetaTranslations[lang]));
+      .subscribe(lang => {
+        this.language = lang;
+        this.metaService.setPageMeta(AccessibilityMetaTranslations[lang]);
+      });
   }
 }

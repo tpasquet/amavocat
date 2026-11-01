@@ -21,10 +21,10 @@ export const translateTestingModule = TranslateModule.forRoot({
 });
 
 /** Common providers for component tests; child components are not declared (NO_ERRORS_SCHEMA). */
-export function configureComponentTest(component: Type<unknown>, routes: Routes = []) {
+export function configureComponentTest(component: Type<unknown>, routes: Routes = [], imports: Type<unknown>[] = []) {
   return TestBed.configureTestingModule({
     declarations: [component],
-    imports: [translateTestingModule, ReactiveFormsModule],
+    imports: [translateTestingModule, ReactiveFormsModule, ...imports],
     providers: [provideRouter(routes), provideHttpClient(), provideHttpClientTesting()],
     schemas: [NO_ERRORS_SCHEMA]
   }).compileComponents();

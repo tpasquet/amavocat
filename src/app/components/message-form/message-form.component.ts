@@ -40,6 +40,7 @@ export class MessageFormComponent implements OnInit {
     private http: HttpClient,
     private languageService: LanguageService,
     private destroyRef: DestroyRef,
+    private host: ElementRef<HTMLElement>,
   ) {
     this.form = this.formBuilder.nonNullable.group({
       firstName: ['', [Validators.required, Validators.maxLength(CONTACT_LIMITS.name), notBlank]],
@@ -109,6 +110,15 @@ export class MessageFormComponent implements OnInit {
     this.sent = false;
     this.displayedAt = Date.now();
     setTimeout(() => this.formElement?.nativeElement.querySelector<HTMLElement>('input')?.focus());
+  }
+
+  /** Brings the form into view and focuses its first field (links to /:lang/contact#message). */
+  focusForm(): void {
+    const card = this.host.nativeElement;
+    card.scrollIntoView({ block: 'start' });
+    const target = this.formElement?.nativeElement.querySelector<HTMLElement>('input')
+      ?? this.successMessage?.nativeElement;
+    target?.focus({ preventScroll: true });
   }
 
   private focusFirstInvalidField(): void {
