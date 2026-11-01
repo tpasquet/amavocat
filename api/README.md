@@ -52,7 +52,7 @@ are refused (requests from the API's own origin, i.e. the admin app, are always 
 `POST /api/contact` takes `{ firstName, lastName, email, phone?, message, consent: true, locale?, website?, elapsedMs? }`
 and answers `202 { status: 'sent' }`, `400 { error: 'invalid_body', fields }`, `429` (rate limit), `502` (SMTP
 error) or `503` (SMTP not configured). The message is emailed to `CONTACT_TO` with the visitor as `Reply-To`, so
-replying to the email answers them directly; it is **not stored** by the API, and its content is never logged.
+replying to the email answers them directly, and the email also carries a "Répondre à …" `mailto:` link (some clients, Proton included, ignore `Reply-To` when `CONTACT_FROM` is the recipient's own address, because they treat the email as one the user sent; prefer a dedicated sender address such as `formulaire@…`). It is **not stored** by the API, and its content is never logged.
 
 Anti-spam, without captcha or cookies: a hidden `website` field that only bots fill, a minimum of 2 seconds between
 displaying the form and submitting it (`elapsedMs`), the rate limit, and the origin check (browsers on other sites
@@ -62,6 +62,9 @@ SMTP settings (all optional; the form stays disabled until `SMTP_HOST`, `CONTACT
 `SMTP_HOST`, `SMTP_PORT` (587), `SMTP_SECURE` (`false` = STARTTLS required, `true` for port 465), `SMTP_USER`,
 `SMTP_PASSWORD`, `CONTACT_TO`, `CONTACT_FROM`. With an Alwaysdata mailbox: `SMTP_HOST=smtp-aureliemanier-avocat.alwaysdata.net`,
 `SMTP_USER` / `SMTP_PASSWORD` = the mailbox address and password, `CONTACT_FROM` = that same address.
+With Proton (current setup): `SMTP_HOST=smtp.protonmail.ch`, `SMTP_PORT=587`, `SMTP_USER` = the sending address,
+`SMTP_PASSWORD` = an SMTP token generated for that address (Settings > IMAP/SMTP > SMTP tokens), `CONTACT_FROM` = the
+same address.
 
 ## Content types
 

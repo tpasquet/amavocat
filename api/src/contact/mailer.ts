@@ -11,6 +11,7 @@ export interface MailMessage {
   replyTo: MailAddress;
   subject: string;
   text: string;
+  html?: string;
 }
 
 /** Sends an email; implemented over SMTP in production and faked in tests */
@@ -47,6 +48,7 @@ export function smtpMailer(settings: SmtpSettings): Mailer {
         replyTo: message.replyTo,
         subject: message.subject,
         text: message.text,
+        html: message.html,
       });
     },
   };

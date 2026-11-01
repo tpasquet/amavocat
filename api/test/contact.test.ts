@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { loadConfig } from '../src/config.js';
-import { formatMessage } from '../src/contact/routes.js';
+import { formatHtmlMessage, formatMessage, replyLink } from '../src/contact/routes.js';
 import { SITE_ORIGIN, setupApp } from './helpers.js';
 
 const valid = {
@@ -42,6 +42,8 @@ describe('contact form', () => {
     });
     expect(mail!.text).toContain('Téléphone : 06 12 34 56 78');
     expect(mail!.text).toContain(valid.message);
+    expect(mail!.text).toContain('mailto:jeanne.martin@example.com?subject=');
+    expect(mail!.html).toContain('href="mailto:jeanne.martin@example.com?subject=');
   });
 
   it('accepts a message without phone', async () => {
@@ -125,5 +127,30 @@ describe('formatMessage', () => {
     );
     expect(text).toContain('10:30');
     expect(text).toContain('Langue du site : anglais');
+  });
+});
+
+describe('reply link', () => {
+  const base = { ...valid, locale: 'fr' as const, phone: '', website: '', consent: true as const };
+
+  it('opens a reply to the visitor, whatever the From address', () => {
+    expect(replyLink(base)).toBe(
+      `mailto:jeanne.martin@example.com?subject=${encodeURIComponent('Votre message à Maître Aurélie Manier')}`,
+    );
+  });
+
+  it('cannot be turned into extra recipients or headers', () => {
+    const link = replyLink({ ...base, email: 'a&cc=x@example.com' });
+    expect(link.startsWith('mailto:a%26cc%3Dx@example.com?')).toBe(true);
+  });
+
+  it('escapes the visitor input in the HTML version', () => {
+    const html = formatHtmlMessage(
+      { ...base, firstName: '<b>Jeanne</b>', message: '<script>alert(1)</script>' },
+      new Date('2026-10-31T09:30:00Z'),
+    );
+    expect(html).not.toContain('<script>');
+    expect(html).toContain('&lt;script&gt;');
+    expect(html).toContain('Répondre à &lt;b&gt;Jeanne&lt;/b&gt; Martin');
   });
 });

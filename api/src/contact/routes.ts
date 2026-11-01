@@ -74,13 +74,15 @@ export async function contactRoutes(
         return reply.code(503).send({ error: 'contact_unavailable' });
       }
 
+      const receivedAt = new Date();
       try {
         await opts.mailer.send({
           to: opts.settings.to,
           from: opts.settings.from,
           replyTo: { name: `${body.firstName} ${body.lastName}`, address: body.email },
           subject: `Nouveau message depuis le site : ${body.firstName} ${body.lastName}`,
-          text: formatMessage(body, new Date()),
+          text: formatMessage(body, receivedAt),
+          html: formatHtmlMessage(body, receivedAt),
         });
       } catch (error) {
         // The message content is personal data: log the failure, never the content
@@ -94,15 +96,30 @@ export async function contactRoutes(
   );
 }
 
-export function formatMessage(body: ContactMessage, receivedAt: Date): string {
-  const date = new Intl.DateTimeFormat('fr-FR', {
+function formatDate(receivedAt: Date): string {
+  return new Intl.DateTimeFormat('fr-FR', {
     dateStyle: 'full',
     timeStyle: 'short',
     timeZone: 'Europe/Paris',
   }).format(receivedAt);
+}
 
+/**
+ * Link that opens a reply addressed to the visitor. The Reply-To header is not enough on its own: when the message
+ * is sent from the recipient's own address (CONTACT_FROM = CONTACT_TO), mail clients such as Proton treat it as a
+ * message the user sent and reply to its recipients instead.
+ */
+export function replyLink(body: ContactMessage): string {
+  const address = encodeURIComponent(body.email).replace(/%40/g, '@');
+  const subject = encodeURIComponent(
+    body.locale === 'en' ? 'Your message to Aurélie Manier, lawyer' : 'Votre message à Maître Aurélie Manier',
+  );
+  return `mailto:${address}?subject=${subject}`;
+}
+
+export function formatMessage(body: ContactMessage, receivedAt: Date): string {
   return [
-    `Message reçu via le formulaire de contact du site, le ${date}.`,
+    `Message reçu via le formulaire de contact du site, le ${formatDate(receivedAt)}.`,
     '',
     `Nom : ${body.firstName} ${body.lastName}`,
     `Email : ${body.email}`,
@@ -113,6 +130,32 @@ export function formatMessage(body: ContactMessage, receivedAt: Date): string {
     body.message,
     '',
     '--',
-    "Répondre à cet email écrit directement à l'expéditeur. Le visiteur a accepté que ses données soient utilisées pour lui répondre.",
+    `Pour répondre à ${body.firstName} ${body.lastName} : ${replyLink(body)}`,
+    "Le visiteur a accepté que ses données soient utilisées pour lui répondre.",
   ].join('\n');
+}
+
+const escapeHtml = (value: string) =>
+  value.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
+
+export function formatHtmlMessage(body: ContactMessage, receivedAt: Date): string {
+  const name = escapeHtml(`${body.firstName} ${body.lastName}`);
+  const link = escapeHtml(replyLink(body));
+  const row = (label: string, value: string) =>
+    `<tr><th align="left" style="padding:4px 16px 4px 0;color:#555;font-weight:normal">${label}</th><td style="padding:4px 0">${value}</td></tr>`;
+
+  return `<!DOCTYPE html>
+<html lang="fr"><body style="font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#212529;line-height:1.5">
+<p>Message reçu via le formulaire de contact du site, le ${escapeHtml(formatDate(receivedAt))}.</p>
+<table role="presentation" style="border-collapse:collapse">
+${row('Nom', name)}
+${row('Email', `<a href="${link}">${escapeHtml(body.email)}</a>`)}
+${row('Téléphone', body.phone ? escapeHtml(body.phone) : 'non renseigné')}
+${row('Langue du site', body.locale === 'en' ? 'anglais' : 'français')}
+</table>
+<p style="margin-top:16px"><strong>Message :</strong></p>
+<div style="white-space:pre-wrap;padding:12px 16px;background:#f3f5f8;border-radius:6px">${escapeHtml(body.message)}</div>
+<p style="margin-top:20px"><a href="${link}" style="display:inline-block;padding:10px 18px;background:#274c77;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:bold">Répondre à ${name}</a></p>
+<p style="color:#555;font-size:13px">Le visiteur a accepté que ses données soient utilisées pour lui répondre.</p>
+</body></html>`;
 }
