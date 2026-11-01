@@ -206,7 +206,7 @@
     },
     "recipients": {
       "title": "Data Recipients",
-      "content": "Your personal data is intended only for <strong>Aurélie MANIER</strong> and is <strong>never sold or shared</strong> with third parties, except for legal obligations.<br><br>Contact form messages pass through the servers of our host, <strong>Alwaysdata</strong> (Paris, France), which acts as a processor and does not access them for its own purposes. They are not stored on the site: they are emailed directly to the office."
+      "content": "Your personal data is intended only for <strong>Aurélie MANIER</strong> and is <strong>never sold or shared</strong> with third parties, except for legal obligations.<br><br>Contact form messages pass through the servers of our host, <strong>Alwaysdata</strong> (Paris, France), then are emailed to the office through its email provider, <strong>Proton</strong> (Switzerland). These providers act as processors and do not access the messages for their own purposes. Messages are not stored on the site."
     },
     "retention": {
       "title": "Retention Period",
