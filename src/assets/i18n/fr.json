@@ -206,7 +206,7 @@
     },
     "recipients": {
       "title": "Destinataires des données",
-      "content": "Vos données personnelles sont destinées uniquement à <strong>Aurélie MANIER</strong> et ne sont <strong>jamais vendues ni partagées</strong> avec des tiers, sauf obligation légale.<br><br>Les messages du formulaire de contact transitent par les serveurs de notre hébergeur, <strong>Alwaysdata</strong> (Paris, France), qui agit en tant que sous-traitant et n'y a pas accès pour son propre compte. Ils ne sont pas enregistrés sur le site : ils sont transmis directement par email au cabinet."
+      "content": "Vos données personnelles sont destinées uniquement à <strong>Aurélie MANIER</strong> et ne sont <strong>jamais vendues ni partagées</strong> avec des tiers, sauf obligation légale.<br><br>Les messages du formulaire de contact transitent par les serveurs de notre hébergeur, <strong>Alwaysdata</strong> (Paris, France), puis sont transmis par email au cabinet via sa messagerie, <strong>Proton</strong> (Suisse). Ces prestataires agissent en tant que sous-traitants et n'y ont pas accès pour leur propre compte. Les messages ne sont pas enregistrés sur le site."
     },
     "retention": {
       "title": "Durée de conservation",
