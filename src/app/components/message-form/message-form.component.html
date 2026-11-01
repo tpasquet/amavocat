@@ -88,7 +88,7 @@
                        [attr.aria-invalid]="showError('consent')"
                        [attr.aria-describedby]="showError('consent') ? 'contact-consent-error' : null">
                 <label for="contact-consent">
-                    {{ 'contact.form.consent' | translate }} <span class="required-mark" aria-hidden="true">*</span>
+                    {{ 'contact.form.consent' | translate }}&nbsp;<span class="required-mark" aria-hidden="true">*</span>
                 </label>
                 <p class="field-hint consent-link">
                     <a [routerLink]="['/', language, 'politique-confidentialite']">{{ 'contact.form.privacyLink' | translate }}</a>
