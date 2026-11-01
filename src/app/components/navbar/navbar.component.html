@@ -49,6 +49,9 @@
             <li>
                 <a class="navbar-link" [routerLink]="['/', language, 'contact']" routerLinkActive="is-active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'navbar.contact' | translate }}</a>
             </li>
+            <li class="cta-mobile-item">
+                <a class="cta-button cta-button--primary" [routerLink]="['/', language, 'contact']" (click)="closeMenu()">{{ 'navbar.appointment' | translate }}</a>
+            </li>
             <li class="language-mobile-item">
                 <app-language-selector (languageChanged)="onLanguageChanged($event)"></app-language-selector>
             </li>
