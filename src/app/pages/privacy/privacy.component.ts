@@ -32,6 +32,7 @@ const PrivacyMetaTranslations: PageMetaTranslations = {
     standalone: false
 })
 export class PrivacyComponent implements OnInit {
+  language: string = 'fr';
 
   constructor(
     private languageService: LanguageService,
@@ -44,7 +45,10 @@ export class PrivacyComponent implements OnInit {
     this.viewportScroller.scrollToPosition([0, 0]);
     this.languageService.currentLang$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(lang => this.metaService.setPageMeta(PrivacyMetaTranslations[lang]));
+      .subscribe(lang => {
+        this.language = lang;
+        this.metaService.setPageMeta(PrivacyMetaTranslations[lang]);
+      });
   }
 
 }

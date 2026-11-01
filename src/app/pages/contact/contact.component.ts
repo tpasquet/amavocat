@@ -1,6 +1,9 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, DestroyRef } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, DestroyRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute } from '@angular/router';
+import { MessageFormComponent } from 'src/app/components/message-form/message-form.component';
 import { Constants } from 'src/app/global/constant';
 import { environment } from 'src/app/environments/environment';
 import { PageMetaTranslations } from 'src/app/global/types';
@@ -31,13 +34,25 @@ const ContactMetaTranslations: PageMetaTranslations = {
     styleUrls: ['./contact.component.scss'],
     standalone: false
 })
-export class ContactComponent {
+export class ContactComponent implements AfterViewInit {
   readonly contactForm = environment.contactForm;
+
+  /** Fragment used by the "write a message" calls to action across the site */
+  static readonly FORM_FRAGMENT = 'message';
+
+  @ViewChild(MessageFormComponent) private messageForm?: MessageFormComponent;
 
   xSmall = false;
   small = false;
   
-  constructor(private languageService: LanguageService, private metaService: MetaService, private destroyRef: DestroyRef, private responsive: BreakpointObserver) {
+  constructor(
+    private languageService: LanguageService,
+    private metaService: MetaService,
+    private destroyRef: DestroyRef,
+    private responsive: BreakpointObserver,
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) {
     this.responsive.observe([
       Breakpoints.Small,
       Breakpoints.XSmall,
@@ -58,5 +73,19 @@ export class ContactComponent {
     this.languageService.currentLang$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(lang => this.metaService.setPageMeta(ContactMetaTranslations[lang]));
+  }
+
+  ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    // /:lang/contact#message: go straight to the form, ready to type
+    this.route.fragment
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(fragment => {
+        if (fragment === ContactComponent.FORM_FRAGMENT) {
+          setTimeout(() => this.messageForm?.focusForm());
+        }
+      });
   }
 }

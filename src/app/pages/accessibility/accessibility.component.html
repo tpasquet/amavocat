@@ -31,6 +31,7 @@
                     <h2>{{ 'accessibility.contact.title' | translate }}</h2>
                     <p>{{ 'accessibility.contact.content' | translate }}</p>
                     <p>
+                        {{ 'a11y.contactForm' | translate }} : <a [routerLink]="['/', language, 'contact']" fragment="message">{{ 'a11y.contactFormLink' | translate }}</a><br>
                         {{ 'legal.editor.email' | translate }} : <a href="mailto:contact@aureliemanier-avocat.fr">contact&#64;aureliemanier-avocat.fr</a><br>
                         {{ 'legal.editor.phone' | translate }} : <a href="tel:+33769997560">07 69 99 75 60</a><br>
                         {{ 'accessibility.contact.post' | translate }} : 90, rue Servient, 69003 Lyon

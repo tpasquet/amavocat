@@ -7,7 +7,7 @@
 
         <div class="contact-layout" [class.contact-layout--with-form]="contactForm">
             <!-- Form first: it is the main action of the page (and comes first on mobile) -->
-            <div *ngIf="contactForm" class="contact-form-section">
+            <div *ngIf="contactForm" class="contact-form-section" id="message">
                 <app-message-form></app-message-form>
             </div>
 

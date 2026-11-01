@@ -12,7 +12,8 @@ export const MAIN_CONTENT_ID = 'main-content';
  * - the skip link moves focus to the main content without changing the URL (a plain `#main-content`
  *   href resolves against `<base href="/">` and would navigate to the home page);
  * - after an in-app navigation, focus moves to the new page's main content, so a screen reader
- *   announces the new page and the next Tab starts from the content instead of the old link.
+ *   announces the new page and the next Tab starts from the content instead of the old link
+ *   (unless the link targets a section of the page, which then handles focus itself).
  */
 @Injectable({ providedIn: 'root' })
 export class PageFocusService {
@@ -34,9 +35,13 @@ export class PageFocusService {
     let firstNavigation = true;
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd), takeUntilDestroyed(destroyRef))
-      .subscribe(() => {
+      .subscribe(event => {
         if (firstNavigation) {
           firstNavigation = false;
+          return;
+        }
+        // A link to a section of the page (e.g. /fr/contact#message): the page moves focus there itself
+        if (this.router.parseUrl(event.urlAfterRedirects).fragment) {
           return;
         }
         // The new page is rendered on the next tick

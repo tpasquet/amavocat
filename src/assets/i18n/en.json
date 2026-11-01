@@ -202,7 +202,7 @@
     },
     "legal": {
       "title": "Legal Basis",
-      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: for messages sent through the contact form (checkbox). You can withdraw it at any time by writing to contact@aureliemanier-avocat.fr<br><strong>Legitimate interest</strong>: for anonymous audience measurement, to improve the site and its content"
+      "content": "The processing of your data is based on:<br><br><strong>Your consent</strong>: for messages sent through the contact form (checkbox). You can withdraw it at any time by writing to the office (contact form or contact@aureliemanier-avocat.fr)<br><strong>Legitimate interest</strong>: for anonymous audience measurement, to improve the site and its content"
     },
     "recipients": {
       "title": "Data Recipients",
@@ -223,7 +223,7 @@
         "portability": "<strong>Right to portability</strong>: retrieve your data in a structured format",
         "complaint": "<strong>Right to lodge a complaint</strong>: file a complaint with the CNIL"
       },
-      "exercise": "To exercise these rights, contact us at: <a href=\"mailto:contact@aureliemanier-avocat.fr\">contact@aureliemanier-avocat.fr</a>"
+      "exercise": "To exercise these rights, write to us with the contact form or at the address given below, under “Contact”."
     },
     "security": {
       "title": "Data Security",
@@ -269,7 +269,8 @@
     "title": "Need advice?",
     "text": "A first phone call to review your situation.",
     "callLabel": "Call 07 69 99 75 60",
-    "email": "Send an email"
+    "message": "Send a message",
+    "messageLabel": "Send a message to the office with the contact form"
   },
   "articles": {
     "title": "Articles",
@@ -296,7 +297,7 @@
   },
   "mobileBar": {
     "call": "Call",
-    "email": "Email"
+    "message": "Message"
   },
   "a11y": {
     "skipToContent": "Skip to main content",
@@ -305,7 +306,9 @@
     "newWindow": "(opens in a new window)",
     "phone": "Phone: 07 69 99 75 60",
     "email": "Email: contact@aureliemanier-avocat.fr",
-    "quickContact": "Quick contact"
+    "quickContact": "Quick contact",
+    "contactForm": "Contact form",
+    "contactFormLink": "write a message from the Contact page"
   },
   "accessibility": {
     "title": "Accessibility",
@@ -322,7 +325,7 @@
         "contrast": "Text has sufficient contrast with its background.",
         "zoom": "Content stays readable, without horizontal scrolling, at up to 400% zoom or on a small screen.",
         "motion": "Animations are turned off when you have asked your system to reduce motion.",
-        "media": "The website has no video or audio content; the office can be contacted in writing (email or post) as well as by phone."
+        "media": "The website has no video or audio content; the office can be contacted in writing (contact form, email or post) as well as by phone."
       }
     },
     "limits": {
@@ -338,7 +341,7 @@
     },
     "contact": {
       "title": "Report a problem",
-      "content": "If you cannot access any content or service on this website, write to or call the office: we will reply and provide the information in another form.",
+      "content": "If you cannot access any content or service on this website, write to the office (contact form or email) or call it: we will reply and provide the information in another form.",
       "post": "Post"
     },
     "date": {

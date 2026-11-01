@@ -5,8 +5,8 @@
         <a class="cta-button cta-button--primary" href="tel:+33769997560" [attr.aria-label]="'cta.callLabel' | translate">
             <i class="bi bi-telephone" aria-hidden="true"></i> 07 69 99 75 60
         </a>
-        <a class="cta-button cta-button--outline" href="mailto:contact@aureliemanier-avocat.fr">
-            <i class="bi bi-envelope" aria-hidden="true"></i> {{ 'cta.email' | translate }}
+        <a class="cta-button cta-button--outline" [routerLink]="['/', language, 'contact']" fragment="message">
+            <i class="bi bi-envelope" aria-hidden="true"></i> {{ 'cta.message' | translate }}
         </a>
     </div>
 </section>
